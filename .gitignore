@@ -55,3 +55,6 @@ Thumbs.db
 python/docs/_build/*
 python/docs/_static/*
 python/docs/_templates/*
+
+# Swap files #
+*.swp
