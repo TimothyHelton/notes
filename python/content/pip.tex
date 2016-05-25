@@ -1,0 +1,79 @@
+\subsection{Install pip}
+%
+\subsubsection{Without Internet Connection}
+\begin{enumerate}
+  \item Download \textbf{get-pip.py}
+  \item On a computer with an internet connection create the following wheels.
+    \begin{itemize}
+      \item pip
+      \item setuptools
+    \end{itemize}
+  \item Move the wheels to the computer without an internet connection.
+  \item Call the following command
+\begin{lstlisting}[language=bash, numbers=none]
+  python get-pip.py --no-index --find-links=WheelHouseDirectory
+\end{lstlisting}
+\end{enumerate}
+
+%%%
+\subsection{Find the Site Packages Installation Directory}
+\begin{lstlisting}[language=bash, numbers=none]
+  python -c "from distutils.sysconfig
+             import get_python_lib;
+             print get_python_lib()"
+\end{lstlisting}
+
+%%%
+\subsection{Install Packages}
+%
+\subsubsection{Install a Single Package}
+\begin{lstlisting}[language=bash, numbers=none]
+  pip install PackageName
+\end{lstlisting}
+%
+\subsubsection{Install a Packages From requirments.txt File}
+\begin{lstlisting}[language=bash, numbers=none]
+  pip install -r requirements.txt
+\end{lstlisting}
+%
+\subsubsection{Install Package in Developer Mode}
+This option allows a package to be actively developed while being installed in
+a Python interpreter.
+\begin{lstlisting}[language=bash, numbers=none]
+  pip install -e%*\ *.
+\end{lstlisting}
+
+%%%
+\subsection{List Outdated Modules}
+\begin{lstlisting}[language=bash, numbers=none]
+  pip list -o
+\end{lstlisting}
+
+%%%
+\subsection{Change the Version of an Installed Package}
+%
+\subsubsection{Upgrade to the Latest Version}
+\begin{lstlisting}[language=bash, numbers=none]
+  pip install --upgrade PackageName
+\end{lstlisting}
+
+\subsubsection{Install a Previous Version}
+\begin{lstlisting}[language=bash, numbers=none]
+  pip install --upgrade PackageName==Version
+\end{lstlisting}
+
+%%%
+\subsection{Create a Wheels}
+\begin{lstlisting}[language=bash, numbers=none]
+  pip wheel --wheel-dir=WheelHouseDirectory
+\end{lstlisting}
+
+%%%
+\subsection{Package Configuration}
+The package configuration may be maintained by a single text file, which is
+commonly called requirements.txt. Boolean operations may also be used in these
+configuration files. To create a snapshot of the current interpreter use the
+following command.
+\begin{lstlisting}[language=bash, numbers=none]
+  pip freeze > requirements.txt
+\end{lstlisting}
