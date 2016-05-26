@@ -9,9 +9,14 @@
 
 # LaTeX files #
 *.aux
+*.bbl
+*.blg
+*.ilg
 *.lof
 *.log
 *.lot
+*.nlo
+*.nls
 *.out
 *.toc
 
