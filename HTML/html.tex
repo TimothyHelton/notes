@@ -81,6 +81,14 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \pagenumbering{arabic}
+\section{Entities}
+\begin{itemize}
+  \item Entities work like unicode. They are codes to provide non ascii
+        characters.
+  \item always begin with an \textbf{\&}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
 \section{Tags}
 
 %%%%%%%%%%
@@ -270,6 +278,20 @@ This tag allows a larger window for the user to type into.
 \begin{lstlisting}
 <a name=``top'' /a>
 <a href=``#Name_of_page_link''>Name of anchor</a>
+\end{lstlisting}
+
+%%%%%%%%%%
+\subsection{iframe}
+\begin{itemize}
+  \item use this tag to embed another webpage into your webpage
+  \item inserted webpage can have a framed box around it by using the
+        frameboarder=``1'' argument
+  \item use this to insert youtube videos into your page
+  \item set size with width=``560'' and height=``315'' arguments
+\end{itemize}
+
+\begin{lstlisting}
+<iframe src=``other_page_address'' frameboarder=``0''></iframe>
 \end{lstlisting}
 
 %%%%%%%%%%
