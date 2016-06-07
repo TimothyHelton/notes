@@ -1,0 +1,241 @@
+\documentclass{article}
+
+%%%
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage[titletoc]{appendix}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[hmargin=1in, vmargin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{txfonts}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[svgnames]{xcolor}
+
+%%% Commands
+\newcommand{\mytitle}{Scrum Notes}
+
+%%% fancyhdr
+\lhead{}
+\chead{\mytitle}
+\rhead{}
+\pagestyle{fancy}
+
+%%% hyperref
+\hypersetup{colorlinks,
+            citecolor=black,
+            filecolor=black,
+            linkcolor=black,
+            urlcolor=black}
+
+%%% listings
+\lstset{% code block formatting
+  backgroundcolor=\color{white},
+  basicstyle=\normalsize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  escapeinside={\%*}{*},
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue}\bfseries,
+  language=Python,
+  otherkeywords={%
+    description,
+    device-width,
+    http-equiv,
+    initial-scale
+  },
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\footnotesize\color{gray},
+  rulecolor=\color{black},
+  showspaces=false,
+  stepnumber=1,
+  tabsize=2,
+}
+
+%%% tabular
+\newcolumntype{L}{>{\arraybackslash}m{4in}}
+
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\author{Timothy J. Helton\\720.641.8370\\timothy.j.helton@gmail.com}
+\date{\today}
+\title{\mytitle}
+
+\maketitle
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\newpage
+
+\listoffigures
+\listoftables
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+\section{Conventional Development}
+
+%%%%%%%%%%
+\subsection{Waterfall Model}
+Most common process for software development. All requirements must be
+identified and defined in the begining, and modifications to these parameters
+is costly.
+
+\begin{enumerate}
+  \item Requirements
+  \item Analysis
+  \item Design
+  \item Coding
+  \item Software Product
+\end{enumerate}
+
+%%%%%%%%%%
+\subsection{Iterative Incremental Model}
+Repeat the Waterfall Model multiple times incorporating new features with each
+iteration. The user is not involved in the design process.
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Agile Development}
+This method is based off the Iterative Incremental Model with a time-boxed
+iterative approach.
+
+Goals
+\begin{itemize}
+  \item faster time to deliver
+  \item reduce uncertainty and risk
+  \item increase return on investment by focusing on customer value
+\end{itemize}
+
+%%%%%%%%%%
+\subsection{Agile Manifesto}
+"We are uncovering better ways of developing software by doing it and helping
+others do it. Through this work, we have come to value:
+
+\begin{itemize}
+  \item Individuals and interactions over processes and tools
+  \item Working software over comprehensive documentation
+  \item Customer collaboration over contract negotiation
+  \item Responding to change over following a plan
+\end{itemize}
+
+That is, while there is value in the items on the right, we value the items on
+the left more."
+
+Authors: Beck, Kent, et al. (2001)
+
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l L}
+    \hline
+    \hline
+    Individuals and Interactions &
+    self-organization and self-motivation of the team members\\
+    {} & continuous interaction for work, clarifications, information among the
+         team members\\
+    Working Software &
+    Delivery of working software at short duration intervals helps gain customer
+    trust and assurance in the team\\
+    Customer collaboration &
+    Constant involvement of customer with the development team ensures
+    communication of necessary modifications\\
+    Responding to change &
+    Focus on quick response to the proposed changes, which is made possible with
+    short duration iterations\\
+    \hline
+  \end{tabular}
+  \caption{Agile Manifesto Items}
+  \label{tab:parts}
+\end{table}
+
+%%%%%%%%%%
+\subsection{Agile Methodologies}
+
+\begin{itemize}
+  \item Dynamic System Development Methodology (DSDM)
+  \item Scrum
+    \begin{itemize}
+      \item Focuses on management of tasks within a team environment
+      \item uses iterative incremental method
+      \item quick and frequent deliveries
+    \end{itemize}
+  \item Extreme Programming (XP)
+    \begin{itemize}
+      \item frequent releases
+      \item short development cycles
+      \item allows new customer requirements to be adopted
+    \end{itemize}
+  \item Test-driven Development (TDD)
+    \begin{itemize}
+      \item test are written first
+      \item minimal amount of code to pass the test is written
+      \item once software is working code is cleaned up to acceptable standards
+    \end{itemize}
+  \item Lean
+    \begin{itemize}
+      \item the expenditure of resources not adding value to the end customer
+            are targeted for elimination.
+      \item focus on preserving value with less work
+    \end{itemize}
+  \item Kanban
+    \begin{itemize}
+      \item system to improve and keep up a high level of production
+    \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Scrum}
+Scrum is a framework that defines certain rules, events and roles to bring in
+regularity. Every event in the framework has a maximum time duration.
+
+\subsection{Sprint}
+\begin{itemize}
+  \item 2 week or 1 month cycles
+  \item work to be performed in the Sprint is planned collaboratively by the
+        team
+  \item daily 15 minute meeting to plan for that day
+  \item Sprint review is held at the end of the Sprint
+\end{itemize}
+
+\subsection{Roles}
+\begin{itemize}
+  \item ScrumMaster
+    \begin{itemize}
+      \item makes the process run smoothly
+      \item removes obstacles that impact productivity
+      \item organizes the facilitates the critical meetings
+    \end{itemize}
+  \item Product Owner
+    \begin{itemize}
+      \item this is a single person not a committee
+      \item manages the product backlog
+      \item prioritizes the product backlog
+      \item optimize the team
+    \end{itemize}
+  \item Team
+    \begin{itemize}
+      \item keep team between 5 -- 9 people
+        \begin{itemize}
+          \item fewer than 5 members decreases interaction and results in
+                smaller productivity gains
+          \item more than 9 members requires too much coordination
+        \end{itemize}
+      \item ensures smooth flow of information and the quick resolution of
+            issues
+      \item maximize opportunities for feedback
+    \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
