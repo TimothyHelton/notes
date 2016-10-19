@@ -10,6 +10,7 @@
 \usepackage[hmargin=1in, vmargin=1in]{geometry}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{nomencl}
 \usepackage{txfonts}
 \usepackage{titlesec}
 \usepackage{titling}
@@ -77,14 +78,40 @@
 
 \listoffigures
 \listoftables
+
+%%%%%%%%%%%%%%%%%%%%
 \newpage
+\makenomenclature
+\renewcommand{\nomname}{Definitions}
+\printnomenclature[1.5in]
+\hfill
+
+\nomenclature{$\mu$}{average value for population}
+\nomenclature{$n$}{sample size}
+\nomenclature{$\overline{x}$}{average value for sample}
+\nomenclature{construct}{an attricute that connot be measured (i.e.\ happiness)}
+\nomenclature{lurking variable}{possible source that could influence a variable}
+\nomenclature{non-response bias}{results are skewed by lack of information}
+\nomenclature{operational definition}{the method chosen to measure a construct}
+\nomenclature{parameter}{a characteristic of a population}
+\nomenclature{placebo}{group that is equal to the interest group in all respects
+                       except the independent variable is not applied} 
+\nomenclature{population}{all specimens in a set}
+\nomenclature{sample}{a subset of the population specimens}
+\nomenclature{sampling error}{the difference between cooresponding parameters
+                              and statistics}
+\nomenclature{statistic}{a characteristic of a sample}
+
 
 %%%%%%%%%%%%%%%%%%%%
 \pagenumbering{arabic}
-\section{Definitions}
+\section{Visualizations}
+
+\subsection{Observations}
+Correlation does not imply causation
 
 %%%%%%%%%%%%%%%%%%%%
-\section{Visualizations}
+%\section{Next Section}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
