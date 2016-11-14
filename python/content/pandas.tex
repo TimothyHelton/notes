@@ -3,3 +3,58 @@
 \begin{lstlisting}
 import pandas as pd
 \end{lstlisting}
+
+%%%
+\subsection{Data Frames}
+Data Frames are like numpy record arrays.
+\begin{itemize}
+  \item \textbf{columns} List the column names
+    \begin{itemize}
+      \item access the column data by using attribute notation (handle.name) or
+        dictionary notation (handle['name'])
+      \item \color{red}{If the column name is more than one word you must use
+        the dictionary notation}
+    \end{itemize}
+  \item To remove a column use the \textbf{del} command
+  \item \textbf{head} Returns the first n rows
+  \item \textbf{ix} Returns the row data (handle.ix[3])
+    \begin{itemize}
+      \item \color{red}{if additional rows and columns are added using this
+        command it will have the same effect as calling reindex.}
+    \end{itemize}
+  \item \textbf{reindex} allows rows or columns to be reindexed
+    \begin{itemize}
+      \item \color{red}{if no arguments are passed the rows will be reindexed,
+        and if the columns argument is passed the columns will be reindexed.}
+    \end{itemize}
+  \item \textbf{tail} Returns the last n rows
+\end{itemize}
+
+%%%
+\subsection{Read From Clipboard}
+This function will take anything on the system clipboard and attempt to convert
+it into a DataFrame.
+\begin{lstlisting}
+pd.read_clipboard()
+\end{lstlisting}
+
+%%%
+\subsection{Series}
+This a vector.
+\begin{itemize}
+  \item \textbf{reindex} Will assign a new index list to the series.
+    \begin{itemize}
+      \item \textbf{fill\textunderscore value} argument to insert a specific
+        value for missing data.
+      \item \textbf{method} allows functions to define the reindex
+        \begin{itemize}
+          \item \textbf{ffill} Forward Fill will propagate a known value for
+            missing data unil a new known value is found.  Then the new value
+            is propagated for missing data until the next known value is found.
+          \item \textbf{bfill} Backward Fill is the same as Forward Fill only
+            the propagation goes backward.
+          \item \textbf{nearest} Uses the nearest value to propagate unkown
+            values.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
