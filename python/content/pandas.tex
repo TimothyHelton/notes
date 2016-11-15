@@ -8,6 +8,11 @@ import pandas as pd
 \subsection{Data Frames}
 Data Frames are like numpy record arrays.
 \begin{itemize}
+  \item \textbf{add} use this method to add two data frames together
+    \begin{itemize}
+      \item use the \color{red}{fill\_value=0}
+      \color{black}{argument to replce NaN with 0}
+    \end{itemize}
   \item \textbf{columns} List the column names
     \begin{itemize}
       \item access the column data by using attribute notation (handle.name) or
@@ -15,7 +20,15 @@ Data Frames are like numpy record arrays.
       \item \color{red}{If the column name is more than one word you must use
         the dictionary notation}
     \end{itemize}
-  \item To remove a column use the \textbf{del} command
+  \item \textbf{del} Remove a column
+  \item \textbf{drop} Remove an index (row or column)
+    \begin{itemize}
+      \item Example row drop: df.drop['b']
+      \item Example column drop: df.drop['b', axis=1]
+      \item Operation is not done in place.  To save the modified data frame
+        assign it to a new handle.
+      \item Add the argument \color{red}{axis=1} to drop a column
+    \end{itemize}
   \item \textbf{head} Returns the first n rows
   \item \textbf{ix} Returns the row data (handle.ix[3])
     \begin{itemize}
@@ -42,6 +55,13 @@ pd.read_clipboard()
 \subsection{Series}
 This a vector.
 \begin{itemize}
+  \item \textbf{drop} Remove an index row
+    \begin{itemize}
+      \item Example row drop: ser.drop['b']
+      \item Operation is not done in place.  To save the modified series
+        assign it to a new handle.
+    \end{itemize}
+  \item \textbf{rank} Return the value rank with respect to index.
   \item \textbf{reindex} Will assign a new index list to the series.
     \begin{itemize}
       \item \textbf{fill\textunderscore value} argument to insert a specific
@@ -57,4 +77,8 @@ This a vector.
             values.
         \end{itemize}
     \end{itemize}
+  \item \textbf{sort\_index} Will sort the series based on index when no
+    arguments are provided.
+  \item \textbf{sort\_values} Will sort the series based on value when no
+    arguments are provided.
 \end{itemize}
