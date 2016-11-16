@@ -10,8 +10,7 @@ Data Frames are like numpy record arrays.
 \begin{itemize}
   \item \textbf{add} use this method to add two data frames together
     \begin{itemize}
-      \item use the \color{red}{fill\_value=0}
-      \color{black}{argument to replce NaN with 0}
+      \item use the {\color{red}{fill\_value=0}} argument to replace NaN with 0
     \end{itemize}
   \item \textbf{columns} List the column names
     \begin{itemize}
@@ -20,7 +19,13 @@ Data Frames are like numpy record arrays.
       \item \color{red}{If the column name is more than one word you must use
         the dictionary notation}
     \end{itemize}
+  \item \textbf{cumsum} Returns a cumulative sum for each column
+    \begin{itemize}
+      \item to return the cumulative sum for each row add the argument
+        \color{red}{axis=1}
+    \end{itemize}
   \item \textbf{del} Remove a column
+  \item \textbf{describe} Returns summary statistics for the data frame
   \item \textbf{drop} Remove an index (row or column)
     \begin{itemize}
       \item Example row drop: df.drop['b']
@@ -30,15 +35,39 @@ Data Frames are like numpy record arrays.
       \item Add the argument \color{red}{axis=1} to drop a column
     \end{itemize}
   \item \textbf{head} Returns the first n rows
+  \item \textbf{idxmin} Returns the index of the each column maximum value
+    \begin{itemize}
+      \item to find index of the maximum values for each of the rows enter
+        the argument \color{red}{axis=1}
+    \end{itemize}
+  \item \textbf{idxmin} Returns the index of the each column minimum value
+    \begin{itemize}
+      \item to find index of the minimum values for each of the rows enter
+        the argument \color{red}{axis=1}
+    \end{itemize}
   \item \textbf{ix} Returns the row data (handle.ix[3])
     \begin{itemize}
       \item \color{red}{if additional rows and columns are added using this
         command it will have the same effect as calling reindex.}
     \end{itemize}
+  \item \textbf{max} find the maximum value of each column
+    \begin{itemize}
+      \item to find the maximum value for the rows enter the argument
+        \color{red}{axis=1}
+    \end{itemize}
+  \item \textbf{min} find the minimum value of each column
+    \begin{itemize}
+      \item to find the minimum value for the rows enter the argument
+        \color{red}{axis=1}
+    \end{itemize}
   \item \textbf{reindex} allows rows or columns to be reindexed
     \begin{itemize}
       \item \color{red}{if no arguments are passed the rows will be reindexed,
         and if the columns argument is passed the columns will be reindexed.}
+    \end{itemize}
+  \item \textbf{sum} Returns the sum of the columns
+    \begin{itemize}
+      \item to sum the rows enter the argument \color{red}{axis=1}
     \end{itemize}
   \item \textbf{tail} Returns the last n rows
 \end{itemize}
@@ -69,11 +98,11 @@ This a vector.
       \item \textbf{method} allows functions to define the reindex
         \begin{itemize}
           \item \textbf{ffill} Forward Fill will propagate a known value for
-            missing data unil a new known value is found.  Then the new value
+            missing data until a new known value is found.  Then the new value
             is propagated for missing data until the next known value is found.
           \item \textbf{bfill} Backward Fill is the same as Forward Fill only
             the propagation goes backward.
-          \item \textbf{nearest} Uses the nearest value to propagate unkown
+          \item \textbf{nearest} Uses the nearest value to propagate unknown
             values.
         \end{itemize}
     \end{itemize}
