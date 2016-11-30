@@ -1,0 +1,23 @@
+%%%
+\subsection{Line Profiling}
+This module will return the inividule times required for a each line of code.
+
+\subsubsection{install the line\_profiler package}
+\begin{lstlisting}
+pip install line_profiler
+\end{lstlisting}
+\subsubsection{add the LineProfiler to the \_\_builtins\_\_ namespace}
+\begin{lstlisting}
+kernprof -l script_to_profile.py
+\end{lstlisting}
+\subsubsection{place a decorator above the function or method you would like to profile}
+\begin{lstlisting}
+@profile
+def slow_function(a, b, c):
+  ...
+\end{lstlisting}
+\subsubsection{view the results}
+\begin{lstlisting}
+python -m line_profiler script_to_profile.py.lprof
+\end{lstlisting}
+
