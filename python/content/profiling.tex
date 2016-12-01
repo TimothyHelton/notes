@@ -1,23 +1,111 @@
 %%%
-\subsection{Line Profiling}
-This module will return the inividule times required for a each line of code.
+\subsection{Configurations}
 
-\subsubsection{install the line\_profiler package}
+\subsubsection{install the line\_profiler}
 \begin{lstlisting}
 pip install line_profiler
+pip install memory_profiler
 \end{lstlisting}
+
+\subsubsection{update the IPython runtime configuration file}
+Add the following lines to the file ~/.ipython/profile\_default/ipython\_config.py
+\begin{lstlisting}
+c.TerminalIPythonApp.extensions = [
+    'line_profiler',
+    'memory_profiler',
+]
+\end{lstlisting}
+
+%%%
+\subsection{Line Profiling}
+This module will return the individual times required for a each line of code.
+
 \subsubsection{add the LineProfiler to the \_\_builtins\_\_ namespace}
 \begin{lstlisting}
 kernprof -l script_to_profile.py
 \end{lstlisting}
+
 \subsubsection{place a decorator above the function or method you would like to profile}
 \begin{lstlisting}
 @profile
 def slow_function(a, b, c):
   ...
 \end{lstlisting}
+
 \subsubsection{view the results}
 \begin{lstlisting}
 python -m line_profiler script_to_profile.py.lprof
+\end{lstlisting}
+
+%%%
+\subsection{Memory Profiling by Line}
+This module will return the individual memory usage for a each line of code.
+{\color{red}{NOTE: this utility may only be run against a file saved to disk.}}
+
+\subsubsection{install the memory\_profiler package}
+\begin{lstlisting}
+pip install memory_profiler
+\end{lstlisting}
+
+\subsubsection{place a decorator above the function or method you would like to profile}
+\begin{lstlisting}
+@profile
+def memory_hog_function(a, b, c):
+  ...
+\end{lstlisting}
+
+\subsubsection{measure a file}
+\begin{lstlisting}
+python -m memory_profiler script_to_profile.py
+\end{lstlisting}
+
+%%%
+\subsection{Memory Profiling Verses Time}
+These procedure will produce a graph of the memory usage with respect to time.
+
+\subsubsection{run the profiler}
+\begin{lstlisting}
+mprof run script_to_profile.py
+\end{lstlisting}
+
+\subsubsection{display the plot}
+\begin{lstlisting}
+mprof plot
+\end{lstlisting}
+
+\subsubsection{clean up the temporary files}
+\begin{lstlisting}
+mprof clean
+\end{lstlisting}
+
+%%%
+\subsection{Profiling in IPython}
+It is possible to run the profilers inside IPython.
+
+\subsubsection{profile a function}
+\begin{lstlisting}
+%mprun -f func func()
+\end{lstlisting}
+
+\subsubsection{profile a statement for multiple cycles}
+Here n is the number of cycles to be executed.
+\begin{lstlisting}
+%memit -r n statement
+\end{lstlisting}
+
+\subsubsection{time a statement}
+\begin{lstlisting}
+%lprun statement
+\end{lstlisting}
+
+\subsubsection{time a function}
+Use the -f argument, then state the function name and lastly call the function.
+\begin{lstlisting}
+%lprun -f func func()
+\end{lstlisting}
+
+\subsubsection{time a script}
+\begin{lstlisting}
+%prun script()
 \end{lstlisting}
 
