@@ -1,0 +1,139 @@
+\documentclass{article}
+
+%%%
+\usepackage{amsmath}
+\usepackage[titletoc]{appendix}
+\usepackage{caption}
+\usepackage[superscript, biblabel]{cite}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[hmargin=1in, vmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[lighttt]{lmodern}
+\usepackage{nomencl}
+\usepackage{subfig}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[svgnames]{xcolor}
+
+
+%%% Variables
+% image height
+\newcommand{\imheight}{2.0in}
+% input argument
+\newcommand{\textarg}[1]{% bold text and change color to blue
+  % #1 text
+  {\color{blue}{\textbf{#1}}}
+}
+% scale
+\newcommand{\scale}{0.25}
+% topic
+\newcommand{\topic}{C Programming Language}
+
+
+%%% fancyhdr
+\lhead{\hyperlink{toc}{\topic}}
+
+%%% figure
+\restylefloat{figure}
+
+%%% graphicx
+\graphicspath{{images/}}
+
+%%% hyperref
+\hypersetup{colorlinks,
+            citecolor=black,
+            filecolor=black,
+            linkcolor=black,
+            urlcolor=black}
+
+%%% listings
+\lstset{%
+        backgroundcolor=\color{white},
+        basicstyle=\bfseries,
+        commentstyle=\color{blue},
+        escapeinside={\%*}{*},
+        frame=tb,
+        language=C,
+        keepspaces=true,
+        keywordstyle=\color{Peru},
+        morestring=[s]{"""}{"""},
+        numbers=left,
+        numbersep=5pt,
+        numberstyle=\tiny,
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        stringstyle=\color{VioletRed},
+        tabsize=4
+}
+
+%%% nomencl
+\makenomenclature
+\renewcommand{\nomname}{Nomenclature}
+
+%%% titlesec
+\titleformat{\section}{\color{Blue}\normalfont\Large\bfseries}{\color{Blue}\thesection}{1em}{}
+\titleformat{\subsection}{\color{Red}\normalfont\bfseries}{\color{Red}\thesubsection}{1em}{}
+\titleclass{\section}{top}
+\newcommand\setionbreak{\clearpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagenumbering{roman}
+%%%
+\title{\topic \ Notes}
+\author{Timothy J. Helton\\720.641.8370\\timothy.j.helton@gmail.com}
+\date{\today}
+
+\begin{titlingpage}
+  \maketitle
+\end{titlingpage}
+
+%%%
+\hypertarget{toc}{}
+\tableofcontents
+\newpage
+
+%%%
+\listoffigures
+\listoftables
+\newpage
+
+%%%
+\printnomenclature[0.75in]
+\hfill
+\input{content/nomenclature.tex}
+\newpage
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Header Files}
+Header files are used to import libraries into the current module.
+
+The syntax to include files varies depending on the type of library being
+imported.
+\begin{itemize}
+  \item Standard libraries are surrounded by
+    {\color{red}{\textless \ \textgreater}} symbols.
+    This tells the complier to search in pre-defined system directories.
+  \item User libraries are surrounded by {\color{red}{""}} symbols.
+    This tells the complier to search for the library in the directory
+    containing the directive.
+\end{itemize}
+\begin{lstlisting}
+#include <std_lib.h>
+#include "user_lib.h"
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\bibliographystyle{plain}
+%\bibliography{/home/thelton/projects/report_blocks/citations.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}

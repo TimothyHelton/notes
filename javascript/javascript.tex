@@ -1,0 +1,197 @@
+\documentclass{article}
+
+%%%
+\usepackage{amsmath}
+\usepackage[titletoc]{appendix}
+\usepackage{caption}
+\usepackage[superscript, biblabel]{cite}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[hmargin=1in, vmargin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[lighttt]{lmodern}
+\usepackage{nomencl}
+\usepackage{subfig}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[svgnames]{xcolor}
+
+
+%%% Variables
+% image height
+\newcommand{\imheight}{2.0in}
+% input argument
+\newcommand{\textarg}[1]{% bold text and change color to blue
+  % #1 text
+  {\color{blue}{\textbf{#1}}}
+}
+% scale
+\newcommand{\scale}{0.25}
+% topic
+\newcommand{\topic}{Javascript Programming Language}
+
+
+%%% fancyhdr
+\lhead{\hyperlink{toc}{\topic}}
+
+%%% figure
+\restylefloat{figure}
+
+%%% graphicx
+\graphicspath{{images/}}
+
+%%% hyperref
+\hypersetup{colorlinks,
+            citecolor=black,
+            filecolor=black,
+            linkcolor=black,
+            urlcolor=black}
+
+%%% listings
+\lstset{%
+        backgroundcolor=\color{white},
+        basicstyle=\bfseries,
+        commentstyle=\color{blue},
+        escapeinside={\%*}{*},
+        frame=tb,
+        language=C,
+        keepspaces=true,
+        keywordstyle=\color{Peru},
+        morestring=[s]{"""}{"""},
+        numbers=left,
+        numbersep=5pt,
+        numberstyle=\tiny,
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        stringstyle=\color{VioletRed},
+        tabsize=4
+}
+
+%%% nomencl
+\makenomenclature
+\renewcommand{\nomname}{Nomenclature}
+
+%%% titlesec
+\titleformat{\section}{\color{Blue}\normalfont\Large\bfseries}{\color{Blue}\thesection}{1em}{}
+\titleformat{\subsection}{\color{Red}\normalfont\bfseries}{\color{Red}\thesubsection}{1em}{}
+\titleclass{\section}{top}
+\newcommand\setionbreak{\clearpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagenumbering{roman}
+%%%
+\title{\topic \ Notes}
+\author{Timothy J. Helton\\720.641.8370\\timothy.j.helton@gmail.com}
+\date{\today}
+
+\begin{titlingpage}
+  \maketitle
+\end{titlingpage}
+
+%%%
+\hypertarget{toc}{}
+\tableofcontents
+\newpage
+
+%%%
+\listoffigures
+\listoftables
+\newpage
+
+%%%
+\printnomenclature[0.75in]
+\hfill
+\input{content/nomenclature.tex}
+\newpage
+
+\pagenumbering{arabic}
+\pagestyle{fancy}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Comment}
+Use two forward slashes to designate a comment.
+
+\begin{lstlisting}
+// this is comment
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{End of Line}
+Each command is completed with a semicolon
+
+\begin{lstlisting}
+variable = 5;
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Images}
+
+%%%
+\subsection{Load an image into memory}
+\begin{lstlisting}
+image = new SimpleImage("name_of_image_file");
+\end{lstlisting}
+
+%%%
+\subsection{Display Image}
+\begin{lstlisting}
+print(image);
+\end{lstlisting}
+
+%%%
+\subsection{Define Handle for an individual pixel}
+    \begin{itemize}
+      \item integers begin in the upper left hand corner.
+      \item integers increase to the right and down
+    \end{itemize}
+\begin{lstlisting}
+pixel = image.getPixel(int, int)
+\end{lstlisting}
+
+%%%
+\subsection{Modify pixel color}
+    \begin{itemize}
+      \item chose an integer between 0-255
+    \end{itemize}
+\begin{lstlisting}
+pixel.setRed(int)
+pixel.setGreen(int)
+pixel.setBlue(int)
+\end{lstlisting}
+
+%%%
+\subsection{Zoom}
+\begin{lstlisting}
+image.setZoom(integer);
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Print}
+Use the print command to send output to the screen.
+
+\begin{lstlisting}
+print("This will be displayed on the terminal.");
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Strings}
+
+\begin{itemize}
+  \item Quotes: use double quotes to denote a string
+\begin{lstlisting}
+"This is a string"
+\end{lstlisting}
+
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\bibliographystyle{plain}
+%\bibliography{/home/thelton/projects/report_blocks/citations.bib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
