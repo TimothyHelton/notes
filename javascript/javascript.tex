@@ -121,10 +121,14 @@ Use two forward slashes to designate a comment.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{End of Line}
-Each command is completed with a semicolon
+\begin{itemize}
+  \item semicolons are only required when there are multiple statments on the
+    same line
+\end{itemize}
 
 \begin{lstlisting}
-variable = 5;
+variable = 5; another_variable = 10;
+new_variable = 15
 \end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -133,13 +137,13 @@ variable = 5;
 %%%
 \subsection{Load an image into memory}
 \begin{lstlisting}
-image = new SimpleImage("name_of_image_file");
+image = new SimpleImage("name_of_image_file")
 \end{lstlisting}
 
 %%%
 \subsection{Display Image}
 \begin{lstlisting}
-print(image);
+print(image)
 \end{lstlisting}
 
 %%%
@@ -153,20 +157,48 @@ pixel = image.getPixel(int, int)
 \end{lstlisting}
 
 %%%
+\subsection{For Loops}
+\begin{itemize}
+  \item condition is surrounded in parenthesis
+  \item body is contained in french braces
+\end{itemize}
+\begin{lstlisting}
+for (condition) {
+    body
+}
+\end{lstlisting}
+
+%%%
+\subsection{Get pixel color}
+\begin{itemize}
+  \item chose an integer between 0-255
+\end{itemize}
+
+\begin{lstlisting}
+pixel.getRed(int)
+pixel.getGreen(int)
+pixel.getGreen(int)
+\end{lstlisting}
+
+%%%
 \subsection{Modify pixel color}
-    \begin{itemize}
-      \item chose an integer between 0-255
-    \end{itemize}
+\begin{itemize}
+  \item chose an integer between 0-255
+\end{itemize}
 \begin{lstlisting}
 pixel.setRed(int)
 pixel.setGreen(int)
 pixel.setBlue(int)
+
+for (pixel: image) {
+    pixel.setBlue(int)
+}
 \end{lstlisting}
 
 %%%
 \subsection{Zoom}
 \begin{lstlisting}
-image.setZoom(integer);
+image.setZoom(integer)
 \end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,7 +206,7 @@ image.setZoom(integer);
 Use the print command to send output to the screen.
 
 \begin{lstlisting}
-print("This will be displayed on the terminal.");
+print("This will be displayed on the terminal.")
 \end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
