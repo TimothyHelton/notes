@@ -232,6 +232,28 @@ print("This will be displayed on the terminal.")
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tables}
+
+%%%
+\subsection{Load a table into memory}
+\begin{lstlisting}
+table = new SimpleTable("table_name.csv")
+\end{lstlisting}
+
+%%%
+\subsection{Enumerate Table Data}
+\begin{lstlisting}
+table = new SimpleTable("table_name.csv")
+
+for (row: table) {
+  if (row.getField("field_name") == value) {
+    body
+  }
+}
+\end{lstlisting}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \bibliographystyle{plain}
 %\bibliography{/home/thelton/projects/report_blocks/citations.bib}
