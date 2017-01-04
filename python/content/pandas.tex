@@ -7,180 +7,240 @@ import pandas as pd
 %%%
 \subsection{Data Frames}
 Data Frames are like numpy record arrays.
-\begin{itemize}
 
-  \item \textbf{add} use this method to add two data frames together
-    \begin{itemize}
-      \item use the {\color{red}{fill\_value=0}} argument to replace NaN with 0
-    \end{itemize}
+%
+\subsubsection{add}
+Use this method to add two data frames together
+  \begin{itemize}
+    \item use the {\color{red}{fill\_value=0}} argument to replace NaN with 0
+  \end{itemize}
 
-  \item \textbf{columns} List the column names
-    \begin{itemize}
+%
+\subsubsection{columns}
+List the column names
+  \begin{itemize}
 
-      \item access the column data by using attribute notation (handle.name) or
-        dictionary notation (handle['name'])
+    \item access the column data by using attribute notation (handle.name) or
+      dictionary notation (handle['name'])
 
-      \item \color{red}{If the column name is more than one word you must use
-        the dictionary notation}
-    \end{itemize}
+    \item \color{red}{If the column name is more than one word you must use
+      the dictionary notation}
+  \end{itemize}
 
-  \item \textbf{cumsum} Returns a cumulative sum for each column
-    \begin{itemize}
+%
+\subsubsection{cumsum}
+Returns a cumulative sum for each column
+  \begin{itemize}
 
-      \item to return the cumulative sum for each row add the argument
-        \color{red}{axis=1}
-    \end{itemize}
+    \item to return the cumulative sum for each row add the argument
+      \color{red}{axis=1}
+  \end{itemize}
 
-  \item \textbf{columns.names} \textit{list} add column header names to
-    displayed output
+%
+\subsubsection{columns.names}
+\textit{list} Add column header names to displayed output
 
-  \item \textbf{corr} Return the correlation of the data columns.
+%
+\subsubsection{corr}
+Return the correlation of the data columns.
 
-  \item \textbf{describe} Returns summary statistics for the data frame
+%
+\subsubsection{describe}
+Returns summary statistics for the data frame
 
-  \item \textbf{drop} Remove an index (row or column)
-    \begin{itemize}
+%
+\subsubsection{drop}
+Remove an index (row or column)
+  \begin{itemize}
 
-      \item Example: remove row named "b"
+    \item Example: remove row named "b"
 \begin{lstlisting}
 df = df.drop["b"]
 \end{lstlisting}
 
-      \item Example: remove columun named "b"
+    \item Example: remove columun named "b"
 \begin{lstlisting}
 df = df.drop["b", axis=1]
 \end{lstlisting}
 
-      \item Operation is not done in place.  To save the modified data frame
-        assign it to a new handle.
+    \item Operation is not done in place.  To save the modified data frame
+      assign it to a new handle.
 
-      \item Add the argument \color{red}{axis=1} to drop a column
-    \end{itemize}
+    \item Add the argument \color{red}{axis=1} to drop a column
+  \end{itemize}
 
-  \item \textbf{dropna} Returns a dataframe with all rows containing any null
-    values removed.
-    \begin{itemize}
+%
+\subsubsection{dropna}
+Returns a dataframe with all rows containing any null values removed.
+  \begin{itemize}
 
-      \item By adding the argument {\color{red}{how='all'}} only the rows that
-        contain all null removed.
+    \item By adding the argument {\color{red}{how='all'}} only the rows that
+      contain all null removed.
 
-      \item By adding the argument {\color{red}{axis=1}} the columns will be
-        removed in lieu of the rows.
+    \item By adding the argument {\color{red}{axis=1}} the columns will be
+      removed in lieu of the rows.
 
-      \item By adding the argument {\color{red}{thresh}} equal to an integer n
-        rows or columns with less than n items will be removed.
-    \end{itemize}
+    \item By adding the argument {\color{red}{thresh}} equal to an integer n
+      rows or columns with less than n items will be removed.
+  \end{itemize}
 
-  \item \textbf{fillna} Fills all the null values with the given value.
-    \begin{itemize}
+%
+\subsubsection{fillna}
+Fills all the null values with the given value.
+  \begin{itemize}
 
-      \item If a {\color{red}{dictionary}} is passed to fillna it is possible
-        to assign different fill values based on column.
+    \item If a {\color{red}{dictionary}} is passed to fillna it is possible
+      to assign different fill values based on column.
 
-      \item Argument {\color{red}{inplace=True}} will permanently alter the
-        original dataframe.
-    \end{itemize}
+    \item Argument {\color{red}{inplace=True}} will permanently alter the
+      original dataframe.
+  \end{itemize}
 
-  \item \textbf{head} Returns the first n rows
+%
+\subsubsection{head}
+Returns the first n rows
 
-  \item \textbf{idxmin} Returns the index of the each column maximum value
-    \begin{itemize}
+%
+\subsubsection{idxmin}
+Returns the index of the each column maximum value
+  \begin{itemize}
 
-      \item to find index of the maximum values for each of the rows enter
-        the argument \color{red}{axis=1}
-    \end{itemize}
+    \item to find index of the maximum values for each of the rows enter
+      the argument \color{red}{axis=1}
+  \end{itemize}
 
-  \item \textbf{idxmin} Returns the index of the each column minimum value
-    \begin{itemize}
+%
+\subsubsection{idxmin}
+Returns the index of the each column minimum value
+  \begin{itemize}
 
-      \item to find index of the minimum values for each of the rows enter
-        the argument \color{red}{axis=1}
-    \end{itemize}
+    \item to find index of the minimum values for each of the rows enter
+      the argument \color{red}{axis=1}
+  \end{itemize}
 
-  \item \textbf{index.names} \textit{list} add index header names to the
-    displayed output
+%
+\subsubsection{index.names}
+\textit{list} Add index header names to the displayed output
 
-  \item \textbf{ix} Returns the row data (handle.ix[3])
-    \begin{itemize}
+%
+\subsubsection{ix}
+Returns the row data (handle.ix[3])
+  \begin{itemize}
 
-      \item \color{red}{if additional rows and columns are added using this
-        command it will have the same effect as calling reindex.}
-    \end{itemize}
+    \item \color{red}{if additional rows and columns are added using this
+      command it will have the same effect as calling reindex.}
+  \end{itemize}
 
-  \item \textbf{max} find the maximum value of each column
-    \begin{itemize}
+%
+\subsubsection{max}
+Find the maximum value of each column
+  \begin{itemize}
 
-      \item to find the maximum value for the rows enter the argument
-        \color{red}{axis=1}
-    \end{itemize}
+    \item to find the maximum value for the rows enter the argument
+      \color{red}{axis=1}
+  \end{itemize}
 
-  \item \textbf{min} find the minimum value of each column
-    \begin{itemize}
+%
+\subsubsection{merge}
+  \begin{itemize}
+    \item combines two data frames common elements
+  \end{itemize}
 
-      \item to find the minimum value for the rows enter the argument
-        \color{red}{axis=1}
-    \end{itemize}
+%
+\subsubsection{min}
+Find the minimum value of each column
+  \begin{itemize}
 
-  \item \textbf{pct\_change} returns the item by item percent change along the
-    columns for each row.
-    \begin{itemize}
+    \item to find the minimum value for the rows enter the argument
+      \color{red}{axis=1}
+  \end{itemize}
 
-      \item to view the percent change across the rows enter the argument
-        \color{red}{axis=1}
-    \end{itemize}
+%
+\subsubsection{pct\_change}
+Returns the item by item percent change along the columns for each row.
+  \begin{itemize}
 
-  \item \textbf{plot} uses matplotlib to plot the each column of the data frame.
-    \begin{itemize}
+    \item to view the percent change across the rows enter the argument
+      \color{red}{axis=1}
+  \end{itemize}
 
-      \item {\color{red}{make sure to import matplotlib before calling this
-        method}}
+%
+\subsubsection{plot}
+Uses matplotlib to plot the each column of the data frame.
+  \begin{itemize}
 
-      \item to see the graph call {\color{red}{plt.show()}}
+    \item {\color{red}{make sure to import matplotlib before calling this
+      method}}
 
-      \item if using Jupyter notebooks call {\color{red}{\%matplotlib inline}}
-    \end{itemize}
+    \item to see the graph call {\color{red}{plt.show()}}
 
-  \item \textbf{reindex} allows rows or columns to be reindexed
-    \begin{itemize}
+    \item if using Jupyter notebooks call {\color{red}{\%matplotlib inline}}
+  \end{itemize}
 
-      \item \color{red}{if no arguments are passed the rows will be reindexed,
-        and if the columns argument is passed the columns will be reindexed.}
-    \end{itemize}
+%
+\subsubsection{reindex}
+Allows rows or columns to be reindexed
+  \begin{itemize}
 
-  \item \textbf{sum} Returns the sum of the columns
-    \begin{itemize}
+    \item \color{red}{if no arguments are passed the rows will be reindexed,
+      and if the columns argument is passed the columns will be reindexed.}
+  \end{itemize}
 
-      \item to sum the rows enter the argument \color{red}{axis=1}
-    \end{itemize}
+%
+\subsubsection{sum}
+Returns the sum of the columns
+  \begin{itemize}
 
-  \item \textbf{swaplevel} if multiple indices are used this method will swap
-    their order
-    \begin{itemize}
+    \item to sum the rows enter the argument \color{red}{axis=1}
+  \end{itemize}
 
-      \item to swap the columns indices add the argument {\color{red}{axis=1}}
-    \end{itemize}
+%
+\subsubsection{swaplevel}
+If multiple indices are used this method will swap their order
+  \begin{itemize}
 
-  \item \textbf{tail} Returns the last n rows
-\end{itemize}
+    \item to swap the columns indices add the argument {\color{red}{axis=1}}
+  \end{itemize}
+
+%
+\subsubsection{tail}
+Returns the last n rows
+
+%%%
+\subsection{Excel with Python}
+
+%
+\subsubsection{Required Installs}
+\begin{lstlisting}
+pip install xlrd
+pip install openpyxl
+\end{lstlisting}
+
+%
+\subsubsection{Open Excel File}
+\begin{lstlisting}
+xls_file = pd.ExcelFile('file_name.xlsx')
+data_frame = xls_file.parse('Sheet1')
+\end{lstlisting}
+
 
 %%%
 \subsection{io}
 
 %
 \subsubsection{data}
-\begin{itemize}
+  \begin{itemize}
 
-  \item \textbf{pd.io.data.get\_data\_yahoo()} may be used to get stock prices
-    from yahoo finance
-\end{itemize}
+    \item \textbf{pd.io.data.get\_data\_yahoo()} may be used to get stock prices
+      from yahoo finance
+  \end{itemize}
 
-%%%
+%
 \subsection{Multiple Indices}
 
-%%%%
+%
 \subsubsection{Series}
 \begin{itemize}
-
   \item Assigning multiple indices to a Series will cause it to act like a
     DataFrame
 
@@ -238,54 +298,58 @@ pd.read_clipboard()
 
 %%%
 \subsection{Series}
-This a vector.
-\begin{itemize}
+This is a vector.
 
-  \item \textbf{drop} Remove an index row
-    \begin{itemize}
+\subsubsection{drop}
+Remove an index row
+  \begin{itemize}
 
-      \item Example row drop: ser.drop['b']
+    \item Example row drop: ser.drop['b']
 
-      \item Operation is not done in place.  To save the modified series
-        assign it to a new handle.
-    \end{itemize}
+    \item Operation is not done in place.  To save the modified series
+      assign it to a new handle.
+  \end{itemize}
 
-  \item \textbf{dropna} Removes all null values.
+\subsubsection{dropna}
+Removes all null values.
 
-  \item \textbf{isnull} Returns boolean array based on null value.
+\subsubsection{isnull}
+Returns boolean array based on null value.
 
-  \item \textbf{rank} Return the value rank with respect to index.
+\subsubsection{rank}
+Return the value rank with respect to index.
 
-  \item \textbf{reindex} Will assign a new index list to the series.
-    \begin{itemize}
+\subsubsection{reindex}
+Will assign a new index list to the series.
+  \begin{itemize}
 
-      \item \textbf{fill\textunderscore value} argument to insert a specific
-        value for missing data.
+    \item \textbf{fill\textunderscore value} argument to insert a specific
+      value for missing data.
 
-      \item \textbf{method} allows functions to define the reindex
-        \begin{itemize}
+    \item \textbf{method} allows functions to define the reindex
+      \begin{itemize}
 
-          \item \textbf{ffill} Forward Fill will propagate a known value for
-            missing data until a new known value is found.  Then the new value
-            is propagated for missing data until the next known value is found.
+        \item \textbf{ffill} Forward Fill will propagate a known value for
+          missing data until a new known value is found.  Then the new value
+          is propagated for missing data until the next known value is found.
 
-          \item \textbf{bfill} Backward Fill is the same as Forward Fill only
-            the propagation goes backward.
+        \item \textbf{bfill} Backward Fill is the same as Forward Fill only
+          the propagation goes backward.
 
-          \item \textbf{nearest} Uses the nearest value to propagate unknown
-            values.
-        \end{itemize}
-    \end{itemize}
+        \item \textbf{nearest} Uses the nearest value to propagate unknown
+          values.
+      \end{itemize}
+  \end{itemize}
 
-  \item \textbf{sort\_index} Will sort the series based on index when no
-    arguments are provided.
+\subsubsection{sort\_index}
+Will sort the series based on index when no arguments are provided.
 
-  \item \textbf{sort\_values} Will sort the series based on value when no
-    arguments are provided.
+\subsubsection{sort\_values}
+Will sort the series based on value when no arguments are provided.
 
-  \item \textbf{unique} Returns the unique values of a series.
+\subsubsection{unique}
+Returns the unique values of a series.
 
-  \item \textbf{value\_counts} Returns the number of times each values occurs
-    in the series.
-\end{itemize}
+\subsubsection{value\_counts}
+Returns the number of times each values occurs in the series.
 
