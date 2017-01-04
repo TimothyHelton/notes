@@ -241,12 +241,44 @@ table = new SimpleTable("table_name.csv")
 \end{lstlisting}
 
 %%%
+\subsection{Starts With}
+Check to see if a row ends with a given string.
+\begin{itemize}
+  \item the search strings are case sensitive
+\end{itemize}
+\begin{lstlisting}
+table = new SimpleTable("table_name.csv")
+
+for (row: table) {
+  if (row.getField("field_name").endsWith("string")) {
+    body
+  }
+}
+\end{lstlisting}
+
+%%%
 \subsection{Enumerate Table Data}
 \begin{lstlisting}
 table = new SimpleTable("table_name.csv")
 
 for (row: table) {
   if (row.getField("field_name") == value) {
+    body
+  }
+}
+\end{lstlisting}
+
+%%%
+\subsection{Starts With}
+Check to see if a row starts with a given string.
+\begin{itemize}
+  \item the search strings are case sensitive
+\end{itemize}
+\begin{lstlisting}
+table = new SimpleTable("table_name.csv")
+
+for (row: table) {
+  if (row.getField("field_name").startsWith("string")) {
     body
   }
 }
