@@ -144,6 +144,17 @@ Find the maximum value of each column
 \subsubsection{merge}
   \begin{itemize}
     \item combines two data frames common elements
+    \item the column used to merge must exist in each DataFrame
+    \item to merge on a specific column use the \textbf{on} argument
+    \item to specify how the merge is completed use the \textbf{how} argument
+      \begin{itemize}
+        \item \textbf{left} - use only keys from the left frame
+        \item \textbf{right} - use only keys from the right frame
+        \item \textbf{inner} - use union of keys from both frames
+        \item \textbf{outter} - use intersection of keys from both frames
+      \end{itemize}
+    \item if multiple columns have the same name in both DataFrames you may
+      define the suffix use with the \textbf{suffixes} argument
   \end{itemize}
 
 %
@@ -186,6 +197,15 @@ Allows rows or columns to be reindexed
       and if the columns argument is passed the columns will be reindexed.}
   \end{itemize}
 
+%
+\subsubsection{sliceing}
+\begin{itemize}
+  \item slice a DataFrame line an numpy array
+  \item for multiple conditions use an \&
+\begin{lstlisting}
+df[(df.key1 > value) & (df.key2 <= value)]
+\end{lstlisting}
+\end{itemize}
 %
 \subsubsection{sum}
 Returns the sum of the columns

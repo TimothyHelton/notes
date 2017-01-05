@@ -112,6 +112,13 @@
 \pagenumbering{arabic}
 \pagestyle{fancy}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Boolean}
+\begin{itemize}
+  \item \textbf{and}: \&\&
+  \item \textbf{or}: $\vert\vert$ 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Comment}
 Use two forward slashes to designate a comment.
 
@@ -238,6 +245,14 @@ print("This will be displayed on the terminal.")
 \subsection{Load a table into memory}
 \begin{lstlisting}
 table = new SimpleTable("table_name.csv")
+\end{lstlisting}
+
+%%%
+\subsection{Convert to Lower}
+Convert all text to lower case
+\begin{lstlisting}
+table = new SimpleTable("table_name.csv")
+table.convertToLowerCase()
 \end{lstlisting}
 
 %%%
