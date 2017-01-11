@@ -5,6 +5,22 @@ import numpy as np
 \end{lstlisting}
 
 %%%
+\subsection{Concatenate}
+Use this command to combine arrays.
+%
+\subsubsection{Example}
+\begin{lstlisting}
+arr = np.arange(9).reshpae(3, 3)
+
+# Create new array doubling the rows by adding two instances of arr.
+arr_rows = np.concatenate([arr, arr], axis=0)
+
+# Create new array doubling the columns by adding two instances of arr.
+arr_cols = np.concatenate([arr, arr], axis=1)
+\end{lstlisting}
+
+
+%%%
 \subsection{Record Array}
 %
 \subsubsection{Create from list of tuples}
