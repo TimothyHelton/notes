@@ -1,0 +1,225 @@
+\documentclass{article}
+
+%%%
+\usepackage{amsmath}
+\usepackage[titletoc]{appendix}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage[hmargin=1in, vmargin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{txfonts}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[svgnames]{xcolor}
+
+%%% Commands
+\newcommand{\mytitle}{CSS Notes}
+
+%%% fancyhdr
+\lhead{}
+\chead{\mytitle}
+\rhead{}
+\pagestyle{fancy}
+
+%%% hyperref
+\hypersetup{colorlinks,
+            citecolor=black,
+            filecolor=black,
+            linkcolor=black,
+            urlcolor=black}
+
+%%% listings
+\lstset{% code block formatting
+  backgroundcolor=\color{white},
+  basicstyle=\normalsize,
+  breakatwhitespace=false,
+  breaklines=true,
+  captionpos=b,
+  commentstyle=\color{green},
+  escapeinside={\%*}{*},
+  frame=single,
+  keepspaces=true,
+  keywordstyle=\color{blue}\bfseries,
+  language=HTML,
+  otherkeywords={%
+    description,
+    device-width,
+    http-equiv,
+    initial-scale
+  },
+  numbers=left,
+  numbersep=5pt,
+  numberstyle=\footnotesize\color{gray},
+  rulecolor=\color{black},
+  showspaces=false,
+  stepnumber=1,
+  tabsize=2,
+}
+
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\author{Timothy J. Helton\\720.641.8370\\timothy.j.helton@gmail.com}
+\date{\today}
+\title{\mytitle}
+
+\maketitle
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\newpage
+
+\listoffigures
+\listoftables
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{class}
+\begin{itemize}
+  \item start with a period
+  \item content is contained in french braces
+  \item a class may be applied to a portion of an element using the span tag
+  \item it is possible to assign an element more than one tag at a time
+\end{itemize}
+\begin{lstlisting}
+<!doctype html>
+<html>
+<head>
+
+    .bold {
+      font-weight:bold;
+    }
+
+    .large {
+        color:blue;
+        font-size:300%;
+    }
+
+    .underline {
+        text-decoration:underline;
+    }
+
+</head>
+
+<body>
+    <p class="large">This is LARGE text.</p>
+    <p>This is <span class="underline">underlined</span> text.</p>
+    <p>This is <span class="bold underline">underlined</span> text.</p>
+</body>
+</html>
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{div}
+\begin{itemize}
+  \item div elements are always just boxes that surround the elements within
+    them
+  \item by creating a CSS div definition it will adjust all div elements
+\end{itemize}
+\begin{lstlisting}
+<!doctype html>
+<html>
+<head>
+
+    div {
+        background-color:blue;
+        height:300px;
+        width:100px;
+        float:right;
+    }
+
+</head>
+
+<body>
+    <div>
+        <p>This is LARGE text.</p>
+    </div>
+</body>
+</html>
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Color Codes}
+\begin{itemize}
+  \item when using color codes make sure to include the ampersand
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{float}
+\begin{itemize}
+  \item items floated to the right will stack sequentially to the right
+  \item items floated to the left will stack sequentially to the left
+  \item to have items floated to the left and right AND then have other items
+    below you must add a clearing div
+\end{itemize}
+\begin{lstlisting}
+<!doctype html>
+<html>
+<head>
+
+    .clear {
+        clear:both;
+    }
+
+    .floatright {
+        background-color:red;
+        float:right;
+    }
+
+    .floatleft {
+        background-color:blue;
+        float:left;
+    }
+
+</head>
+
+<body>
+    <div class="floatright">
+        <p>This text is in a red box.</p>
+    </div>
+    <div class="floatleft">
+        <p>This text is in a blue box.</p>
+    </div>
+    <div class="clear"></div>
+    <p>This text will appear below the red box.</p>
+
+</body>
+</html>
+\end{lstlisting}
+
+
+%%%%%%%%%%%%%%%%%%%%
+\section{id}
+\begin{itemize}
+  \item start with a ampersand
+  \item content is contained in french braces
+  \item id= is similar to class= with the exception that the id is only ever
+    used once
+  \item it is possible to assign an id and a class to the same element
+\end{itemize}
+\begin{lstlisting}
+<!doctype html>
+<html>
+<head>
+    #green {
+        color:green;
+        font-size:300%;
+    }
+</head>
+
+<body>
+    <p id="green">This is LARGE text.</p>
+</body>
+</html>
+\end{lstlisting}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
