@@ -1,7 +1,56 @@
 %%%
+\subsection{Dependencies}
+\begin{lstlisting}
+pip install numpy
+pip install scipy
+pip install matplotlib
+pip install pandas
+pip install statsmodels
+pip install patsy
+\end{lstlisting}
+
+%%%
 \subsection{Import}
 \begin{lstlisting}
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+from scipy import stats
 import seaborn as sns
+\end{lstlisting}
+
+%%%
+\subsection{Box Plot}
+
+\begin{lstlisting}
+# Box plot where whiskers include all points
+sns.boxplot([data1, data2], whis=np.inf)
+
+# Box plot on the horizontal axis
+sns.boxplot([data1, data2], vert=False)
+\end{lstlisting}
+
+%%%
+\subsection{Carpet Plot (Rug Plot)}
+Places a stick for every entry in the data set.
+
+\begin{lstlisting}
+sns.rugplot(dataset)
+plt.ylim(0, 1)
+
+# Add histogram to carpet plot
+plt.hist(dataset, alpha=0.3)
+\end{lstlisting}
+
+%%%
+\subsection{Combining Plot Styles}
+
+\begin{lstlisting}
+sns.distplot(dataset, bins=25, rug=True,
+             kde_kws={'color': 'indianred', 'label': 'KDE'},
+             hist_kws={'color': 'blue', 'label': 'HIST'},
+             rug_kws={'color': 'green', 'label': 'Rug'})
 \end{lstlisting}
 
 %%%
@@ -12,3 +61,77 @@ between variables.
 sns.corrplot(pandas_dataframe)
 \end{lstlisting}
 
+%%%
+\subsection{Histograms}
+
+\begin{lstlisting}
+# Matplotlib
+plt.hist(data_set1, normed=True, alpha=0.5, bins=20)
+plt.hist(data_set2, normed=True, alpha=0.5, bins=20)
+
+# Seaborn
+sns.jointplot(data_set1, data_set2, kind='hex')
+\end{lstlisting}
+
+%%%
+\subsection{Kernel Density Estimation Plots (KDE)}
+
+\subsubsection{Long Way}
+
+\begin{lstlisting}
+sns.rugplot(dataset)
+
+x_min = dataset.min() - 2
+x_max = dataset.max() + 2
+
+x_axis = np.linspace(x_min, x_max, 100)
+
+bandwidth = ((4 * dataset.std()**5) / 3 * len(dataset)))**0.2
+
+kernel_list = []
+
+for data_point in dataset:
+    # Create a kernel for each point
+    kernel = stats.norm(data_point, bandwidth).pdf(x_axis))
+    kernel_list.append(kernel)
+
+    # Scale for plotting
+    kernel = kernel / kernel.max()
+    kernel = kernel * 0.4
+
+    plt.plot(x_axis, kernel, alpha=0.5)
+
+plt.ylim(0, 1)
+
+kde_sum = np.sum(kernel_list, axis=0)
+
+fig = plt.plot(x_zxis, kde_sum)
+sns.rugplot(dataset)
+
+plt.yticks([])
+plt.suptitle("Sum of the basis functions")
+\end{lstlisting}
+
+%
+\subsubsection{Short Way}
+
+\begin{lstlisting}
+sns.rugplot(dataset)
+sns.kdeplot(dataset, bw=bandwidth, label=label, shade=True)
+\end{lstlisting}
+
+%
+\subsubsection{Cumulative Distribution Function}
+
+\begin{lstlisting}
+sns.kdeplot(dataset, cumulative=True)
+\end{lstlisting}
+
+%%%
+\subsection{Violin Plot}
+Combine a KDE Plot with a Box Plot. This type of plot will distinguish between
+data that is symmetric about zero or centered on zero.
+
+\begin{lstlisting}
+sns.violinplot([data1, data2], inner='stick')
+\end{lstlisting}

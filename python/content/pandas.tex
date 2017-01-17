@@ -5,6 +5,26 @@ import pandas as pd
 \end{lstlisting}
 
 %%%
+\subsection{Binning}
+Binning is capable of placing the count of one list into the spans of another
+list. This technique is useful for generating histograms.
+
+\begin{lstlisting}
+years = [1900, 1991, 1992, 2008, 2012, 2015, 1987, 1969, 2013, 2008, 1999]
+bins = list(range(1960, 2021, 10))
+decade_bins = pd.cut(years, bins)
+
+# To view the bins
+decade_bins.categories
+
+# To view the values
+pd.value_counts(decade_bins)
+
+# To state the number of bins
+pd.cut(years, 2, precision=1)
+\end{lstlisting}
+
+%%%
 \subsection{Data Frames}
 Data Frames are like numpy record arrays.
 
@@ -104,6 +124,37 @@ Returns a dataframe with all rows containing any null values removed.
   \end{itemize}
 
 %
+\subsubsection{drop\_duplicates}
+Remove all duplicates.
+
+  \begin{itemize}
+    \item calling the method without arguments will drop duplicates based on
+      all columns.
+\begin{lstlisting}
+df.duplicated()
+\end{lstlisting}
+    \item calling the method with the argument of a column names will only drop
+      the duplicate rows based on that column keeping the first instance.
+\begin{lstlisting}
+df.duplicated(['key_1'])
+\end{lstlisting}
+  \item providing a column name and the argument take\_last equal to True will
+    remove the duplicate rows and keep the last instance.
+\begin{lstlisting}
+df.duplicated(['key_1', take_last=True])
+\end{lstlisting}
+  \end{itemize}
+
+%
+\subsubsection{duplicated}
+Returns a boolean Series stating if the rows are duplicates or not keeping the
+first instance.
+
+\begin{lstlisting}
+df.duplicated()
+\end{lstlisting}
+
+%
 \subsubsection{fillna}
 Fills all the null values with the given value.
   \begin{itemize}
@@ -151,6 +202,11 @@ Returns the row data (handle.ix[3])
   \end{itemize}
 
 %
+\subsubsection{map}
+Allows columns to be added to a DataFrame and the values to be matched to
+another column instead of the index.
+
+%
 \subsubsection{max}
 Find the maximum value of each column
   \begin{itemize}
@@ -195,6 +251,13 @@ Returns the item by item percent change along the columns for each row.
   \end{itemize}
 
 %
+\subsubsection{Pivoting}
+Create new views of the data.
+
+\begin{lstlisting}
+df.pivot(<index>, <column>, <value)
+\end{lstlisting}
+%
 \subsubsection{plot}
 Uses matplotlib to plot the each column of the data frame.
   \begin{itemize}
@@ -217,14 +280,18 @@ Allows rows or columns to be reindexed
   \end{itemize}
 
 %
+\subsubsection{sign}
+Return a 1 or -1 depending on the sign of the DataFrame value.
+
+%
 \subsubsection{sliceing}
-\begin{itemize}
-  \item slice a DataFrame line an numpy array
-  \item for multiple conditions use an \&
+  \begin{itemize}
+    \item slice a DataFrame line an numpy array
+    \item for multiple conditions use an \&
 \begin{lstlisting}
 df[(df.key1 > value) & (df.key2 <= value)]
 \end{lstlisting}
-\end{itemize}
+  \end{itemize}
 
 %
 \subsubsection{stack}
@@ -254,6 +321,14 @@ If multiple indices are used this method will swap their order
 %
 \subsubsection{tail}
 Returns the last n rows
+
+%
+\subsubsection{take}
+Reorder an index based on a list if integers.
+
+\begin{lstlisting}
+df.take(new_list)
+\end{lstlisting}
 
 %
 \subsubsection{transpose}
@@ -322,6 +397,14 @@ df = ser.unstack()
 \end{lstlisting}
 
 %%%
+\subsection{Outliers}
+Find values greater than a perscribed number. In the example 3 was chosen.
+
+\begin{lstlisting}
+df[(np.abs(df) > 3).any(1)]
+\end{lstlisting}
+
+%%%
 \subsection{Read Files}
 \begin{lstlisting}
 df = pd.read_csv
@@ -368,6 +451,7 @@ pd.read_clipboard()
 \subsection{Series}
 This is a vector.
 
+%
 \subsubsection{combine\_first}
 Replace null values in one Series with the corresponding values from another
 Series.
@@ -375,6 +459,7 @@ Series.
 ser_1.combine_first(ser_2)
 \end{lstlisting}
 
+%
 \subsubsection{concat}
 Combine two Series
 \begin{lstlisting}
@@ -388,6 +473,7 @@ pd.concat([ser_1, ser_2], axis=0, key=['cat_1', 'cat_2'])
 pd.concat([ser_1, ser_2], axis=1)
 \end{lstlisting}
 
+%
 \subsubsection{drop}
 Remove an index row
   \begin{itemize}
@@ -398,15 +484,19 @@ Remove an index row
       assign it to a new handle.
   \end{itemize}
 
+%
 \subsubsection{dropna}
 Removes all null values.
 
+%
 \subsubsection{isnull}
 Returns boolean array based on null value.
 
+%
 \subsubsection{rank}
 Return the value rank with respect to index.
 
+%
 \subsubsection{reindex}
 Will assign a new index list to the series.
   \begin{itemize}
@@ -429,15 +519,28 @@ Will assign a new index list to the series.
       \end{itemize}
   \end{itemize}
 
+%
+\subsubsection{replace}
+Where loc is useful for replacing values based on index this method works based
+on value.
+
+The following code would replace all values of 10 with 100 and 40 with 400.
+\begin{lstlisting}
+ser.replace([10, 40], [100, 400])
+\end{lstlisting}
+
+%
 \subsubsection{sort\_index}
 Will sort the series based on index when no arguments are provided.
 
+%
 \subsubsection{sort\_values}
 Will sort the series based on value when no arguments are provided.
 
+%
 \subsubsection{unique}
 Returns the unique values of a series.
 
+%
 \subsubsection{value\_counts}
 Returns the number of times each values occurs in the series.
-
