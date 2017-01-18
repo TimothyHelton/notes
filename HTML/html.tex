@@ -16,7 +16,7 @@
 \usepackage[svgnames]{xcolor}
 
 %%% Commands
-\newcommand{\mytitle}{HTML Notes}
+\newcommand{\mytitle}{HyperText Markup Language (HTML) Notes}
 
 %%% fancyhdr
 \lhead{}
@@ -81,6 +81,15 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \pagenumbering{arabic}
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Comments}
+
+\begin{lstlisting}
+<!-- HTML comments use this syntax -->
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%
 \section{Entities}
 \begin{itemize}
   \item Entities work like unicode. They are codes to provide non ascii
@@ -90,6 +99,26 @@
 
 %%%%%%%%%%%%%%%%%%%%
 \section{Tags}
+
+%%%%%%%%%%
+\subsection{Article}
+The article element is used to identify a section of independent, self-contained
+content that may be independently distributed or reused.
+
+\begin{lstlisting}
+<article>
+</article>
+\end{lstlisting}
+
+%%%%%%%%%%
+\subsection{Aside}
+The aside element holds content, such as sidebars, inserts, or brief
+explanations, that is tangentially related to the content surrounding it.
+
+\begin{lstlisting}
+<aside>
+</aside>
+\end{lstlisting}
 
 %%%%%%%%%%
 \subsection{Body Section}
@@ -124,7 +153,8 @@
 
 %%%%%%%%%%
 \subsection{Division}
-Use this tag to create separate formated sections on a web page.
+If the content is being grouped solely for styling purposes and doesn't provide
+value to the outline of a document, use the division element.
 
 \begin{lstlisting}
 <div>
@@ -155,6 +185,16 @@ This the first line of an HTML file.
 \begin{lstlisting}
 <html>
 </html>
+\end{lstlisting}
+
+%%%%%%%%%%
+\subsection{Footer}
+The \textless footer\textgreater \ element identifies the closing or end of a
+page, article, section, or other segment of a page.
+
+\begin{lstlisting}
+<footer>
+</footer>
 \end{lstlisting}
 
 %%%%%%%%%%
@@ -239,13 +279,30 @@ This tag allows a larger window for the user to type into.
 
 %%%%%%%%%%
 \subsection{Head Section}
+The \textless head\textgreater \ element is not displayed on a page and is used
+to outline metadata, including the document title, and links to external files.
+
 \begin{lstlisting}
 <head>
 </head>
 \end{lstlisting}
 
 %%%%%%%%%%
-\subsection{Headers}
+\subsection{Header}
+The \textless header\textgreater \ element is used to identify the top of a
+page, article, section, or other segment of a page.
+
+\begin{lstlisting}
+<header>
+</header>
+\end{lstlisting}
+
+%%%%%%%%%%
+\subsection{Headings}
+Headings should be used in an order that is relevant to the content of a page.
+Each heading level should be used where it is semantically valued, and should
+not be used to make text bold or big.
+
 \begin{lstlisting}
 <h1></h1>
 <h2></h2>
@@ -259,25 +316,6 @@ This tag allows a larger window for the user to type into.
 \subsection{Horizontal Line}
 \begin{lstlisting}
 <hr />
-\end{lstlisting}
-
-%%%%%%%%%%
-\subsection{Links}
-\begin{itemize}
-  \item destination links use the href argument
-\end{itemize}
-
-\begin{lstlisting}
-<a href=``full_path_to_external_link''>Name of External Link</a>
-\end{lstlisting}
-
-\begin{itemize}
-  \item source locations in a web page use the name argument
-\end{itemize}
-
-\begin{lstlisting}
-<a name=``top'' /a>
-<a href=``#Name_of_page_link''>Name of anchor</a>
 \end{lstlisting}
 
 %%%%%%%%%%
@@ -339,8 +377,6 @@ This tag allows a larger window for the user to type into.
 
 \end{itemize}
 
-
-
 %%%%%%%%%%
 \subsection{Italics}
 \begin{itemize}
@@ -350,6 +386,52 @@ This tag allows a larger window for the user to type into.
 \begin{lstlisting}
 <p><em>Italics text</em></p>
 \end{lstlisting}
+
+%%%%%%%%%%
+\subsection{Links}
+\begin{itemize}
+  \item destination links use the href argument
+
+\begin{lstlisting}
+<a href=``full_path_to_external_link''>Name of External Link</a>
+\end{lstlisting}
+
+  \item source locations in a web page use the name argument
+
+\begin{lstlisting}
+<a name=``top'' /a>
+<a href=``#Name_of_page_link''>Name of anchor</a>
+\end{lstlisting}
+
+  \item link to an email address
+    \begin{itemize}
+      \item there must be a "?" question mark after the email address
+      \item subject and body section may be defined
+      \item spaces must be entered as \textbf{\%20}
+    \end{itemize}
+
+\begin{lstlisting}
+<a href="mailto:name@domain?subject=Reaching%20Out&body=How%20are%20you">Email Me</a>
+\end{lstlisting}
+
+  \item to open a link in a new window add the "target" argument
+
+\begin{lstlisting}
+<a href="http://google.com/" target="_blank">Google</a>
+\end{lstlisting}
+
+  \item add link to different location on same page
+
+\begin{lstlisting}
+<body id="top">
+...
+<a href="#top">Back to top</a>
+...
+<\body>
+
+\end{lstlisting}
+
+\end{itemize}
 
 %%%%%%%%%%
 \subsection{Line Break}
@@ -365,6 +447,13 @@ This tag allows a larger window for the user to type into.
 <meta name=``viewport'' content=``width=device-width, initial-scale=1''/>
 <meta description= content=``Enter Description Here''/>
 \end{lstlisting}
+
+%%%%%%%%%%
+\subsection{Navigation}
+The \textless nav\textgreater \ element identifies a section of major
+navigational links on a page. Miscellaneous one-off links should not be wrapped
+within the navigation element; they should use the anchor element
+\textless a\textgreater.
 
 %%%%%%%%%%
 \subsection{Numbered List}
@@ -389,6 +478,24 @@ This tag allows a larger window for the user to type into.
 \begin{lstlisting}
 <p>
 </p>
+\end{lstlisting}
+
+%%%%%%%%%%
+\subsection{Section}
+The section element is used to identify a thematic grouping of content, which
+generally, but not always, includes a heading. The section element is commonly
+used to break up and provide hierarchy to a page.
+\begin{lstlisting}
+<section>
+</section>
+\end{lstlisting}
+
+%%%%%%%%%%
+\subsection{Span}
+An inline-level element commonly used to identify smaller groupings of text
+within a block-level element.
+\begin{lstlisting}
+<p>This is an example of <span class="marked">marked text</span>.</p>
 \end{lstlisting}
 
 %%%%%%%%%%
