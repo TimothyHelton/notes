@@ -1,8 +1,18 @@
 # Scrum Notes
 
-## Conventional Development
+## <a name="toc"></a>Table of Contents
 
-### Waterfall Model
+[Conventional Development](#conv_devel)
+
+[Agile Development](#agile_devel)
+
+[Scrum](#scrum)
+
+---
+
+### <a name="conv_devel"></a>Conventional Development
+
+#### Waterfall Model
 
 Most common process for software development.  All requirements must be 
 identified and defined in the beginning, and modifications to these 
@@ -14,23 +24,27 @@ parameters is costly.
   1. Coding
   1. Software Products
 
-### Iterative Incremental Model
+#### Iterative Incremental Model
 
 Repeat the Waterfall Model multiple times incorporating new features with 
 each iteration.  The user is not involved in the design process.
 
-## Agile Development
+[Table of Contents](#toc)
+
+---
+
+### <a name="agile_devel"></a>Agile Development
 
 This method is based off the Iterative Incremental Model with a time-boxed 
 iterative approach.
 
-### Goals
+#### Goals
 
   - faster time to deliver
   - reduce uncertainty and risk
   - increase return on investment by focusing on customer value
 
-### Agile Manifesto
+#### Agile Manifesto
 "We are uncovering better ways to developing software by doing it and 
 helping other do it.  Through this work, we have come to value:
 
@@ -42,7 +56,7 @@ helping other do it.  Through this work, we have come to value:
 That is, while there is value in the items on the right, we vaalue the items
  on the left more."
 
-#### Agile Manifesto Items
+##### Agile Manifesto Items
   - Individuals and Interactions
     - self-organization and self-motivation of the team members continuous
     interaction for work, clarifications, information among the team members
@@ -56,53 +70,57 @@ That is, while there is value in the items on the right, we vaalue the items
     - Focus on quick response to the proposed changes, which is made 
     possible wth short duration iterations
 
-#### Authors
+##### Authors
 Beck, Kent, et al. (2001)
 
-### Agile Methodologies
+#### Agile Methodologies
 
-#### Dynamic System Development Methodology (DSDM)
+##### Dynamic System Development Methodology (DSDM)
 
-#### Scrum
+##### Scrum
 
   - focuses on management of tasks within a team environment
   - uses iterative incremental method
   - quick and frequent deliveries
   
-#### Extreme Programming (XP)
+##### Extreme Programming (XP)
 
   - frequent releases
   - short development cycles
   - allows new customer requirements to be adopted
 
-#### Test-Driven Development (TDD)
+##### Test-Driven Development (TDD)
 
   - tests are written first
   - minimal amount of code to pass the test is written
   - once software is working code is cleaned up to acceptable standards
 
-#### Lean
+##### Lean
 
   - the expenditure of resources not adding value to the end customer are 
   targeted for elimination
   - focus on preserving value with less work
   
-#### Kanbon
+##### Kanbon
 
   - system to improve and keep up a high level of production
 
-## Scrum
+[Table of Contents](#toc)
+
+---
+
+### <a name="scrum"></a>Scrum
 Scrum is a framework that defines certain rules, events and roles to bring 
 in regularity.  Every event in the frame work has a maximum time duration.
 
-### Sprint
+#### Sprint
 
   - 2 week or 1 month cycles
   - work to be performed in the Sprint is planned collaboratively by the team
   - daily 15 minute meeting to plan for that day
   - Sprint review is held at the end of the Sprint
 
-### Roles
+#### Roles
   - ScrumMaster
     - makes the process run smoothly
     - removes obstacles that impact productivity
@@ -119,3 +137,5 @@ in regularity.  Every event in the frame work has a maximum time duration.
       - more than 9 members requires too much coordination
     - ensures smooth flow of information and the quick resolution of issues
     - maximize opportunities for feedback
+    
+[Table of Contents](#toc)
