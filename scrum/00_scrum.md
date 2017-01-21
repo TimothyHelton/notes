@@ -1,5 +1,7 @@
 # Scrum Notes
 
+---
+
 ## <a name="toc"></a>Table of Contents
 
 [Conventional Development](#conv_devel)
