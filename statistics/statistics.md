@@ -4,13 +4,12 @@
 
 | Term | Definition |
 | ---- | ---------- |
-| ![alt text](assets/average_population.png)| average value for a 
-population |
-| ![alt text](assets/average_sample.png) | average value for sample |
+| ![alt text](average_population.png)| average value for a population |
+| ![alt text](average_sample.png) | average value for sample |
 | N | population size |
 | n | sample size |
 | r | Pearson correlation coefficient |
-| ![alt text](assets/std_dev.png) | Standard Deviation of x |
+| ![alt text](std_dev.png) | Standard Deviation of x |
 | covariance | a descriptive measure of the linear association between two variables |
 | negative relationship | multiple variables which have opposite trends |
 | population | all specimens in a set |
@@ -34,11 +33,11 @@ population |
   
 #### Sample Covariance
 
-![alt text](assets/sample_covariance.png)
+![alt text](sample_covariance.png)
 
 #### Population Covariance
 
-![alt text](assets/population_covariance.png)
+![alt text](population_covariance.png)
 
 ## Correlation
 
@@ -52,15 +51,15 @@ population |
   - correlation is the covariance between the two variables divided by the 
   product of each variables standard deviation
  
-![alt text](assets/correlation_long.png)
+![alt text](correlation_long.png)
 
-![alt text](assets/correlation_short.png)
+![alt text](correlation_short.png)
 
 ### Rule of Thumb for Causation
 
 If the following relationship is true then causation exists.
 
-![alt text](assets/causation_rule.png)
+![alt text](causation_rule.png)
 
 ## Linear Regression
 
