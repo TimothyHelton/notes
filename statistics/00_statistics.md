@@ -1,6 +1,18 @@
 # Statistics
 
-## Definitions
+### <a name="toc"></a>Table of Contents
+
+[Definitions](#definitions)
+
+[Bivariate Relationships](#bivariate_relationships)
+
+[Correlation](#correlation)
+
+[Linear Regression](#linear_regression)
+
+---
+
+### <a name="definitions"></a> Definitions
 
 | Term | Definition |
 | ---- | ---------- |
@@ -18,9 +30,13 @@
 | sampling error | the difference between corresponding parameters and statistics |
 | statistic | a characteristic of a sample |
 
-## Bivariate Relationships
+[Table of Contents](#toc)
 
-### Covariance
+---
+
+### <a name="bivariate_relationships"></a>Bivariate Relationships
+
+#### Covariance
 
   - a descriptive measure of the linear association between two variables
   - only describes **direction** not magnitude
@@ -31,15 +47,19 @@
   - When there is not a relationship between two variables the covariance 
   would be equal or near zero
   
-#### Sample Covariance
+##### Sample Covariance
 
 ![alt text](sample_covariance.png)
 
-#### Population Covariance
+##### Population Covariance
 
 ![alt text](population_covariance.png)
 
-## Correlation
+[Table of Contents](#toc)
+
+---
+
+### <a name="correlation"></a>Correlation
 
   - Describes the **magnitude** and **direction** of an association
   - Denoted by the lowercase variable r
@@ -55,15 +75,21 @@
 
 ![alt text](correlation_short.png)
 
-### Rule of Thumb for Causation
+#### Rule of Thumb for Causation
 
 If the following relationship is true then causation exists.
 
 ![alt text](causation_rule.png)
 
-## Linear Regression
+[Table of Contents](#toc)
+
+---
+
+### <a name="linear_regression"></a>Linear Regression
 
   - If you only have data for one variable then the best predictor for 
   future samples would be the mean value of the data.
   - **residuals** or **error** is the measure between individual data points
   to the best fit model.
+
+[Table of Contents](#toc)
