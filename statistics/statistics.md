@@ -4,7 +4,7 @@
 
 | Term | Definition |
 | ---- | ---------- |
-| ![alt text](average_population.png)| average value for a population |
+| ![alt text](assets/average_population.png)| average value for a population |
 | ![alt text](average_sample.png) | average value for sample |
 | N | population size |
 | n | sample size |
