@@ -12,7 +12,7 @@
 
 [Bullet List](#bullet_list)
 
-[Division (dif)](#division)
+[Division (div)](#division)
 
 [Document Type](#document_type)
 
@@ -275,6 +275,8 @@ section, or other segment of a page.
 </form>
 ```
 
+[Table of Contents](#toc)
+
 ---
 
 ### <a name="head_section"></a> Head Section
@@ -399,7 +401,7 @@ img src="images/picture.png" width="100"/>
 
 ---
 
-### <a name="link"></a> Links 
+### <a name="links"></a> Links 
 
   - destination links use the href argument
   
