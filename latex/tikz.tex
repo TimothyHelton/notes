@@ -55,20 +55,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\begin{tikzpicture}[node distance=1.1cm]
+\begin{tikzpicture}[node distance=1cm]
 
 %%% Nodes
-\node[startstop] (maindir) {\LARGE assy\_name\_ASSY0001};
-\node[process] (assyjou) [below right=of maindir] {\LARGE assy\_name\_ASSY0001.jou};
-\node[process] (assy2part) [below=of assyjou.west, anchor=west] {\LARGE assy2part.jou};
-\node[startstop] (partdir1) [below=of assy2part.west, anchor=west] {\LARGE part\_name\_PART001};
-\begin{scope}[node distance=0.2in]
-  \node[startstop] (dir2D1) [below right=of partdir1] {\LARGE 2D};
-  \node[startstop] (dir3D1) [below=of dir2D1] {\LARGE 3D};
-  \node[startstop] (partdir2) [below left=of dir3D1] {\LARGE part\_name\_PART002};
-  \node[startstop] (dir2D2) [below right=of partdir2] {\LARGE 2D};
-  \node[startstop] (dir3D2) [below=of dir2D2] {\LARGE 3D};
-\end{scope}
+\node[startstop] (startstop) {\LARGE Start / Stop};
+\node[io] (io) [below=of startstop] {\LARGE Input / Output};
+\node[process] (process) [below=of io] {\LARGE Process};
+\node[decision] (decision) [below=of process] {\LARGE Decision};
 
 \end{tikzpicture}
 
