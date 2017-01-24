@@ -4,6 +4,8 @@
 
 [Installation](#installation)
 
+[Configuration](#configuration)
+
 [Site Packages Installation Directory](#site_pkgs_dir)
 
 [Install Packages](#install_packages)
@@ -39,6 +41,21 @@ pip install wheel
 $ python get-pip.py --no-index --find-links=WheelHouseDirectory
 ```
   
+[Table of Contents](#toc)
+
+---
+
+### <a name="configuration"></a> Configuration
+
+#### List Format
+Add a file named **pip.conf** with the following lines to the virtual 
+environment to define the list format.
+
+```
+[global]
+format = columns  
+```
+
 [Table of Contents](#toc)
 
 ---
