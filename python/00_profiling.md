@@ -12,6 +12,10 @@
 
 [Memory Profiling Verses Time](#memory_vs_time)
 
+[Performance Profiling](#performance_profiling)
+
+[Snakeviz](#snakeviz)
+
 ---
 
 ### <a name="dependencies"></a> Dependencies
@@ -145,5 +149,56 @@ $ mprof plot
 $ mprof clean
 ```
 
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="performance_profiling"><a> Performacne Profiling
+
+#### timit
+
+  - use the **timeit** function from the command line
+  - This will give an overall runtime for a number of loops of the script
+
+```
+$ python -m timeit 'import my_module' 'my_module.test_function()'
+```
+
+  - use the **timeit** function within a script
+
+```
+import timeit
+
+setup = '\n'.join(('from __main__ import main', 'import2', 'def1')
+statement = 'execution'
+t = timeit.Timer(stmt=statement, setup=setup)
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="snakeviz"><a> Snakeviz
+
+  - run cProfile from the command line
+  
+```
+$ python -m cProfile -o output_file.profile test_file.py
+```
+
+  - run cProfile from a script
+
+```
+import cProfile
+
+cProfile.run(statement, filename='script_name.profile')
+```
+
+  - call snakeviz to open a web browser and view the D3 sunburst
+
+```
+$ snakeviz script_name.profile
+```
 
 [Table of Contents](#toc)
