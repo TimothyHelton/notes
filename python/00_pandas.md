@@ -359,7 +359,7 @@ df = pd.DataFrame(np.arange(8).reshape(2, 4),
 
 ### <a name="multiple_indices"></a> Multiple Indices
  
-#### Series
+#### Multi-Index Series
 
   - Assigning multiple indices to a Series will cause it to act like a 
   DataFrame.
