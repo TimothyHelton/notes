@@ -11,7 +11,7 @@
 
 
 %%% tikzstyle
-\tikzstyle{startstop} = [% start stop node
+\tikzstyle{terminal} = [% the beginning or end of a program
   ellipse,
   minimum width=\minwidth,
   minimum height=\minheight,
@@ -19,7 +19,7 @@
   draw=black,
   fill=red!20
   ]
-\tikzstyle{io} = [% input output node
+\tikzstyle{io} = [% input or output of aata and information
   trapezium,
   trapezium left angle=70,
   trapezium right angle=110,
@@ -29,7 +29,7 @@
   draw=black,
   fill=blue!20
   ]
-\tikzstyle{process} = [% process node
+\tikzstyle{process} = [% processes: calculations or data manipulations
   rectangle,
   minimum width=\minwidth,
   minimum height=\minheight,
@@ -37,13 +37,29 @@
   draw=black,
   fill=orange!20
   ]
-\tikzstyle{decision} = [% decision node
+\tikzstyle{decision} = [% decision: comparison, question or decision
   diamond,
   minimum width=\minwidth,
   minimum height=\minheight,
   text centered,
   draw=black,
   fill=green!20
+  ]
+\tikzstyle{junction} = [% junction: confluence of flow lines
+  circle,
+  minimum width=1cm,
+  minimum height=1cm,
+  text centered,
+  draw=black,
+  fill=yellow!20
+  ]
+\tikzstyle{loop} = [% loop
+  chamfered rectangle,
+  chamfered rectangle xsep=1cm,
+  minimum width=\minwidth,
+  minimum height=\minheight,
+  draw=black,
+  fill=purple!20
   ]
 \tikzstyle{arrow} = [% arrow format
   thick,
@@ -58,15 +74,21 @@
 \begin{tikzpicture}[node distance=1cm]
 
 %%% Nodes
-\node[startstop] (startstop) {\LARGE Start / Stop};
-\node[io] (io) [below=of startstop] {\LARGE Input / Output};
+\node[terminal] (terminal) {\LARGE Terminal};
+\node[io] (io) [below=of terminal] {\LARGE Input / Output};
 \node[process] (process) [below=of io] {\LARGE Process};
 \node[decision] (decision) [below=of process] {\LARGE Decision};
+\node[junction] (junction) [below=of decision] {\LARGE};
+\node[loop] (loop) [right=of decision] {\LARGE Loop};
 
 %%%
-\draw[arrow] (startstop) -- (io);
+\draw[arrow] (terminal) -- (io);
 \draw[arrow] (io) -- (process);
-\draw[arrow] (process) -- (decision);
+\draw[arrow] (process) -- (decision.north);
+\draw[arrow] (decision.south) -- (junction);
+\draw[arrow] (decision.east) -- (loop.west);
+\draw[arrow] (loop.east) -- +(1, 0) |- (junction.east);
+\draw[arrow] (process.east) -| (loop.north);
 
 \end{tikzpicture}
 
