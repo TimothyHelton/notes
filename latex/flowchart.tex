@@ -63,6 +63,11 @@
 \node[process] (process) [below=of io] {\LARGE Process};
 \node[decision] (decision) [below=of process] {\LARGE Decision};
 
+%%%
+\draw[arrow] (startstop) -- (io);
+\draw[arrow] (io) -- (process);
+\draw[arrow] (process) -- (decision);
+
 \end{tikzpicture}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
