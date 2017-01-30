@@ -5,14 +5,18 @@
 % average value for sample
 \overline{x}
 
-% Standard Deviation of x
-s_x
+%Bayes' Factor 1
+% Bayes' Rule Symbols 0
+p(b|a) =  \frac{p(b|a)  \times  p(a)}{p(b)}
 
-% Sample Covariance
-Cov(x,y) = S_{xy} = \frac{\Sigma(x_i - \overline{x})(y_i - \overline{y})}{n-1}
+% Bayes' Rule Symbols 1
+p( \theta |x) =  \frac{p(x |  \theta )  \times  p( \theta )}{p(x)}
 
-% Population Covariance
-\sigma_{xy} = \frac{\Sigma(x_i - \mu_x)(y_i - \mu_y)}{N}
+% Bayes' Rule Words 0
+p(b|a) =  \frac{likelihood  \times  prior}{marginal\ likelihood}
+
+% Bayes' Rule Words 1
+p(hypothesis|data) =  \frac{p(data | hypothesis)  \times  p(hypothesis)}{p(data)}
 
 % Correlation
 r = \frac{Covariance(x,y)}{(Standard Deviation(x))(Standard Deviation(y))}
@@ -20,3 +24,13 @@ r = \frac{Cov(x,y)}{s_xs_y}
 
 % Linear Regression
 \mid r\mid \ \geq \frac{2}{\sqrt{n}}
+
+% Population Covariance
+\sigma_{xy} = \frac{\Sigma(x_i - \mu_x)(y_i - \mu_y)}{N}
+
+% Sample Covariance
+Cov(x,y) = S_{xy} = \frac{\Sigma(x_i - \overline{x})(y_i - \overline{y})}{n-1}
+
+% Standard Deviation of x
+s_x
+
