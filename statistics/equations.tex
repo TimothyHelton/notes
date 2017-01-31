@@ -28,6 +28,18 @@ r = \frac{Cov(x,y)}{s_xs_y}
 % Population Covariance
 \sigma_{xy} = \frac{\Sigma(x_i - \mu_x)(y_i - \mu_y)}{N}
 
+% Posterior Ratio
+R_{post} =  \frac{P(\theta_{x} | x)}{P(\theta_{y} | y)}
+
+% Posterior Ratio Apply Bayes' Rules
+R_{post} =  \frac{ \frac{P(x | \theta_{x})  \times P(  \theta_{x} ) }{P(x)} }{\frac{P(y | \theta_{y})  \times P(  \theta_{y} )}{P(y)}
+
+% Posterior Ratio > 3
+R_{post} > 3
+
+% Posterior Ratio < 3
+R_{post} < 3
+
 % Sample Covariance
 Cov(x,y) = S_{xy} = \frac{\Sigma(x_i - \overline{x})(y_i - \overline{y})}{n-1}
 

@@ -86,18 +86,21 @@ The decision associated with the maximum value posterior probability.
 ---
 
 ### <a name="bayes_factor"></a> Bayes' Factor
-The product of the ratio of likelihoods.
+The product of the ratio of likelihoods.  This is also called the 
+**posterior ratio**.
 
 #### Posterior Ratio
-#TODO add equation
+![alt text](posterior_ratio.png)
 
 #### Apply Bayess Rule
-#TODO add equations
+![alt text](posterior_ratio_apply_bayes_rule.png)
 
   - There is a **substantial** difference between the probabilities if the   
   posterior odds (Rpost) meet the following criteria.
-  
-  #TODO add Rpost images
+
+    ![alt text](posterior_ratio_greater_3.png)
+
+    ![alt text](posterior_ratio_less_than_3.png)
   
   - Since the **marginal likelihood (evidence)** P(x) is cancelled out of the 
   equation it has **no impact** on the **Bayes' Factor**.
