@@ -44,7 +44,7 @@ Boarders require three properties.
   - border-style
   - border-color
 
-```
+```css
 div {
    border-top-width: 12px; 
    border-bottom: 6px solid #949599;
@@ -79,7 +79,7 @@ Any **border** or **padding** property values are included within the
 
 - If a **margin is add the values will need to be calculated the full box size.
 
-```
+```css
 div {
     box-sizing: border-box;
 }
@@ -114,7 +114,7 @@ break.
 
 ### <a name="comments"></a> Comments
 
-```
+```css
 /* CSS comments use this syntax */
 ```
 
@@ -131,7 +131,7 @@ Common vendor prefixes.
   - Microsoft Internet Explorer: -ms-
   - Webkit (Google Chrome and Apple Safari): -sebkit-
 
-```
+```css
 div {
     -webkit-box-sizing: content-box;
        -moz-box-sizing: content-box;
@@ -151,7 +151,7 @@ div {
   - it is possible to assign an element more than one tag at a time
 
 CSS File
-```
+```css
 .bold {
     font-weight: bold;
 }
@@ -167,7 +167,7 @@ CSS File
 ```
 
 HTML File
-```
+```html
 <body>
     <p class="large">This is LARGE text.</p>
     <p>This is <span class="underline">underlined</span> text.</p>
@@ -193,7 +193,7 @@ popular and should be preferred.  HSL is the newest and not widely supported.
     name maybe shorted to just three characters.  This notation is used 
     because it is possible to define **millions** of colors.
 
-```
+```css
 #ff6600
 #f60
 ```
@@ -202,7 +202,7 @@ popular and should be preferred.  HSL is the newest and not widely supported.
     - Use the rgb() or rgba() functions three integers between 0 and 255 to 
     define the color and one float between 0 and 1 to define the transparency.
     
-```
+```css
 rgb(255, 112, 0)
 rgba(255, 112, 0, 0.4)
 ```
@@ -215,7 +215,7 @@ rgba(255, 112, 0, 0.4)
       - lightness is a percentage between 0 and 100
       - the transparency is a float between 0 and 1
 
-```
+```css
 hsl(60, 100%, 50%)
 hsla(60, 100%, 50%, 0.2)
 ```
@@ -236,7 +236,7 @@ Display controls the amount of space an element occupies on the page.
   
 #### Change a Display Level
   
-```
+```css
 .block_display {
     display: block;
 }
@@ -252,7 +252,7 @@ Display controls the amount of space an element occupies on the page.
   - by creating a CSS div definition it will adjust all div elements
 
 CSS File
-```
+```css
 div {
     background-color: blue;
     height: 300px;
@@ -262,7 +262,7 @@ div {
 ```
 
 HTML File
-```
+```html
 <body>
     <div>
         <p>This text has the style from the CSS file.</p>
@@ -276,13 +276,19 @@ HTML File
 
 ### <a name="float"></a> Float
 
+- Float allows elements to be located to the left or right of the parent 
+element.
+- If there isn't a parent element the float will move the element all the way 
+to the edge of the page.
+- By using float the element's display value will be altered to **BLOCK**. 
+
   - items floated to the right will stack sequentially to the right
   - items floated to the left will stack sequentially to the left
   - to have items floated to the left and right **AND** then have other 
   items below you must add a clearing div.
 
 CSS File
-```
+```css
 .clear {
     clear: both;
 }
@@ -290,16 +296,20 @@ CSS File
 .floatright {
     background-color: red;
     float: right;
+    margin: 0 1.5%;
+    width: 63%;
 }
 
 .floatleft {
     background-color: blue;
     float: left;
+    margin: 0 1.5%;
+    width: 63%;
 }
 ```
 
 HTML File
-```
+```html
 <body>
     <div class="floatright">
         <p>This text is in a red box.</p>
@@ -310,6 +320,18 @@ HTML File
     <div class="clear"></div>
     <p>This text will appear below the red and blue boxes.</p>
 </body>
+```
+
+#### Multi-Column Pages
+To have more than two columns use set all the float values of the column 
+elements to left, and assign a width of 30%.
+
+CSS File
+```css
+section {
+    float: left;
+    width: 30%;
+}
 ```
 
 [Table of Contents](#toc)
@@ -325,7 +347,7 @@ HTML File
   - it is possible to assign an id and a class to the same element
   
 CSS File
-```
+```css
 #green {
     color: green;
     font-size: 300%;
@@ -333,7 +355,7 @@ CSS File
 ```
 
 HTML File
-```
+```html
 <body>
     <p id="green">This is large and green text.</p>
 </body>
@@ -350,7 +372,7 @@ HTML File
   - use the px suffix to denote pixels
   - Pixel definitions are stable, but not fancy.
   
-```
+```css
 font-size: 14px;
 ```
 
@@ -359,7 +381,7 @@ font-size: 14px;
 ##### Percentages
 Percentages set a relative value based on the parent element.
 
-```
+```css
 .col {
     width: 50%;
 }
@@ -372,7 +394,7 @@ element is used.
 
 This method is useful for setting padding around text.
 
-```
+```css
 .banner {
     font-size: 14px;
     width: 5em;
@@ -399,7 +421,7 @@ and inline-block elements.**
 ##### Short Hand Notation
 This single call will apply the same margin value to all available sides.
 
-```
+```css
 div {
     margin: 20px;
 }
@@ -411,8 +433,8 @@ div {
 
 **TOP/BOTTOM LEFT/RIGHT**
 
-```
-dif {
+```css
+div {
     margin: 10px 40px;
 }
 ```
@@ -421,7 +443,7 @@ dif {
 
 **TOP BOTTOM LEFT RIGHT**
 
-```
+```css
 div {
     margin: 10px 20px 0 40px;
 }
@@ -429,7 +451,7 @@ div {
 
   - To specify individual sides use these these properties.
 
-```
+```css
 div {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -445,7 +467,7 @@ boarder.
 **Padding works on all sides of an element, but may blend into the line 
 above or below the given element.**
 
-```
+```css
 div {
     padding: 20px;
 }
@@ -465,7 +487,7 @@ Use the same syntax as the **Margin** property.
   - The **border** and **margin** properties will still add the the 
   **width** and **height**.
 
-```
+```css
 div {
     box-sizing: padding-box;
 }
@@ -479,7 +501,7 @@ div {
 Width and Height properties only apply to **BLOCK** and **INLINE-BLOCK** 
 elements.
 
-```
+```css
 div {
     width: 400px;
     height: 100px;

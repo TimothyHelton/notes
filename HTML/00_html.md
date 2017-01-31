@@ -69,7 +69,7 @@
 
 ### <a name="comments"></a> Comments
 
-```
+```html
 <!-- HTML comments use this syntax -->
 ```
 
@@ -90,7 +90,7 @@
 The article element is used to identify a section of independent, 
 self-contained content that may be independently distributed or reused.
 
-```
+```html
 <article>
 </article>
 ```
@@ -103,7 +103,7 @@ self-contained content that may be independently distributed or reused.
 The aside element holds content, such as sidebars, inserts or brief 
 explanations, that is tangentially related to the content surrounding it.
 
-```
+```html
 <aside>
 </aside>
 ```
@@ -114,7 +114,7 @@ explanations, that is tangentially related to the content surrounding it.
 
 ### <a name="body_section"></a> Body Section
 
-```
+```html
 <body>
 </body>
 ```
@@ -126,7 +126,7 @@ explanations, that is tangentially related to the content surrounding it.
 ### <a name="bold"></a> Bold
 Use the strong tag to set font to be bold.
 
-```
+```html
 <p><strong>BOLD text</strong></p>
 ```
 
@@ -138,7 +138,7 @@ Use the strong tag to set font to be bold.
   - ul: unordered list
   - li: list item
 
-```
+```html
 <ul>
     <li></li>
     <li></li>
@@ -157,7 +157,7 @@ Use the strong tag to set font to be bold.
 If the content is being grouped solely for styling purposes and does not
 provide value to the outline of a document, use the division element.
 
-```
+```html
 <div>
 </div>
 ```
@@ -169,7 +169,7 @@ provide value to the outline of a document, use the division element.
 ### <a name="document_type"></a> Document Type
 This is the first line of an HTML file.
 
-```
+```html
 <!doctype html>
 ```
 
@@ -179,7 +179,7 @@ This is the first line of an HTML file.
 
 ### <a name="drop_down_menu"></a> Drop Down Menu
 
-```
+```html
 <select>
     <option>Select From List</option>
     <option>First</option>
@@ -194,7 +194,7 @@ This is the first line of an HTML file.
 
 ### <a name="file_type"></a> File Type
  
-```
+```html
 <html>
 </html>
 ```
@@ -207,7 +207,7 @@ This is the first line of an HTML file.
 The footer element identifies the closing or end of a page, article, 
 section, or other segment of a page.
 
-```
+```html
 <footer>
 </footer>
 ```
@@ -222,7 +222,7 @@ section, or other segment of a page.
 
   - type="checkbox"
 
-```
+```html
 <form>
     <input type="checkbox" name="variable_name" value="1"/> Text
 <form>
@@ -233,7 +233,7 @@ section, or other segment of a page.
     valid or not.
     - **%40** is the URL encoding for the @ symbol
     
-```
+```html
 <form>
     <input type="email" placeholder="user@domain" name="variable_name"/>
 </form>
@@ -244,7 +244,7 @@ section, or other segment of a page.
     - The name argument will make the group of radio buttons mutually 
     exclusive.
     
-```
+```html
 <form>
     <input type="radio" name="group_name" /name="variable_name"> Title
 </form>
@@ -257,7 +257,7 @@ section, or other segment of a page.
     - If you want the user to enter a large section of text use the textarea
      tag in a form.
 
-```
+```html
 <form>
     <input type="text" placeholder="default text" /name="variable_name"/>
 </form>
@@ -269,7 +269,7 @@ section, or other segment of a page.
     - The fields on the web page must have the name argument for the submit 
     to work.
 
-```
+```html
 <form>
     <input type="submit" value="Text on Button"/>
 </form>
@@ -283,7 +283,7 @@ section, or other segment of a page.
 The head element is not displayed on a page and is used to outline metadata,
  including the document title, and links to external files.
  
-```
+```html
 <head>
 </head>
 ```
@@ -296,7 +296,7 @@ The head element is not displayed on a page and is used to outline metadata,
 The header element is used to identify the top of a page, article, section 
 or other segment of a page.
 
-```
+```html
 <header>
 </header>
 ```
@@ -310,7 +310,7 @@ Headings should be used in an order that is relevant to the content of a
 page.  Each heading level should be used where it is semantically valued, 
 and should not be used to make text bold or big.
 
-```
+```html
 <h1></h1>
 <h2></h2>
 <h3></h3>
@@ -325,7 +325,7 @@ and should not be used to make text bold or big.
 
 ### <a name="horizontal_line"></a> Horizontal Line 
 
-```
+```html
 <hr />
 ```
 
@@ -341,7 +341,7 @@ and should not be used to make text bold or big.
   - use this to insert youtube videos into your page
   - set size with width="560" and height="315" arguments
 
-```
+```html
 <iframe src="other_page_address" frameboarder="0"></iframe>
 ```
 
@@ -353,13 +353,13 @@ and should not be used to make text bold or big.
 
   - For a locally stored image:
   
-```
+```html
 img src="images/picture.png"/>
 ```
 
   - For an image that is loaded from another location on the internet.
   
-```
+```html
 <img src="url_of_image_file"/>
 ```
 
@@ -367,21 +367,21 @@ img src="images/picture.png"/>
     - Note: Aspect ratio will be maintained.
     - 100 is about right for a thumbnail
 
-```
+```html
 img src="images/picture.png" width="100"/>
 ```
 
   - To set the height of an image in pixels.
     - Note: Aspect ratio will be maintained.
 
-```
+```html
 <img src="images/picture.png" height="100"/>
 ```
 
   - To set the height and width of an image in pixels.
     - Note: Aspect ratio will **not** be maintained.
 
-```
+```html
 <img src="images/picture.png" height="500" width="100"/>
 ```
 
@@ -393,7 +393,7 @@ img src="images/picture.png" width="100"/>
 
   - **em** stands for emphasis
 
-```
+```html
 <p><em>Italics text</em><p>
 ```
 
@@ -405,13 +405,13 @@ img src="images/picture.png" width="100"/>
 
   - destination links use the href argument
   
-```
+```html
 <a href="full_path_to_external_link">Name of External Link</a>
 ```
 
   - source locations in a web page use the name argument
   
-```
+```html
 <a name="top" /a>
 <a href="#Name_of_page_link">Name of anchor</a>
 ```
@@ -421,13 +421,13 @@ img src="images/picture.png" width="100"/>
     - subject and body sections may be defined
     - spaces must be entered as **%20**
     
-```
+```html
 <a href=”mailto:name@domain?subject=Reaching%20Out&body=How%20are%20you”>Email Me</a>
 ```
 
   - to open a link in a new window add the "target" argument
   
-```
+```html
 <a href=”http://google.com/” target=”blank”>Google</a>
 ```
 
@@ -437,7 +437,7 @@ img src="images/picture.png" width="100"/>
 
 ### <a name="line_break"></a> Line Break 
 
-```
+```html
 <br />
 ```
 
@@ -447,7 +447,7 @@ img src="images/picture.png" width="100"/>
 
 ### <a name="meta_data"></a> Meta Data
 
-```
+```html
 <meta charset="utf −8"/>
 <meta http−equiv="Content−type" content="text/html; charset=utf−8"/> 
 <meta name="viewport" content="width=device−width, initial−scale=1"/>
@@ -463,7 +463,7 @@ The nav element identifies a section of major navigational links on a page.
  Miscellaneous one-off links should not be wrapped within the navigation 
  element; they should use the anchor element <a>.
  
-```
+```html
 <nav>
     <a href="index.html">Home</a>
     <a href="page_stuff.html">Page Stuff</a>
@@ -479,7 +479,7 @@ The nav element identifies a section of major navigational links on a page.
   - ol: ordered list
   - li: list item
 
-```
+```html
 <ol>
     <li></ li>
     <li></ li>
@@ -496,7 +496,7 @@ The nav element identifies a section of major navigational links on a page.
 
 ### <a name="paragraph"></a> Paragraph 
 
-```
+```html
 <p>
 </p>
 ```
@@ -510,7 +510,7 @@ The section element is used to identify a thematic grouping of content,
 which generally, but not always, includes a heading.  The section element is
  commonly used to break up and provide hierarchy to a page.
 
-```
+```html
 <section>
 </section>
 ```
@@ -523,7 +523,7 @@ which generally, but not always, includes a heading.  The section element is
 An inline-level element commonly used to identify smaller groupings of text 
 within a block-level element.
 
-```
+```html
 <p>This is an example of <span class="marked">marked text</span>.</p>
 ```
 
@@ -533,7 +533,7 @@ within a block-level element.
 
 ### <a name="strike_through"></a> Strike Through
 
-```
+```html
 <strike>Strike Through Text</strike>
 ```
 
@@ -546,7 +546,7 @@ within a block-level element.
   - may be used for tables
   - may also be used for layout design
 
-```
+```html
 <table>
     <tr>
         <th>Col0</th>
@@ -575,7 +575,7 @@ This element allows a larger window for the user to type into.
 ### <a name="title"></a> Title 
 The title element will place a title on the browser tab.
 
-```
+```html
 <title>This is the Title</title>
 ```
 
@@ -585,7 +585,7 @@ The title element will place a title on the browser tab.
 
 ### <a name="underline"></a> Underline
 
-```
+```html
 <u>Underlined Text</u>
 ```
 
