@@ -2,13 +2,21 @@
 
 ### <a name="toc"></a>Table of Contents
 
+[Borders](#borders)
+
+[Border Box](#border_box)
+
 [Cascade](#cascade)
 
 [Comments](#comments)
 
+[Content Box](#content_box)
+
 [Class](#class)
 
 [Colors](#colors)
+
+[Display](#display)
 
 [Division](#division)
 
@@ -17,6 +25,67 @@
 [ID](#id)
 
 [Lengths](#lengths)
+
+[Margins & Padding](#margins_padding)
+
+[Padding Box](#padding_box)
+
+[Width & Height](#width_height)
+
+---
+
+### <a name="borders"></a> Borders
+Boarders provide an outline around an element.
+
+#### Properties
+Boarders require three properties.
+
+  - border-width
+  - border-style
+  - border-color
+
+```
+div {
+   border-top-width: 12px; 
+   border-bottom: 6px solid #949599;
+}
+```
+
+#### Style Options
+Most common options
+
+  - solid
+  - double
+  - dashed
+  - dotted
+  - none
+
+#### Border Radius
+The radius property rounds the corners of the border.
+
+  - border-rounded
+  - border-circle
+  - border-football
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="border_box"></a> Border Box
+**This is the preferred box-sizing value to be used.**
+
+Any **border** or **padding** property values are included within the 
+**width** and **height**.
+
+- If a **margin is add the values will need to be calculated the full box size.
+
+```
+div {
+    box-sizing: border-box;
+}
+```
+
+[Table of Contents](#toc)
 
 ---
 
@@ -47,6 +116,27 @@ break.
 
 ```
 /* CSS comments use this syntax */
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="content_box"></a> Content Box
+This will set the default values for all elements to use the box model.
+
+Common vendor prefixes.
+
+  - Mozilla Firefox: -moz-
+  - Microsoft Internet Explorer: -ms-
+  - Webkit (Google Chrome and Apple Safari): -sebkit-
+
+```
+div {
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
+}
 ```
 
 [Table of Contents](#toc)
@@ -128,6 +218,28 @@ rgba(255, 112, 0, 0.4)
 ```
 hsl(60, 100%, 50%)
 hsla(60, 100%, 50%, 0.2)
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="display"></a> Display
+**Every element on a page is a rectangular box.**
+
+Display controls the amount of space an element occupies on the page.
+
+  - **block**: occupy any available width
+  - **inline**: occupy only the width their content requires
+  - **inline-block**: element possesses all the block properties, but is 
+  displayed inline.
+  
+#### Change a Display Level
+  
+```
+.block_display {
+    display: block;
+}
 ```
 
 [Table of Contents](#toc)
@@ -265,6 +377,112 @@ This method is useful for setting padding around text.
     font-size: 14px;
     width: 5em;
 }
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="margins_padding"></a> Margins & Padding
+
+#### Colors
+- Margin and padding properties are completely transparent and do not accept
+any color values.
+- They do show the background color of the parent element.
+
+#### Margins
+Use margins to position elements or space out elements.
+
+**Vertical margins, *top* and *bottom*, are only applicable for block-level 
+and inline-block elements.**
+
+##### Short Hand Notation
+This single call will apply the same margin value to all available sides.
+
+```
+div {
+    margin: 20px;
+}
+```
+
+##### Long Hand Notation
+  - To specify different values for the vertical and horizontal sides use two
+  arguments.
+
+**TOP/BOTTOM LEFT/RIGHT**
+
+```
+dif {
+    margin: 10px 40px;
+}
+```
+
+  - To specify different values for each side call them out in order.
+
+**TOP BOTTOM LEFT RIGHT**
+
+```
+div {
+    margin: 10px 20px 0 40px;
+}
+```
+
+  - To specify individual sides use these these properties.
+
+```
+div {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+```
+
+#### Padding
+Padding is similar to margins only if falls **inside** of the element's 
+boarder.
+
+**Padding works on all sides of an element, but may blend into the line 
+above or below the given element.**
+
+```
+div {
+    padding: 20px;
+}
+```
+
+##### Long & Short Hand Notation
+Use the same syntax as the **Margin** property.
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="width_height"></a> Width & Height
+  - The padding box argument will make it to where as the padding values
+  increase the content size within an element shrinks proportionately.
+
+  - The **border** and **margin** properties will still add the the 
+  **width** and **height**.
+
+```
+div {
+    box-sizing: padding-box;
+}
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="width_height"></a> Width & Height
+Width and Height properties only apply to **BLOCK** and **INLINE-BLOCK** 
+elements.
+
+```
+div {
+    width: 400px;
+    height: 100px;
 ```
 
 [Table of Contents](#toc)
