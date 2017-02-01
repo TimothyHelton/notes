@@ -326,12 +326,74 @@ HTML File
 To have more than two columns use set all the float values of the column 
 elements to left, and assign a width of 30%.
 
+The comments ensure there will not be white space between the columns 
+resulting in the columns being pushed to a new row.
+
 CSS File
 ```css
 section {
     float: left;
     width: 30%;
 }
+```
+
+```html
+<section>
+    <p>Left Column</p>
+</section><!--
+--><section>
+    <p>Center Column</p>
+</section><!--
+--><section>
+    <p>Right Column</p>
+</section>
+```
+
+#### Clear Fix
+This is a different method of floating objects that is mor robust.
+
+CSS File
+```css
+.group:before,
+.group:after {
+    content: "";
+    display: table;
+}
+
+.group:after {
+    clear: both;
+}
+
+.group {
+    clear: both;
+    *zoom: 1;
+}
+
+section {
+    float: left;
+    margin: 0 1.5%;
+    width: 63%;
+}
+
+aside {
+    float: right;
+    margin: 0 1.5%;
+    width: 63%;
+}
+```
+
+```html
+<header></header>
+
+<div class="group">
+    
+    <section></section>
+    
+    <aside></aside>
+    
+</div>
+
+<footer></footer>
 ```
 
 [Table of Contents](#toc)
