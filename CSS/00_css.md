@@ -30,6 +30,10 @@
 
 [Padding Box](#padding_box)
 
+[Positioning Elements](#positioning_elems)
+
+[Typography](#typography)
+
 [Width & Height](#width_height)
 
 ---
@@ -552,6 +556,154 @@ Use the same syntax as the **Margin** property.
 ```css
 div {
     box-sizing: padding-box;
+}
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="positioning_elems"></a> Positioning Elements
+
+#### Relative Positioning
+- The **relative** value for **position** allows element to appear within the 
+normal flow of a page.
+- The element's display position may be modified with box offset properties.
+- The relative values move opposite of the direction listed.
+  - The following example would move the element 20px to the **right**.
+    - left: 20px;
+- Any elements that are moved relative will overlap the other elements on 
+the page.
+     
+#### Absolute Positioning
+Absolute positioned elements are located with respect to the closest 
+relatively positioned parent element.
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="typography"></a> Typography
+
+- Typeface: the artistic impression of how text looks, feels, and reads.
+  - Think -> A Song
+- Font: file which contains a typeface.
+  - Think -> An MP3
+  
+#### Change Font Properties for an entire page
+
+```css
+html {
+    color: #555
+}
+```
+
+#### Font Family
+- The **font-family** property declares the primary font and a list of 
+secondary fonts.
+- The list is in order of preference.
+- Fonts with spaces in their names must be enclosed with quotation marks.
+
+```css
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+```
+
+#### Font Size
+- units that may be used are pixels, em, percentages, point or font-size 
+keywords
+
+```css
+body {
+    font-size: 14px;
+}
+```
+
+#### Font Style
+- Keywords
+  - normal
+  - italic
+  - oblique
+  - inherit
+
+```css
+.special {
+    font-style: italic;
+}
+```
+
+#### Font Variant (Small Caps)
+- Keywords
+  - normal
+  - small-caps
+  - inherit
+
+```css
+.firm {
+    font-variant: small-caps;
+}
+```
+
+#### Font Weight
+- Keywords
+  - normal
+  - bold
+  - bolder
+  - lighter
+  - inherit
+- Numeric Values
+  - range from 100 - 900
+  - Normal is 400
+  - Bold is 700
+  - Not all typefaces have all the numeric values
+    - if a value is not present the closet one available will be used
+
+```css
+.daring {
+    font-weight: bold;
+}
+
+.more-daring {
+    font-weight: 800;
+}
+```
+
+#### Line Height
+- This is the line spacing distance.
+- Best Practice is to use 1 1/2 times font-size. 
+  - Easily set using a percentage 150%
+- Also useful to center text in an element
+  - use the same property value for **line-height** and **height**
+
+```css
+body {
+    line-height: 150%;
+}
+
+.btn {
+    height: 22px;
+    line-height: 22px;
+}
+```
+
+#### Shorthand Font Properties
+- on a single line list the following properties in order
+  - **font**:
+  - font-style
+  - font-variant
+  - font-weight
+  - font-size
+    - **REQUIRED**
+    - must be followed by a forward slash if line-height is defined
+  - line-height
+  - font-family
+    - **REQUIRED**
+    - separated by commas
+
+```css
+html {
+    font: italic small-caps bold 14px/22px "Helvetica Neue", Helvetica, Arial;
 }
 ```
 
