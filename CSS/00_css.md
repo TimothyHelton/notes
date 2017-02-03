@@ -6,7 +6,11 @@
 
 [Border Box](#border_box)
 
+[Box Shadow](#box_shadow)
+
 [Cascade](#cascade)
+
+[Citations & Quotes](#citations_quotes)
 
 [Comments](#comments)
 
@@ -26,15 +30,31 @@
 
 [Lengths](#lengths)
 
+[Letter Spacing](#letter_spacing)
+
 [Margins & Padding](#margins_padding)
 
 [Padding Box](#padding_box)
 
 [Positioning Elements](#positioning_elems)
 
+[Text Alignment](#text_alignment)
+
+[Text Decoration](#text_decoration)
+
+[Text Indent](#text_indent)
+
+[Text Shadow](#text_shadow)
+
+[Text Transform](#text_transform)
+
 [Typography](#typography)
 
+[Web Safe Fonts](#web_safe_fonts)
+
 [Width & Height](#width_height)
+
+[Word Spacing](#word_spacing)
 
 ---
 
@@ -70,6 +90,29 @@ The radius property rounds the corners of the border.
   - border-rounded
   - border-circle
   - border-football
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="box_shadow"></a> Box Shadow
+This property applies a shadow to an element.
+
+  - First Value: shadow's horizontal offset
+  - Second Value: shadow's vertical offset
+  - Third Value: shadow's blur radius
+  - Fourth Value: shadow's spread
+    - positive values: shadow will be larger than the size of the element
+    - negative values: shadow will be smaller than the size of the element
+  - Fifth Value: shadow's color
+  - Sixth Value: inset
+    - this property locates the shadow inside or outside the element.
+
+```css
+p {
+    box-shadow: 3px 6px 2px 3px rgba(0, 0, 0, 0.3) inset;
+}
+```
 
 [Table of Contents](#toc)
 
@@ -113,6 +156,63 @@ The higher the specificity weights rise, the more likely the cascade will
 break.
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="citations_quotes"></a> Citations & Quotes
+
+  - **cite**: used to reference a creative work, author or resource
+  - **q**: used for short, inline quotations
+  - **blockquote**: used for longer external quotations
+  
+#### Cite
+
+```html
+<p>
+    The book
+    <cite><a href="http://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537">Steve Jobs</a></cite>
+    is truly inspirational.
+</p>
+```
+
+#### Dialogue & Prose Quotation
+
+```html
+<p>
+    Steve Jobs once said, <q>One home run is much better than two doubles.</q>
+</p>
+```
+
+#### Dialogue & Prose Citation
+
+```html
+<p>
+    <a href="http://www.businessweek.com/magazine/content/06_06/b3970001.htm">Steve Jobs</a>
+    once said,
+    <q cite="http://www.businessweek.com/magazine/content/06_06/b3970001.htm">One home run is much better than two doubles.</q>
+</p>
+```
+[Table of Contents](#toc)
+
+#### External Citation
+
+```html
+<blockquote cite="http://money.cnn.com/magazines/fortune/fortune_archive/2000/01/24/272277/index.htm">
+    <p>
+        &#8220;In most people&#8217;s vocabularies, design is a veneer.
+        It&#8217;s interior decorating. It&#8217;s the fabric of the curtains,
+        of the sofa. But to me, nothing could be further from the meaning of 
+        design. Design is the fundamental soul of a human-made creation that 
+        ends up expressing itself in successive outer layers of the 
+        product.&#8221;
+    </p>
+    
+    <p>
+        <cite>&#8212; Steve Jobs in <a href="http://money.cnn.com/ magazines/fortune/fortune_archive/2000/01/24/272277/index.htm">Fortune Magazine</a></cite>
+    </p>
+</blockquote>
+
+```
 
 ---
 
@@ -471,6 +571,24 @@ This method is useful for setting padding around text.
 
 ---
 
+### <a name="letter_spacing"></a> Letter Spacing
+Adjust the space between letters on a page. Good practice is to use relative 
+length values.
+
+  - positive value: push letters farther apart
+  - negative value: pull letters closer together
+  - none: returns spacing back to normal size
+
+```css
+p {
+    letter-spacing: -0.5em;
+}
+```
+
+[Table of Contents](#toc)
+
+---
+
 ### <a name="margins_padding"></a> Margins & Padding
 
 #### Colors
@@ -578,6 +696,94 @@ the page.
 #### Absolute Positioning
 Absolute positioned elements are located with respect to the closest 
 relatively positioned parent element.
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="text_alignment"></a> Text Alignment
+This property moves the text within an element.
+
+NOTE: The float properties moves the entire element. Be sure to use the one 
+that provides the desired effect.
+
+  - left
+  - right
+  - center
+  - justify
+  - inherit
+
+```css
+p { 
+    text-align: center;
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="text_decoration"></a> Text Decoration
+Multiple values for this property may be defined by separating each one with
+a space.
+
+  - none
+  - underline
+  - overline
+  - line-through
+  - inherit
+
+```css
+.note {
+    text-decoration: underline overline;
+}
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="text_indent"></a> Text Indent
+This property will indent the first line of text within an element.
+
+```css
+p {
+    text-indent: 20px;
+}
+```
+
+### <a name="text_shadow"></a> Text Shadow
+This property allows a single or multiple shadows to be applied to text.
+
+  - First Value: shadow's horizontal offset
+  - Second Value: shadow's vertical offset
+  - Third Value: shadow's blur radius
+  - Fourth Value: shadow's color
+  - **Negative** values move the shadow to the left and top
+
+```css
+p {
+    text-shadow: 3px 6px 2px rgba(0, 0, 0, 0.3);
+}
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="text_transform"></a> Text Transform
+Changes the text inline without the need for an alternate typeface.
+
+  - none: set all inherited values back to the original text style
+  - capitalize: capitalize the first letter of each word
+  - uppercase: capitalized every letter
+  - lowercase: make every letter lowercase
+  - inherit
+
+```css
+p {
+    text-transform: uppercase;
+}
+```
 
 [Table of Contents](#toc)
 
@@ -711,6 +917,46 @@ html {
 
 ---
 
+### <a name="web_safe_fonts"></a> Web Safe Fonts
+
+- Arial
+- Courier New, Courier
+- Garamond
+- Georgia
+- Lucida Sans, Lucida Grande, Lucida
+- Palatino linotype
+- Tahoma
+- Times New Roman, Times
+- Trebuchet
+- Verdana
+
+#### Embed Non-Standard Fonts
+It is possible to upload custom fonts, which will allow all users to view 
+the page with the custom font even if their computer does not have that font
+installed.
+
+Even though this is possible it may not be **legal**. Check the license 
+agreement for the font before uploading it to the web.
+
+[Google Fonts](#https://fonts.google.com) website has a number of nice fonts.
+Look at Lato.
+
+  - After choosing a font on the website make a link in the header
+  - Add the font name to the body style
+    - **The font will need to be surrounded by quotes even if it's just one 
+      word since it's a web font.**
+
+```css
+@font-face {
+    font-family: "Lobster";
+    src: local("Lobster"), url("lobster.woff") format("woff");
+}
+```
+
+[Table of Contents](#toc)
+
+---
+
 ### <a name="width_height"></a> Width & Height
 Width and Height properties only apply to **BLOCK** and **INLINE-BLOCK** 
 elements.
@@ -719,6 +965,24 @@ elements.
 div {
     width: 400px;
     height: 100px;
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="word_spacing"></a> Word Spacing
+Adjust the space between words on a page. Good practice is to use relative 
+length values.
+
+  - positive value: push letters farther apart
+  - negative value: pull letters closer together
+  - none: returns spacing back to normal size
+
+```css
+p {
+    word-spacing: -0.25em;
+}
 ```
 
 [Table of Contents](#toc)
