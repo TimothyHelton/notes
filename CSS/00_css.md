@@ -2,6 +2,8 @@
 
 ### <a name="toc"></a>Table of Contents
 
+[Background](#background)
+
 [Borders](#borders)
 
 [Border Box](#border_box)
@@ -25,6 +27,8 @@
 [Division](#division)
 
 [Float](#float)
+
+[gradient_background](#gradient_background)
 
 [ID](#id)
 
@@ -55,6 +59,61 @@
 [Width & Height](#width_height)
 
 [Word Spacing](#word_spacing)
+
+---
+
+### <a name="background"></a> Background
+
+  - background: accepts colors and images
+    - to define an image use the **url** function
+    - by default the image will repeat horizontally and vertically. To 
+    control these features use the following.
+      - **background-repeat**
+        - repeat
+        - repeat-x
+        - repeat-y
+        - no-repeat
+      - **background-position**
+        - default location is upper left corner
+          - first value: horizontal offset
+          - second value: vertical offset
+          - **If only one value is provided it will be used for horizontal 
+          and vertical offset.**
+          - **It's a good idea to use percentage values here.**
+        - top
+        - right
+        - bottom
+        - left
+        - center
+  - background-color: only accepts colors
+  - when using a transparent background always supply a default solid color 
+  first.
+  
+```css
+div {
+    background-color: #b2b2b2;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+```
+
+```css
+div {
+    background: url("alert.png");
+    background-position: 20px 10px;
+    background-repeat: no-repeat;
+}
+```
+
+#### Short Hand
+background -> color -> image -> position -> repeat
+
+```css
+div {
+    background: #b2b2b2 url("alert.png") 20px 10px no-repeat;
+}
+```
+
+[Table of Contents](#toc)
 
 ---
 
@@ -454,7 +513,7 @@ section {
 ```
 
 #### Clear Fix
-This is a different method of floating objects that is mor robust.
+This is a different method of floating objects that is more robust.
 
 CSS File
 ```css
@@ -498,6 +557,28 @@ aside {
 </div>
 
 <footer></footer>
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="gradient_background"></a> Gradient Background
+It used to be required to define vendor support for gradient backgrounds, 
+and it is good common practice to continue.
+
+  - use the linear-gradient function with the background or background-image
+   properties.
+  - before assigning a gradient make sure to put in a solid default color 
+  just in case the browser does not implement gradients.
+
+```css
+div {
+    background: #466368;
+    background: -webkit-linear-gradient(#648880, #293F50);
+    background:    -moz-linear-gradient(#648880, #293F50);
+    background:         linear-gradient(#648880, #293f50);
+}
 ```
 
 [Table of Contents](#toc)
