@@ -113,6 +113,40 @@ div {
 }
 ```
 
+#### Background Size
+
+  - First value is the length of the background
+  - Second value is the height of the background
+  - percentage values are in relation to the **elements** size not the 
+  background
+  - the keyword **auto** may be used as either the width or height value to 
+  preserve the aspect ratio of the background image
+  
+```css
+div {
+    background: url("shay.jpg") 0 0 no-repeat;
+    background-size: auto 75%;
+    border: 2px dashed #9799a7;
+    height: 240px;
+    width: 200px;
+}
+```
+
+#### Cover
+This keyword value specifies that the background image will be resized to 
+completely cover an element's width and height.
+
+  - often part of an image is cutoff when this is used
+
+#### Contain
+This keyword value specifies that the background image will be completely 
+within the element.
+
+  - often this leads to part of the element not being filled by the image
+
+
+```
+
 [Table of Contents](#toc)
 
 ---
@@ -567,19 +601,33 @@ aside {
 It used to be required to define vendor support for gradient backgrounds, 
 and it is good common practice to continue.
 
-  - use the linear-gradient function with the background or background-image
-   properties.
+  - use the **linear-gradient** or **radial-gradient** function with the 
+  **background** or **background-image** properties.
   - before assigning a gradient make sure to put in a solid default color 
   just in case the browser does not implement gradients.
+  
+#### Linear Gradient
+
+  - the first argument is a direction which is optional.
+    - the default will be top to bottom
+    - to go from the upper left to the bottom right use **to right bottom**
+    - degrees may also be inserted here
+      - 315 degrees would be equivalent to **to right bottom**
+  - n number of colors may be specified after the first parameter
 
 ```css
 div {
     background: #466368;
-    background: -webkit-linear-gradient(#648880, #293F50);
-    background:    -moz-linear-gradient(#648880, #293F50);
-    background:         linear-gradient(#648880, #293f50);
+    background: -webkit-linear-gradient(to right bottom, #648880, #293F50);
+    background:    -moz-linear-gradient(to right bottom, #648880, #293F50);
+    background:         linear-gradient(to right bottom, #648880, #293f50);
 }
 ```
+
+#### Radial Gradient
+
+  - the first color will appear in the center
+  - the second color will be on the outside
 
 [Table of Contents](#toc)
 
