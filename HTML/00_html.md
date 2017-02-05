@@ -4,7 +4,13 @@
 
 [Comments](#comments)
 
+[Entities](#Entities)
+
+[Article](#article)
+
 [Aside](#aside)
+
+[Audio](#audio)
 
 [Body Section](#body_section)
 
@@ -20,6 +26,8 @@
 
 [Drop Down Menu](#drop_down_menu)
 
+[Figure](#figure)
+
 [File Type](#file_type)
 
 [Footer](#footer)
@@ -34,9 +42,9 @@
 
 [Horizontal Line](#horizontal_line)
 
-[Iframe](#iframe)
-
 [Images](#images)
+
+[Inline Frames](#iframe)
 
 [Italics](#italics)
 
@@ -65,6 +73,8 @@
 [Title](#title)
 
 [Underline](#underline)
+
+[Video](#video)
 
 
 ---
@@ -108,6 +118,51 @@ explanations, that is tangentially related to the content surrounding it.
 ```html
 <aside>
 </aside>
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="audio"></a> Audio
+Audio tags require a opening and closing tags.
+
+  - autoplay: music will begin when the page loads
+  - controls: audio controls will be displayed on the page
+  - loop: loop will cause the audio file to repeat continually, from 
+  beginning to end.
+  - preload: identifies what information about the audio file should be 
+  loaded before the clip is played.
+    - none: loads no information about the file
+    - auto: loads all information about the file
+      - **auto is the default setting if preload is not included**
+    - metadata: only loads certain information
+    
+It is good practice to include **preload="none"** or **preload="metadata"** 
+when an audio file is not essential to the page.
+
+```html
+<audio src="jazz.ogg" controls preload="none"></audio>
+```
+
+#### Audio Formats
+The most popular formats are:
+
+  - ogg
+  - mp3
+  - wav
+  
+Using a source tag will help the browsers play the audio more of the time. 
+The following code will allow the browser to play the audio file if it can, 
+and only when it fails will it present the option to download the file.
+
+```html
+<audio controls>
+    <source src="jazz.ogg" type="audio/ogg">
+    <source src="jazz.mp3" type="audio/mpeg">
+    <source src="jazz.wav" type="audio/wav">
+    Please <a href="jazz.mp3" download>download</a> the audio file.
+</audio>
 ```
 
 [Table of Contents](#toc)
@@ -206,6 +261,31 @@ This is the first line of an HTML file.
     <option>Second</option>
     <option>Third</option>
 </select>
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="figure"></a> Figure
+This tag is used to group self-contained content. 
+
+```html
+<figure>
+    <img src="image.jpg" alt="description of image.">
+</figure>
+```
+
+#### Figure Caption
+
+  - Only apply one **figcaption** tag per figure.
+  - This caption may replace the img alt property
+
+```html
+<figure>
+    <img src="image.jpg">
+    <figcaption>description of image</figcaption>
+</figure>
 ```
 
 [Table of Contents](#toc)
@@ -353,22 +433,6 @@ and should not be used to make text bold or big.
 
 ---
 
-### <a name="iframe"></a> Iframe
-
-  - use this tag to embed another web page into your web page
-  - inserted web page can have a framed box around it by using the 
-  frameboarder="1" argument
-  - use this to insert youtube videos into your page
-  - set size with width="560" and height="315" arguments
-
-```html
-<iframe src="other_page_address" frameboarder="0"></iframe>
-```
-
-[Table of Contents](#toc)
-
----
-
 ### <a name="images"></a> Images
 
   - include the **alt** attribute to describe the content of the image.
@@ -408,6 +472,22 @@ and should not be used to make text bold or big.
 
 ```html
 <img src="images/picture.png" height="500" width="100">
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="iframe"></a> Inline Frames
+
+  - use this tag to embed another web page into your web page
+  - inserted web page can have a framed box around it by using the 
+  frameboarder="1" argument
+  - use this to insert youtube videos into your page
+  - set size with width="560" and height="315" arguments
+
+```html
+<iframe src="other_page_address" frameboarder="0"></iframe>
 ```
 
 [Table of Contents](#toc)
@@ -618,3 +698,52 @@ The title element will place a title on the browser tab.
 ```
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="video"></a> Video
+Video tags require a opening and closing tags.
+
+  - autoplay: video will begin when the page loads
+  - controls: video controls will be displayed on the page
+  - loop: loop will cause the video file to repeat continually, from 
+  beginning to end.
+  - poster: allows the specification of a url image to show before the video
+   is played
+  - preload: identifies what information about the video file should be 
+  loaded before the clip is played.
+    - none: loads no information about the file
+    - auto: loads all information about the file
+      - **auto is the default setting if preload is not included**
+    - metadata: only loads certain information
+    
+It is good practice to include **preload="none"** or **preload="metadata"** 
+when a video file is not essential to the page.
+
+```html
+<video src="earth.ogv" controls preload="none" poster="earth.jpg"></video>
+```
+
+#### Video Formats
+The most popular formats are:
+
+  - ogv
+  - mp4
+  
+Using a source tag will help the browsers play the video more of the time. 
+The following code will allow the browser to play the video file if it can, 
+and only when it fails will it present the option to download the file.
+
+Instead of providing a link to download the video a link to YouTube or Vimeo
+ would be a good idea too.
+
+```html
+<video controls>
+    <source src="earth.ogv" type="video/ogv">
+    <source src="earth.mp4" type="video/mp4">
+    Please <a href="earth.mp4" download>download</a> the video.
+</video>
+```
+
+[Table of Contents](#toc)
+

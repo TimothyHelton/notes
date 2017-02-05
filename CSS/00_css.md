@@ -34,6 +34,8 @@
 
 [Images](#images)
 
+[Inline Frames](#inline_frames)
+
 [Lengths](#lengths)
 
 [Letter Spacing](#letter_spacing)
@@ -704,6 +706,18 @@ img {
     padding: 4px;
 }
 ```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="inline_frames"></a> Inline Frames
+Control the style of other web pages inserted into your page.
+
+- Properties
+  - border
+  - width
+  - height
 
 [Table of Contents](#toc)
 
