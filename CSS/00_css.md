@@ -36,6 +36,8 @@
 
 [Letter Spacing](#letter_spacing)
 
+[Lists](#lists)
+
 [Margins & Padding](#margins_padding)
 
 [Padding Box](#padding_box)
@@ -143,9 +145,6 @@ This keyword value specifies that the background image will be completely
 within the element.
 
   - often this leads to part of the element not being filled by the image
-
-
-```
 
 [Table of Contents](#toc)
 
@@ -711,6 +710,132 @@ length values.
 ```css
 p {
     letter-spacing: -0.5em;
+}
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="lists"></a> Lists
+property **list-style-type** defines the shape of the list item 
+
+  - disc
+    - filled circle
+  - circle
+    - hollow circle
+  - square
+    - filled square
+  - decimal
+  - decimal-leading-zero
+  - lower-roman
+  - upper-roman
+  - lower-greek
+  - lower-alpha
+    - lowercase ASCII letters
+  -upper-alpha
+    - uppercase ASCII letters
+  - armenian
+    - traditional Armenian numbering
+  - georgian
+    - traditional Georgian numbering
+  - none
+
+```css
+ul {
+    list-style-type: square;
+}
+```
+
+#### Use Image as Bullet Style
+
+```css
+li {
+    background: url("arrow.png") 0 50% no-repeat;
+    list_style_type: none;
+    padding-left: 12px;
+}
+```
+
+#### List Style Position Property
+Alter the location of the list text with relation to the element.
+
+  - **outside** places the marker to the left and does not allow wrapping 
+  underneath 
+  - **inside** places the marker in line and allows wrapping underneath 
+  (this does not look good)
+  
+#### Shorthand List Definition
+Combine the type and position into one line with the **list-style** property.
+
+```css
+ul {
+    list-style: circle inside;
+}
+```
+
+#### Horizontal Lists
+
+  - Change the display to **inline-bock**, but the markers will be removed.
+  - Float the elements in the list if you want to keep the markers.
+
+```css
+li {
+    float: left;
+    margin: 0 20px;
+}
+```
+
+#### Navigational Lists
+
+```html
+<nav class="navigation"> 
+
+    <ul>
+    
+        <li><a href="#">Profile</a></li><!--
+        --><li><a href="#">Settings</a></li><!--
+        --><li><a href="#">Notifications</a></li><!--
+        --><li><a href="#">Logout</a></li>
+    
+    </ul>
+
+</nav>
+```
+
+```css
+.navigation ul {
+  font: bold 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.navigation li {
+  display: inline-block;
+}
+
+.navigation a {
+  background: #395870;
+  background: linear-gradient(#49708f, #293f50);
+  border-right: 1px solid rgba(0, 0, 0, .3);
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  background: #314b60;
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, .3);
+}
+
+.navigation li:first-child a {
+  border-radius: 4px 0 0 4px;
+}
+
+.navigation li:last-child a {
+  border-right: 0;
+  border-radius: 0 4px 4px 0;
 }
 ```
 

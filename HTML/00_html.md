@@ -12,6 +12,8 @@
 
 [Bullet List](#bullet_list)
 
+[Description List](#description_list)
+
 [Division (div)](#division)
 
 [Document Type](#document_type)
@@ -147,6 +149,24 @@ Use the strong tag to set font to be bold.
         </ul>
     <li></li>
 </ul>
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="description_list"></a> Description List
+Description lists are used to outline multiple terms and their descriptions.
+
+  - glossaries would be a good use of this list type
+
+```html
+<dl>
+    <dt>term</dt>
+    <dd>definition of the term</dd>
+    <dt>next term</dt>
+    <dd>definition of the next term</dd>
+</dl>
 ```
 
 [Table of Contents](#toc)
@@ -478,15 +498,18 @@ The nav element identifies a section of major navigational links on a page.
 
   - ol: ordered list
   - li: list item
+  - **start** attribute defines what number to begin the list
+  - **reversed** attribute reverses the order
+  - **value** attribute on a item will change the assigned number
 
 ```html
-<ol>
-    <li></ li>
-    <li></ li>
+<ol reversed start="30">
+    <li></li>
+    <li></li>
         <ol>
-            <li></ li>
-        </ ol>
-    <li></ li>
+            <li value="9"></li>
+        </ol>
+    <li></li>
 <ol>
 ```
 
