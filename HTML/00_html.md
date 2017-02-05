@@ -28,7 +28,7 @@
 
 [Head Section](#head_section)
 
-[header](#header)
+[Header](#header)
 
 [Headings](#headings)
 
@@ -371,38 +371,43 @@ and should not be used to make text bold or big.
 
 ### <a name="images"></a> Images
 
+  - include the **alt** attribute to describe the content of the image.
+    - if the image does not load properly the alt text will be displayed.
+
   - For a locally stored image:
   
 ```html
-img src="images/picture.png"/>
+<img src="images/picture.png" alt="this text describes the image">
 ```
 
   - For an image that is loaded from another location on the internet.
   
 ```html
-<img src="url_of_image_file"/>
+<img src="url_of_image_file">
 ```
 
   - To set the width of an image in pixels.
     - Note: Aspect ratio will be maintained.
     - 100 is about right for a thumbnail
+    - **this can also be done with CSS and the CSS properties will take 
+    precedence over the HTML**
 
 ```html
-img src="images/picture.png" width="100"/>
+<img src="images/picture.png" width="100">
 ```
 
   - To set the height of an image in pixels.
     - Note: Aspect ratio will be maintained.
 
 ```html
-<img src="images/picture.png" height="100"/>
+<img src="images/picture.png" height="100">
 ```
 
   - To set the height and width of an image in pixels.
     - Note: Aspect ratio will **not** be maintained.
 
 ```html
-<img src="images/picture.png" height="500" width="100"/>
+<img src="images/picture.png" height="500" width="100">
 ```
 
 [Table of Contents](#toc)

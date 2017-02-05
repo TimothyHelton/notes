@@ -32,6 +32,8 @@
 
 [ID](#id)
 
+[Images](#images)
+
 [Lengths](#lengths)
 
 [Letter Spacing](#letter_spacing)
@@ -653,6 +655,54 @@ HTML File
 <body>
     <p id="green">This is large and green text.</p>
 </body>
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="images"></a> Images
+
+#### Size
+
+  - setting only height **or** width will result in the image maintaining 
+  it's aspect ratio.
+  - when both height **and** width are set the the aspect ratio will be 
+  altered
+
+```css
+img {
+    height: 200px;
+    width: 200px;
+}
+```
+
+#### Position
+
+  - by default the image element is displayed **inline**
+
+##### Block Display
+
+  - this will give the image it's own line
+
+```css
+img {
+    display: block;
+}
+```
+
+##### Float Display
+
+  - this will allow the text to be placed around an image
+
+```css
+img {
+    background: #eaeaed;
+    border: 1px solid #9799a7;
+    float: right;
+    margin: 8px 0 0 20px;
+    padding: 4px;
+}
 ```
 
 [Table of Contents](#toc)
