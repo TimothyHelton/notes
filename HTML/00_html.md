@@ -766,21 +766,59 @@ within a block-level element.
 
 ### <a name="tables"></a> Tables
 
-  - may be used for tables
-  - may also be used for layout design
+  - may be used for tabular data
+  - may also be used for layout design **but this should be discouraged**
+    - use CSS for layout design
+  - **th**: table header
+    - **scope** property designates if the header is for a row or column
+  - **tr**: table row element
+  - **td**: table data element
+  - **caption** caption element
+    - must come immediately after the opening table tag
+  - **thead**: element used to denote the table header
+  - **tbody**: element used to denote the table body
+  - **tfoot**: element used to denote the table footer
+  - **colspan**: span a single cell across multiple columns
+  - **rowspan**: span a single cell across multiple rows
 
 ```html
 <table>
-    <tr>
-        <th>Col0</th>
-        <th>Col1</th>
-        <th>Col2</th>
-    </tr>
-    <tr>
-        <td>value0</td>
-        <td>value1</td>
-        <td>value2</td>
-    </tr>
+    <caption>Caption of Table</caption>
+    
+    <thead>
+        <tr>
+            <th scope="col">col_header1</th>
+            <th scope="col">col_header2</th>
+            <th scope="col">col_header3</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr>
+            <td>value0</td>
+            <td>value1</td>
+            <td>value2</td>
+        </tr>
+        <tr>
+            <td>The next column is empty</td>
+            <td></td>
+            <td>value2</td>
+        </tr>
+
+        <tr>
+            <td colspan="2">This cell spans two columns</td>
+            <td>value2</td>
+        </tr>
+    </tbody>
+    
+    <tfoot>
+        <tr>
+            <td>summary1</td>        
+            <td>summary2</td>        
+            <td>summary3</td>        
+        </tr>
+    </tfoot>
+    
 </table>
 ```
 

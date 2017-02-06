@@ -50,6 +50,8 @@
 
 [Positioning Elements](#positioning_elems)
 
+[Tables](#tables)
+
 [Text Alignment](#text_alignment)
 
 [Text Decoration](#text_decoration)
@@ -1025,6 +1027,120 @@ the page.
 #### Absolute Positioning
 Absolute positioned elements are located with respect to the closest 
 relatively positioned parent element.
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="tables"></a> Tables
+Borders around table elements will begin to stack up on each other by default.
+
+  - if a 2px border is around the table and a 2px border is around each cell
+   then there would be a **4px border around every cell in the table**
+  - to prevent this stacking use the **border-collapse** property
+  - to add space between the cell boxes use the **border-spacing** property
+    - this does not look very clean
+    - this only works when the **border-collapse** property is set 
+    to **separate**
+    - first value is horizontal spacing
+    - second value is vertical spacing
+
+```css
+table {
+    border-collapse: separate;
+    border-spacing: 2px 4px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #000;
+}
+
+th,
+td {
+    padding: 10px 15px;
+}
+```
+
+#### Only add boarders to Rows
+
+  - **border-collapse** property must be set to **collapse**
+  - add a bottom border to each table cell
+  - for the last cell define **:last-child** for the last <tr> and do not 
+  set the bottom border
+  
+```css
+table {
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border-bottom: 1px solid #000;
+}
+
+tfoot tr:last-child td {
+    border-bottom: 0;
+}
+```
+
+#### Add Striping
+
+  - use the **:nth-child** pseudo-class selector
+  - the **border-collapse** set to separate and **border-spacing** set to 0 
+  to make the body and foot of the table wider than the head
+  - the previous complication makes the data cells only need a border on the
+   bottom and right
+
+```css
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th,
+td {
+    padding: 10px 15px;
+}
+
+thead {
+    background: #395870;
+    color: #fff
+}
+
+tbody tr:nth-child(even) {
+    background: #f0f0f2;
+}
+
+td {
+    border-bottom: 1px solid #cecfd5;
+    border-right: 1px solid #cecfd5;
+}
+
+td:first-child {
+    border-left: 1px solid #cecfd5;
+}
+```
+
+#### Aligning Text
+
+  - horizontal alignment is accomplished with the **text-align** property
+  - vertical alignment is accomplished with the **vertical-align** property
+    - top
+    - middle
+    - bottom
+    
+```css
+td {
+    padding: 10px 15px;
+    vertical-align: middle;
+}
+
+th:first-child {
+    text-align:left;
+}
+```
 
 [Table of Contents](#toc)
 
