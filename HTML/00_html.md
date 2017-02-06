@@ -18,6 +18,8 @@
 
 [Bullet List](#bullet_list)
 
+[Button](#button)
+
 [Description List](#description_list)
 
 [Division (div)](#division)
@@ -47,6 +49,8 @@
 [Inline Frames](#iframe)
 
 [Italics](#italics)
+
+[Labels](#labels)
 
 [Links](#links)
 
@@ -210,6 +214,20 @@ Use the strong tag to set font to be bold.
 
 ---
 
+### <a name="button"></a> Button
+Performs the same way as form input with type="submit", but is able to wrap 
+other tags.
+
+```html
+<button name="submit_button">
+    <strong>Send Us</strong> a Message
+</button>
+```
+
+[Table of Contents](#toc)
+
+---
+
 ### <a name="description_list"></a> Description List
 Description lists are used to outline multiple terms and their descriptions.
 
@@ -254,8 +272,11 @@ This is the first line of an HTML file.
 
 ### <a name="drop_down_menu"></a> Drop Down Menu
 
+  - **multiple**: this property will allow multiple selections from the same
+   list, but the list will not be collapsed.
+
 ```html
-<select>
+<select name="list_name" multiple>
     <option>Select From List</option>
     <option>First</option>
     <option>Second</option>
@@ -318,6 +339,27 @@ section, or other segment of a page.
 
 ### <a name="form"></a> Form
 
+- Properties
+  - action: contains a url to which information included within the form 
+  will be sent for processing by the server.
+  - method: the HTTP method browsers should use to submit the form data.
+
+- Types
+
+  - color
+  - data
+  - datetime
+  - email
+  - month
+  - number
+  - range
+  - search
+  - tel
+  - text
+  - time
+  - url
+  - week
+
 #### Input
 
   - type="checkbox"
@@ -343,10 +385,12 @@ section, or other segment of a page.
     - This argument will add a radio button.
     - The name argument will make the group of radio buttons mutually 
     exclusive.
+  - wrapping the radio tag within a **label** tag will make the text of the 
+  radio button activate the button too.
     
 ```html
 <form>
-    <input type="radio" name="group_name" /name="variable_name"> Title
+    <input type="radio" name="group_name"> Title
 </form>
 ```
 
@@ -354,12 +398,19 @@ section, or other segment of a page.
     - If you use the argument value="default text" the user will have to 
     erase the default text before typing. The argument placeholder will show
      up as a hint and will disappear when the user clicks on the form.
-    - If you want the user to enter a large section of text use the textarea
-     tag in a form.
+    - If you want the user to enter a large section of text use the 
+    **textarea** tag in a form.
+    - control the width and height of the textarea using CSS
 
 ```html
 <form>
-    <input type="text" placeholder="default text" /name="variable_name"/>
+    <input type="text" placeholder="default text" name="variable_name">
+</form>
+```
+
+```html
+<form>
+    <textarea name="variable_name">Ghost Words Here</textarea>
 </form>
 ```
 
@@ -371,8 +422,59 @@ section, or other segment of a page.
 
 ```html
 <form>
-    <input type="submit" value="Text on Button"/>
+    <input type="submit" name="submit_name" value="Text on Button"/>
 </form>
+```
+
+  - type="hidden"
+    - pass data to the server without displaying it to the users.
+    - **DO NOT USE THIS FOR SENSITIVE OR SECURE INFORMATION**
+
+```html
+<input type="hidden" name="tracking-code" value="abc-123">
+```
+
+  - type="file"
+    - allow users to add files to a form
+    - use JavaScript to set the style of these elements
+
+```html
+<form>
+    <input type="file" name="file">
+</form>
+```
+
+#### Fieldset
+This tag is used to group related sections of a form.
+
+  - the property **disabled** will prevent any of the input from being sent 
+  to the server.
+  - the legend tag provides a heading for the fieldset
+  
+```html
+<fieldset>
+
+    <legend>Login</legend>
+
+    <label> Username
+        <input type="text" name="username">
+    </label>
+    
+    <label> Password
+        <input type="text" name="password">
+    </label>
+
+</fieldset>
+```
+
+#### Required Fields
+If there is a required field apply the property **required** and an error 
+will be raised if the field is empty.
+
+```html
+<label> Email Address
+    <input type="email" name="email-address" required>
+</label>
 ```
 
 [Table of Contents](#toc)
@@ -500,6 +602,19 @@ and should not be used to make text bold or big.
 
 ```html
 <p><em>Italics text</em><p>
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="labels"></a> Labels
+Allows users to click on the label of a input instead of the input by itself.
+
+```html
+<label>Username
+    <input type="text" name="username">
+</label>
 ```
 
 [Table of Contents](#toc)

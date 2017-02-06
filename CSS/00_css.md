@@ -28,7 +28,9 @@
 
 [Float](#float)
 
-[gradient_background](#gradient_background)
+[Forms](#forms)
+
+[Gradient Background](#gradient_background)
 
 [ID](#id)
 
@@ -595,6 +597,15 @@ aside {
 
 <footer></footer>
 ```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="forms"></a> Forms
+
+  - **optional**: if the input is optional
+  - **required**: if the input is required
 
 [Table of Contents](#toc)
 
