@@ -42,6 +42,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
 %matplotlib inline
 ```
 
@@ -79,6 +81,9 @@ Use this method to add two data frames together
 
   - use the **fill_value=0** argument to replace NaN with 0
 
+#### astype
+Change the view data type of a column. 
+
 #### combine_first
 Replace null values in the first DataFrame with values from the second 
 DateFrame.
@@ -101,6 +106,8 @@ List the column names
 #### concat
 Combine DataFrames
 
+  - if the axis argument is set to 1 the data frames will be combined as 
+  columns. 
 ```
 pd.concat([df_1, df_2], ignore_index=True)
 ```
@@ -112,6 +119,14 @@ Returns a cumulative sum for each column
 
 #### columns.names
 *list* Add column header names to displayed output
+
+#### count
+Counts the number of times a field is found. This method works well in 
+conjunction with the groupby method.
+
+```python
+data.groupby(data.field).count()
+```
 
 #### corr
 Return the correlation of the data columns.
@@ -185,7 +200,14 @@ fills all the null values with the given value.
   - If a **dictionary** is passed to fillna it is possible to assign 
   different fill values based on column.
   - argument **inplace=True** will permanently alter the original DataFrame.
-  
+
+#### groupby
+replaces the index by a given column
+
+```python
+data.groupby(data.new_field)
+```
+
 #### head
 Returns the first n rows
 
@@ -210,6 +232,18 @@ Returns the row data (handle.ix[3])
   - **If additional rows and columns are added using this command it will 
   hae the same effect as calling reindex.**
 
+#### loc
+Used to find or replace values in place.
+
+```python
+data.loc[rows, columns]
+
+# All rows one column
+data.loc[:, column]
+
+# All rows with a column value of '-'
+data.loc[column == '-', 'column'] = None
+```
 #### map
 Allows columns to be added to a DataFrame and the values to be matched to 
 another column instead of the index.
@@ -219,6 +253,9 @@ Find the maximum value of each column
 
   - to find the maximum value for the rows enter the argument axis=1
   
+#### median
+Return the median value
+
 #### merge
 
   - combines two data frames common elements
@@ -505,6 +542,9 @@ Will sort the series based on index when no arguments are provided.
 
 #### sort_values
 Will sort the series based on value when no arguments are provided.
+
+#### to_frame
+Method will turn Series into a DataFrame.
 
 #### unique
 Returns the unique values of a series.

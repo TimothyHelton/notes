@@ -14,6 +14,8 @@
 
 [Combining Plot Styles](#combining_plot_styles)
 
+[Context Manager](#context_manager)
+
 [Correlation Plot](#correlation_plot)
 
 [Heatmaps](#heatmaps)
@@ -127,6 +129,18 @@ sns.distplot(dataset, bins=25, rug=True,
              kde_kws={'color': 'indianred', 'label': 'KDE'},
              hist_kws={'color': 'blue', 'label': 'HIST'},
              rug_kws={'color': 'green', 'label': 'RUG'})
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="context_manager"></a> Context Manager
+Set plot properties only for a single plot.
+
+```python
+with sns.plotting_context(font_scale=1.5):
+    sns.factorplot(x, y ...)
 ```
 
 [Table of Contents](#toc)
