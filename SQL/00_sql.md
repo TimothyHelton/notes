@@ -1,7 +1,6 @@
-# HyperText Markup Language (HTML)
+# Structured Query Language (SQL)
 
 ### <a name="toc"></a>Table of Contents
-
 
 [Introduction](#introduction)
 
