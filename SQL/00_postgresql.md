@@ -265,6 +265,7 @@ SELECT FROM table_name WHERE col1 LIKE 'H%';
 
 ### <a name="schemas"></a> Schemas
 Schemas are like namespaces
+  - Sets the data types for each column
   - Allow many users to operate on one database without interfering with 
   each other.
   - Organize the database objects into logical groups.
@@ -326,8 +327,13 @@ root $ service postgresql stop
 ### <a name="tables"></a> Tables
 
 #### Add Record to Table
+  - If there is an entry for every column than the tuple defining the 
+  columns can be removed.
+    - By always including the column line the statement if more robust if 
+    the schema is updated to add more columns.
 ```postgresql
-INSERT INTO table_name (col1, col2, col3)
+INSERT INTO table_name
+(col1, col2, col3)
 VALUES (val1, val2, val3); 
 ```
 
@@ -347,13 +353,15 @@ SELECT fields FROM table_name WHERE condition GROUP BY fields ORDER BY fields;
 
 #### Delete Records
   - Delete all records
+  
 ```postgresql
 DELETE FROM table_name;
 ```
 
   - Delete subset of records
 ```postgresql
-DELETE FROM table_name WHERE condition;
+DELETE FROM table_name
+WHERE condition;
 ```
 
 #### Delete Table
@@ -412,8 +420,14 @@ SELECT DISTINCT fields FROM table_name WHERE conditions;
 ```
 
 #### Update Record
+  - IF YOU LEAVE OFF THE **WHERE** CLAUSE ALL ROWS WILL BE CHANGED!!!
+
 ```postgresql
-UPDATE table_name SET col1=val1, col2=val2 WHERE condition;
+UPDATE table_name
+SET
+    col1=val1,
+    col2=val2,
+WHERE condition;
 ```
 
 #### Where Like Call on Data
