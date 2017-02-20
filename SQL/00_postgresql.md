@@ -2,6 +2,7 @@
 
 ### <a name="toc"></a>Table of Contents
 
+[Aggregates](#aggregates)
 
 [Background](#background)
 
@@ -11,6 +12,10 @@
 
 [Help](#help)
 
+[Multiple Tables](#multiple_tables)
+
+[Null Values](#null_values)
+
 [Operators](#operators)
 
 [Schemas](#schemas)
@@ -18,6 +23,33 @@
 [Servers](#servers)
 
 [Tables](#tables)
+
+---
+
+### <a name="aggregates"></a> Aggregates
+Aggregates summarize a information about a group of rows.
+  
+  - assign aliases to the aggregate functions
+  - without grouping the function will be run over the whole set
+
+```postgresql
+SELECT agg_func(col_or_expression) AS aggregate_descript
+FROM table_name
+WHERE constraint_expression;
+```
+
+#### Aggregate Across Columns
+
+  - to perform aggregate functions across columns add the **GROUP BY** keyword
+
+```postgresql
+SELECT agg_func(col_or_expression) AS aggregate_dexcript
+FROM table_name
+WHERE constraint_expression
+GROUP BY col;
+```
+
+[Table of Contents](#toc)
 
 ---
 
@@ -101,11 +133,22 @@ $ dropdb -h localhost -p 5432 -U postgres database_name
 ---
 
 ### <a name="expressions"></a> Expressions 
+Expressions allow the use to operators on a query. It is good practice to 
+always use an alias to name the expression with the **AS** keyword.
 
-  - ADDITION
-  - AVG()
-  - COUNT()
-  - SUM()
+| Expression | Meaning |
+| ---------- | ------- |
+| ADDITION() | add the group |
+| AVG() | group average |
+| COUNT() | count the number of rows in the group |
+| MAX() | find group maximum |
+| MIN() | find group minimum |
+| SUM() | sum the group |
+  
+```postgresql
+SELECT SUM(col1) as summation
+FROM table_name;
+```
 
 [Table of Contents](#toc)
 
@@ -123,6 +166,61 @@ $ dropdb -h localhost -p 5432 -U postgres database_name
 
 ```postgresql
 \help command_name;
+```
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="multiple_tables"></a> Multiple Tables
+
+
+#### FULL JOIN
+Includes all rows from both tables regardless if there is a matching key 
+between them.
+
+#### INNER JOIN
+Use this process to match values from one table to the other as defined by 
+the ON constraint.
+
+  - **JOIN** is the same as **INNER JOIN**
+    - use INNER JOIN for clarity
+
+```postgresql
+SELECT col_1, another_table_col
+FROM table_name
+INNER JOIN another_table_name
+    ON table_name.id = another_table_name.id
+WHERE conditions
+ORDER BY col ASC 
+LIMIT n OFFSET offset_n;
+```
+
+#### LEFT JOIN
+Includes all rows from the first table and key matching rows from the second 
+table.
+
+#### RIGHT JOIN
+Includes all rows from the second table and key matching rows from the first
+table.
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="null_values"></a> Null Values
+
+  - Avoid null entries in a database if possible
+    - Null entries require special attention for queries
+  - It is better to assign a null value like "0"
+  - If assigning a null value will alter future calculations then it may be 
+  best to use the null entry
+  - Test for NULL entries using **IS NULL** or **IS NOT NULL**
+  
+```postgresql
+SELECT col_1, col_2
+FROM table_name
+WHERE col_1 IS NOT NULL;
 ```
 
 [Table of Contents](#toc)
@@ -149,9 +247,12 @@ $ dropdb -h localhost -p 5432 -U postgres database_name
 | >= | greater than or equal |
 | <= | less than or equal |
 | AND | logical and |
+| IN | string exists in list |
+| NOT IN | opposite of IN |
+| LIKE | used for wildcard searches; **%** used for zero, one or multiple numbers of characters wildcard; **_** used for single character wild card |
+| NOT LIKE | opposite of LIKE |
 | NOT | logical not |
 | OR | logical or |
-| LIKE | used for wildcard searches; **%** used for zero, one or multiple numbers of characters wildcard; **_** used for single character wild card |
 
 #### LIKE Example
 ```postgresql
@@ -291,10 +392,10 @@ SELECT col1, col2 FROM table_name LIMIT #_rows;
 
   - The **OFFSET** statement will shift the returned limit if desired.
 ```postgresql
-SELECT col1, col2 FROM table_name LIMIT #_rows OFFSET #;
+SELECT col1, col2 FROM table_name LIMIT #_rows OFFSET n;
 ```
 
-#### Sort Values
+##### Sort Values
 
 | Sort Command | Action |
 | ------------ | ------ |
@@ -305,7 +406,7 @@ SELECT col1, col2 FROM table_name LIMIT #_rows OFFSET #;
 SELECT * FROM table_name ORDER BY col_1, col2 ASC;
 ```
 
-#### Unique Items From a Field
+##### Unique Items From a Field
 ```postgresql
 SELECT DISTINCT fields FROM table_name WHERE conditions;
 ```
@@ -316,9 +417,14 @@ UPDATE table_name SET col1=val1, col2=val2 WHERE condition;
 ```
 
 #### Where Like Call on Data
+
+  - **HAVING** allows a where like clause for the **GROUP BY** keyword
+  
 ```postgresql
-SELECT fields from table_name
-WHERE conditions GROUP BY fields HAVING conditions ORDER BY fields;
+SELECT fields FROM table_name
+WHERE conditions
+GROUP BY fields HAVING conditions
+ORDER BY fields;
 ```
 
 [Table of Contents](#toc)

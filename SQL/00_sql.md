@@ -8,6 +8,8 @@
 
 [Key Types](#key_types)
 
+[Order of Operations](#order_of_operations)
+
 [Programming Roles](#programming_roles)
 
 [Tables](#tables)
@@ -15,6 +17,8 @@
 ---
 
 ### <a name="introduction"></a> Introduction
+
+  - RDBMS: Relational Database Management Systems
 
 #### SQL: Structured Query Language
 Standardized language used to issue commands to a database.
@@ -67,6 +71,35 @@ Standardized language used to issue commands to a database.
   - Composite
     - The values of the entire row are the key
     
+[Table of Contents](#toc)
+
+---
+
+### <a name="order_of_operations"></a> Order of Operations
+
+  1. **FROM** and **JOIN**
+  1. **WHERE**
+    1. aliases in the **SELECT** section are not available here
+  1. **GROUP BY**
+  1. **HAVING**
+  1. **AS** aliases in the **SELECT** section
+  1. **DISTINCT**
+  1. **ORDER BY**
+  1. **LIMIT** and **OFFSET**
+
+```sql
+SELECT DISTINCT col, AGG_FUNC(column_or_expression),
+FROM table_name
+    JOIN another_table_name
+      ON table_name.column = another_table_name.column
+    WHERE constraint_expression
+    GROUP BY col
+    HAVING constraint_expression
+    ORDER BY col ASC/DESC
+    LIMIT n OFFSET COUNT;
+```
+
+
 [Table of Contents](#toc)
 
 ---
