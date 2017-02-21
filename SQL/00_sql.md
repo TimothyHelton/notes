@@ -6,6 +6,8 @@
 
 [CRUD Model](#crud_model)
 
+[Data Types](#data_types)
+
 [Key Types](#key_types)
 
 [Order of Operations](#order_of_operations)
@@ -52,6 +54,20 @@ Standardized language used to issue commands to a database.
   - Retrieve Data
   - Update Data
   - Delete Data
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="data_types"></a> Data Types
+
+| Data Type | Description |
+| --------- | ----------- |
+| INTEGER, BOOLEAN | whole integer values (0 or 1 for boolean) |
+| FLOAT, DOUBLE, REAL | decimal numbers or various precision |
+| CHARACTER(num_chars), VARCHAR(num_chars), TEXT | string types |
+| DATE, DATETIME | dates and times |
+| BLOB | binary data with metadata to perform queries |
 
 [Table of Contents](#toc)
 

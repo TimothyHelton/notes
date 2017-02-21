@@ -337,14 +337,42 @@ INSERT INTO table_name
 VALUES (val1, val2, val3); 
 ```
 
-#### Create Table
+#### Alter Tables
+  - must list existing columns and any new columns
+  - **FIRST** and **AFTER** keywords exist in some databases
+  - **RENAME TO** will rename the table
+
 ```postgresql
-CREATE TABLE table_name (
-    col_1 datatype,
-    col_2 datatype,
+ALTER TABLE table_name
+ADD col data_type constraint DEFAULT default_value;
+```
+
+```postgresql
+ALTER TABLE table_name
+RENAME TO new_table_name;
+```
+
+#### Create Table
+  - The **IF NOT EXISTS** clause will skip the table creation if a table 
+  with the same name exists.
+
+```postgresql
+CREATE TABLE IF NOT EXISTS table_name (
+    col_1 datatype constraint DEFAULT default_value,
+    col_2 datatype constraint DEFAULT default_value,
     PRIMARY KEY ( one_or_more_cols )
 );
 ```
+
+##### Constraints
+
+| Constraint | Description |
+| PRIMARY KEY | values in this column are unique and identify a single row |
+| AUTOINCREMENT | integer value that is automatically filled in and incremented with each row insertion |
+| UNIQUE | values of this column must be unique, but do not have to be a key |
+| NOT NULL | inserted value cannot be NULL |
+| CHECK(expression) | perform a check on the input defined by the expression |
+| FOREIGN KEY | checks that each value in this column corresponds to a column in another table | 
 
 #### Combine Records with Identical Fields
 ```postgresql
@@ -365,8 +393,11 @@ WHERE condition;
 ```
 
 #### Delete Table
+  - if a dependent table exists (**FOREIGN KEY**) then it must be updated 
+  **prior** to deleting the parent table.
+  
 ```postgresql
-DROP TABLE table_name;
+DROP TABLE IF EXISTS table_name;
 ```
 
 #### Display Tables
