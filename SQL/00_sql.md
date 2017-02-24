@@ -4,15 +4,21 @@
 
 [Introduction](#introduction)
 
+[Comments](#comments)
+
 [CRUD Model](#crud_model)
 
 [Data Types](#data_types)
+
+[If Then](#if_then)
 
 [Key Types](#key_types)
 
 [Order of Operations](#order_of_operations)
 
 [Programming Roles](#programming_roles)
+
+[Style](#style)
 
 [Tables](#tables)
 
@@ -46,6 +52,25 @@ Standardized language used to issue commands to a database.
 ![alt text](relational_database.png)
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="comments"></a> Comments
+
+  - single line comments are denoted by two hyphens "--"
+  - multi line comments follow C language convention "/* */"
+  
+```sql
+-- This is a single line comment
+/* This
+is a 
+multi line
+comment*/
+```
+
+[Table of Contents](#toc)
+
+
 ---
 
 ### <a name="crud_model"></a> CRUD Model
@@ -70,6 +95,28 @@ Standardized language used to issue commands to a database.
 | BLOB | binary data with metadata to perform queries |
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="if_then"></a> If Then
+
+```sql
+SELECT
+    CASE
+        WHEN condition_1
+            THEN action_1
+        WHEN condition_2
+            THEN action_2
+        ELSE action_3
+    END AS group_alias,
+    COUNT(*) count_alias
+FROM table_name
+GROUP BY group_alias
+ORDER BY group_alias;
+```
+
+[Table of Contents](#toc)
+
 
 ---
 
@@ -127,6 +174,22 @@ FROM table_name
     application.
   - Database Administrator
     - Monitors and adjusts the database as the program runs in production.
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="style"></a> Style
+
+  - all column names will be **lowercase** unless placed between double quotes
+  - to have column names with spaces use double quotes
+    - it's best to avoid the use of double quotes and call the **AS** clause
+     to format the titles
+
+#### Quotes
+
+  - Double quotes (" ") are used for table or column names
+  - Single quotes (' ') are used for strings
 
 [Table of Contents](#toc)
 

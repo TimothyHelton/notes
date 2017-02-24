@@ -12,6 +12,8 @@
 
 [Help](#help)
 
+[If Then](#if_then)
+
 [Multiple Tables](#multiple_tables)
 
 [Null Values](#null_values)
@@ -139,11 +141,11 @@ always use an alias to name the expression with the **AS** keyword.
 | Expression | Meaning |
 | ---------- | ------- |
 | ADDITION() | add the group |
-| AVG() | group average |
+| AVG() | group average (can only be used on numbers) |
 | COUNT() | count the number of rows in the group |
 | MAX() | find group maximum |
 | MIN() | find group minimum |
-| SUM() | sum the group |
+| SUM() | sum the group (can only be used on numbers) |
   
 ```postgresql
 SELECT SUM(col1) as summation
@@ -167,6 +169,21 @@ FROM table_name;
 ```postgresql
 \help command_name;
 ```
+
+---
+
+### <a name="if_thn"></a> If Then
+
+```postgresql
+SELECT col_1, col_2
+    IF boolean_expression THEN
+        statements
+    END IF
+FROM table;
+```
+
+[Table of Contents](#toc)
+
 
 [Table of Contents](#toc)
 
@@ -229,6 +246,10 @@ WHERE col_1 IS NOT NULL;
 
 ### <a name="operators"></a> Operators
 
+  - The arithmetic operators are only valid across a single row.
+    - To perform math across rows use the aggregate functions.
+  - Columns that contain arithmetic function are called "**derived columns**"
+
 | Operator | Meaning |
 | -------- | ------- |
 | + | addition |
@@ -249,6 +270,7 @@ WHERE col_1 IS NOT NULL;
 | AND | logical and |
 | IN | string exists in list |
 | NOT IN | opposite of IN |
+| ILIKE | case insensitive version of LIKE |
 | LIKE | used for wildcard searches; **%** used for zero, one or multiple numbers of characters wildcard; **_** used for single character wild card |
 | NOT LIKE | opposite of LIKE |
 | NOT | logical not |
@@ -446,6 +468,8 @@ SELECT * FROM table_name ORDER BY col_1, col2 ASC;
 ```
 
 ##### Unique Items From a Field
+  - NOTE: **This argument slows the search down considerably.**
+
 ```postgresql
 SELECT DISTINCT fields FROM table_name WHERE conditions;
 ```
