@@ -10,6 +10,12 @@
 
 [Linear Regression](#linear_regression)
 
+[Mean](#mean)
+
+[Median](#median)
+
+[Mode](#mode)
+
 ---
 
 ### <a name="definitions"></a> Definitions
@@ -91,5 +97,32 @@ If the following relationship is true then causation exists.
   future samples would be the mean value of the data.
   - **residuals** or **error** is the measure between individual data points
   to the best fit model.
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="mean"></a> Mean 
+- Average of a population
+  - sum / number of samples
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="median"></a> Median
+- Sort all the values and select the midpoint
+- If there is an even number of values then average the two located at the 
+midpoint
+- **Median is less susceptible to outliers than the mean**
+  - whenever you present a mean value also show the median
+
+[Table of Contents](#toc)
+
+---
+
+### <a name="mode"></a> Mode
+- most common value in a data set
+  - not relevant to continuous numerical data
 
 [Table of Contents](#toc)
