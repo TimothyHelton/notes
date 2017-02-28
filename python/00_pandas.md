@@ -293,6 +293,32 @@ Uses matplotlib to plot each column of the data frame.
   - to see the graph call **plt.show()**
   - if using Jupyter notebooks call **%matplotlib inline**
 
+##### Histograms
+
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+
+ser_name = pd.Series(data)
+
+
+fig = plt.figure('Window Title', figsize=(12, 9), 
+                 facecolor='white', edgecolor='black')
+ax = plt.subplot2grid((1, 1), (0, 0))
+
+ser_name.plot(kind='hist', alpha=0.5, ax=ax, bins=50, edgecolor='black',
+              label='_nolegend_')
+ax.axvline(ser_name.mean(), color='crimson', label='Mean', linestyle='--')
+ax.axvline(ser_name.median(), color='darkblue', label='Median', linestyle='-.')
+
+plt.title('title', fontsize=24)
+plt.xlabel('x label', fontsize=14)
+plt.ylabel('y label', fontsize=14)
+plt.legend(fontsize=14)
+plt.show()
+```
+
+
 #### reindex
 Allows rows or columns to be reindexed
 

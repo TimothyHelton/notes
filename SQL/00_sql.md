@@ -89,10 +89,19 @@ comment*/
 | Data Type | Description |
 | --------- | ----------- |
 | INTEGER, BOOLEAN | whole integer values (0 or 1 for boolean) |
-| FLOAT, DOUBLE, REAL | decimal numbers or various precision |
+| FLOAT, DOUBLE PRECISION, REAL | decimal numbers or various precision |
 | CHARACTER(num_chars), VARCHAR(num_chars), TEXT | string types |
 | DATE, DATETIME | dates and times |
 | BLOB | binary data with metadata to perform queries |
+
+#### Alter Data Type
+```sql
+CAST(col_1 AS new_type)
+```
+
+```sql
+col_1::new_type
+```
 
 [Table of Contents](#toc)
 
