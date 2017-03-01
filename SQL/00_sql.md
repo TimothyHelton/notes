@@ -4,6 +4,8 @@
 
 [Introduction](#introduction)
 
+[Cleaning Data](#cleaning_data)
+
 [Comments](#comments)
 
 [CRUD Model](#crud_model)
@@ -52,6 +54,83 @@ Standardized language used to issue commands to a database.
 ![alt text](relational_database.png)
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="cleaning_data"></a> Cleaning Data
+
+#### Concatenate
+- combine strings from several columns
+- alternative syntax is to use double pipes ||
+
+```sql
+SELECT CONCAT(col_1, ', ', col_2) AS alias_name
+FROM table_name;
+```
+
+```sql
+SELECT con_1 || ', ' || col_2 AS alias_name
+FROM table_name;
+```
+
+#### Left
+- return n characters from the left side of a string
+
+```sql
+SELECT LEFT(col_3, n_characters) AS alias_name
+FROM table_name;
+```
+
+#### Length
+- return the length of a string
+
+```sql
+SELECT RIGHT(col_1, LENGTH(col_1 - 10)) AS alias_name
+FROM table_name;
+```
+
+#### Position
+- return the index of a character in a string
+- **STRPOS** will do the same exact thing
+- **BOTH METHODS ARE CASE SENSITIVE**
+  - use the UPPER or LOWER function to search regardless of case
+
+```sql
+SELECT POSITION('character' IN col_1) AS alias_name
+FROM table_name;
+```
+
+```sql
+SELECT STRPOS(col_1, 'character') AS alias_name
+FROM table_name;
+```
+
+#### Right
+- return n characters from the right side of a string
+
+```sql
+SELECT RIGHT(col_1, n_characters) AS alias_name
+FROM table_name;
+```
+
+#### Substring
+- SUBSTRING works like LEFT or RIGHT, but searches in the middle of a string
+
+```sql
+SELECT SUBSTRING(col_1, start_idx, n_characters) AS alias_name
+FROM table_name;
+```
+
+#### Trim
+- remove characters from the **RIGHT**, **LEFT** or **BOTH** sides of a string
+
+```sql
+SELECT TRIM(BOTH '9()' FROM col_1)
+FROM table_name;
+```
+
+[Table of Contents](#toc)
+
 
 ---
 
