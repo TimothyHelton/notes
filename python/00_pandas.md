@@ -298,23 +298,35 @@ Uses matplotlib to plot each column of the data frame.
 ```python
 import matplotlib.pyplot as plt
 import pandas as pd
+import seaborn as sns
 
 ser_name = pd.Series(data)
 
+n_bins = 50
+label_font =14
 
-fig = plt.figure('Window Title', figsize=(12, 9), 
+fig = plt.figure('Window Title', figsize=(10, 5), 
                  facecolor='white', edgecolor='black')
-ax = plt.subplot2grid((1, 1), (0, 0))
+ax1 = plt.subplot2grid((1, 2), (0, 0))
+ax2 = plt.subplot2grid((1, 2), (0, 1))
 
-ser_name.plot(kind='hist', alpha=0.5, ax=ax, bins=50, edgecolor='black',
+ser_name.plot(kind='hist', alpha=0.5, ax=ax1, bins=n_bins, edgecolor='black',
               label='_nolegend_')
-ax.axvline(ser_name.mean(), color='crimson', label='Mean', linestyle='--')
-ax.axvline(ser_name.median(), color='darkblue', label='Median', linestyle='-.')
+ax1.axvline(ser_name.mean(), color='crimson', label='Mean', linestyle='--')
+ax1.axvline(ser_name.median(), color='black', label='Median', linestyle='-.')
+ax1.set_ylabel('Count', fontsize=label_font)
 
-plt.title('title', fontsize=24)
-plt.xlabel('x label', fontsize=14)
-plt.ylabel('y label', fontsize=14)
-plt.legend(fontsize=14)
+sns.distplot(ser_name, ax=ax2, bins=n_bins,
+             hist_kws={'alpha': 0.5, 'edgecolor': 'black'},
+             kde_kws={'color': 'darkblue', 'label': 'KDE'})
+ax2.set_ylabel('Density', fontsize=label_font)
+
+for n in (ax1, ax2):
+    n.set_xlabel('x_label', fontsize=label_font)
+    n.legend(fontsize=label_font)
+
+plt.suptitle('title', fontsize=24, y=1.08)
+plt.tight_layout()
 plt.show()
 ```
 
