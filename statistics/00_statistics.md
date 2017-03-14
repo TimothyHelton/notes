@@ -16,6 +16,10 @@
 
 [Mode](#mode)
 
+[Moments](#moments)
+
+[Percentile](#percentile)
+
 [Probability Density Function](#prob_density_func)
 
 [Standard Deviation](#standard_deviation)
@@ -117,11 +121,13 @@ If the following relationship is true then causation exists.
 ---
 
 ### <a name="median"></a> Median
-- Sort all the values and select the midpoint
-- If there is an even number of values then average the two located at the 
-midpoint
+- Equivalent to the 50th percentile.
 - **Median is less susceptible to outliers than the mean**
   - whenever you present a mean value also show the median
+  
+1. Sort all the values and select the midpoint
+1. If there is an even number of values then average the two located at the 
+midpoint
 
 [Table of Contents](#toc)
 
@@ -132,6 +138,58 @@ midpoint
   - not relevant to continuous numerical data
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="moments"></a> Moments
+- Quantitative measures of the shape of a probability density function.
+
+![alt text](moments.png)
+
+- 1st Moment: Mean
+- 2nd Moment: Variance
+- 3rd Moment: Skew
+  - describes if the data is shifted to one side
+  - data with a longer tail on the left will be skewed left (negative skew)
+- 4th Moment: Kurtosis
+  - describes how thick is  the tail, and how sharp is the peak when compared
+  to a normal distribution
+  - higher peaks have a higher kurtosis
+  
+```python
+import numpy as np
+import scipy as sp
+
+
+arr = np.random.normal(0, 0.5, 1000)
+
+moment_1 = np.mean(arr)
+moment_2 = np.var(arr)
+moment_3 = sp.stats.skew(arr)
+moment_4 = sp.stats.kurtosis(arr)
+```
+
+[Table of Contents](#toc)
+
+
+---
+
+### <a name="percentile"></a> Percentile
+- A value in the X percentile means the value is greater than X% of the 
+total samples.
+
+```python
+import numpy as np
+
+np.percentile(array, desired_percentile)
+```
+
+#### Quartiles
+- The 25%, 50% and 75% percentiles
+- **Inner Quartile Range** is the values between 25% and 75%.
+
+[Table of Contents](#toc)
+
 
 ---
 
