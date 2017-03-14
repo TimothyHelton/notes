@@ -16,6 +16,12 @@
 
 [Mode](#mode)
 
+[Probability Density Function](#prob_density_func)
+
+[Standard Deviation](#standard_deviation)
+
+[Variance](#variance)
+
 ---
 
 ### <a name="definitions"></a> Definitions
@@ -126,3 +132,62 @@ midpoint
   - not relevant to continuous numerical data
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="prob_density_func"></a> Probability Density Function
+- Probably of data point falling within a range of values.
+- If the data is **discrete** then it would be referred to as a 
+**Probability Mass Function**
+  - Histograms are Probability Mass Functions
+
+- Gaussian Distribution
+    - 1 STD: 68.2%
+    - 2 STD: 95.4%
+    - 3 STD: 99.8%
+
+[Table of Contents](#toc)
+
+
+---
+
+### <a name="standard_deviation"></a> Standard Deviation
+- Standard deviation is the square root of the variance.
+- Values outside one standard deviation are considered to be outliers.
+
+```python
+import numpy as np
+
+a = np.array([1, 2, 3, 4, 2, 1])
+std_dev = a.std()
+```
+
+[Table of Contents](#toc)
+
+
+---
+
+### <a name="variance"></a> Variance
+- The average of the squared differences from the mean.
+- Population Variance: ![alt text](population_variance.png)
+- Sample Variance: ![alt text](sample_variance.png)
+
+
+
+1. Find the mean
+1. Find differences from the mean
+1. Square the differences
+1. Average the differences
+    - Population: divide by all N samples
+    - Sampled Data: divide by N - 1
+
+```python
+import numpy as np
+
+a = np.array([1, 4, 5, 4, 8])
+population_variance = a.var()
+sample_variance = a.var(ddof=1)
+```
+
+[Table of Contents](#toc)
+
