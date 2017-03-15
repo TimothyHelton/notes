@@ -35,7 +35,7 @@
   minimum height=\minheight,
   text centered,
   draw=black,
-  fill=orange!20
+  fill=brown!20
   ]
 \tikzstyle{decision} = [% decision: comparison, question or decision
   diamond,
@@ -74,20 +74,25 @@
 \begin{tikzpicture}[node distance=1cm]
 
 %%% Nodes
-\node[terminal] (terminal) {\LARGE Terminal};
-\node[io] (io) [below=of terminal] {\LARGE Input / Output};
-\node[process] (process) [below=of io] {\LARGE Process};
-\node[decision] (decision) [below=of process] {\LARGE Decision};
-\node[junction] (junction) [below=of decision] {\LARGE};
-\node[loop] (loop) [right=of decision] {\LARGE Loop};
+\node[terminal] (terminal) {Terminal};
+\node[io] (io) [below=of terminal] {Input / Output};
+\node[process] (process) [below=of io] {Process};
 
-%%%
+\node[decision] (decision) [below=of process] {Decision};
+\node[text width=1cm] (yes) [above right=1mm of decision.east] {yes};
+\node[text width=1.1cm] (no) [below=1mm of decision.south] {no};
+
+\node[junction] (junction) [below=of decision] {};
+\node[loop] (loop) [right=5cm of decision] {Loop};
+
+
+%%% Arrows
 \draw[arrow] (terminal) -- (io);
 \draw[arrow] (io) -- (process);
 \draw[arrow] (process) -- (decision.north);
 \draw[arrow] (decision.south) -- (junction);
 \draw[arrow] (decision.east) -- (loop.west);
-\draw[arrow] (loop.east) -- +(1, 0) |- (junction.east);
+\draw[arrow] (loop.east) -- ++(1, 0) |- (junction.east);
 \draw[arrow] (process.east) -| (loop.north);
 
 \end{tikzpicture}
