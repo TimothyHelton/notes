@@ -29,11 +29,12 @@
 ---
 
 ### <a name="definitions"></a> Definitions
-
 | Term | Definition |
 | ---- | ---------- |
 | ![alt text](average_population.png)| average value for a population |
 | ![alt text](average_sample.png) | average value for sample |
+| ![alt text](population_variance_symbol.png) | variance of a population |
+| ![alt text](sample_variance_symbol.png) | variance of a sample |
 | N | population size |
 | n | sample size |
 | r | Pearson correlation coefficient |
@@ -53,7 +54,6 @@
 ### <a name="bivariate_relationships"></a>Bivariate Relationships
 
 #### Covariance
-
   - a descriptive measure of the linear association between two variables
   - only describes **direction** not magnitude
   - has no upper or lower boundary
@@ -64,19 +64,28 @@
   would be equal or near zero
   
 ##### Sample Covariance
-
 ![alt text](sample_covariance.png)
 
-##### Population Covariance
+```python
+import numpy as np
 
+np.cov(arr_1, arr_2)
+```
+
+##### Population Covariance
 ![alt text](population_covariance.png)
+
+```python
+import numpy as np
+
+np.cov(arr_1, arr_2, bias=True)
+```
 
 [Table of Contents](#toc)
 
 ---
 
 ### <a name="correlation"></a>Correlation
-
   - Describes the **magnitude** and **direction** of an association
   - Denoted by the lowercase variable r
   - standardized measure of an association (-1 to 1)
@@ -91,8 +100,13 @@
 
 ![alt text](correlation_short.png)
 
-#### Rule of Thumb for Causation
+```python
+import numpy as np
 
+np.corrcoef(arr_1, arr_2)
+```
+
+#### Rule of Thumb for Causation
 If the following relationship is true then causation exists.
 
 ![alt text](causation_rule.png)
@@ -102,7 +116,6 @@ If the following relationship is true then causation exists.
 ---
 
 ### <a name="linear_regression"></a>Linear Regression
-
   - If you only have data for one variable then the best predictor for 
   future samples would be the mean value of the data.
   - **residuals** or **error** is the measure between individual data points
@@ -190,7 +203,6 @@ np.percentile(array, desired_percentile)
 
 [Table of Contents](#toc)
 
-
 ---
 
 ### <a name="prob_density_func"></a> Probability Density Function
@@ -205,7 +217,6 @@ np.percentile(array, desired_percentile)
     - 3 STD: 99.8%
 
 [Table of Contents](#toc)
-
 
 ---
 
@@ -222,15 +233,12 @@ std_dev = a.std()
 
 [Table of Contents](#toc)
 
-
 ---
 
 ### <a name="variance"></a> Variance
 - The average of the squared differences from the mean.
 - Population Variance: ![alt text](population_variance.png)
 - Sample Variance: ![alt text](sample_variance.png)
-
-
 
 1. Find the mean
 1. Find differences from the mean
