@@ -120,7 +120,19 @@ If the following relationship is true then causation exists.
   future samples would be the mean value of the data.
   - **residuals** or **error** is the measure between individual data points
   to the best fit model.
+  - Also referred to as **Maximum Likelihood Estimation**
+  - For 3D surfaces use **Gradient Decent**
 
+#### Coefficient of Determination (R-Squared)
+  - The fraction of the total variation in Y that is captured by the 
+  regression model.
+  - Way to quantify how well the regression model matches the data.
+    - value of 1 would be perfect
+
+![alt text](r_squared_descriptive.png)
+
+![alt text](r_squared.png)
+  
 [Table of Contents](#toc)
 
 ---
