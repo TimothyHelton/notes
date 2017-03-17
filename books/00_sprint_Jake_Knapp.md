@@ -81,4 +81,51 @@ all week.
   - This will allow you to look at the results on Friday and answer these 
   questions.
 
+#### Make a Map
+1. List the key actors on the left
+    - these are the customers
+1. Write the ending on the right
+1. Fill in the middle with words and arrows
+    - **Keep It Simple**
+    - less than 20 steps
+1. Ask the team for help as the map is drawn
+
+#### Expert Interviews
+- Bring in experts that can address the following areas:
+    - Strategy
+    - Voice of the Customer
+    - How Things Work
+    - Previous Efforts
+- Interview the Experts
+    1. Introduce the SPRINT
+    1. Review the whiteboards
+    1. Ask them to tell you everything about the challenge at hand.
+    1. Ask questions like a news reporter
+    1. Update the whiteboards as they talk
+
+#### Take "How Might We" Notes
+- Everyone must take notes
+- use 3" X 5" yellow sticky notes
+- use dry-erase markers
+
+1. Put "HMW" in the top left corner.
+1. Wait
+1. When you hear something interesting, convert it into a question (quietly).
+1. Write the question on your sticky note.
+1. Peel the note off and set it aside
+ 
+##### Organize the Notes
+- Place all the notes on a wall
+- Take only 10 minutes and group like ideas on the wall
+
+##### Vote on the Notes
+- Each person gets 2 large dot stickers
+- The decider get 4 large dot stickers
+- Ask everyone to review the goal and sprint questions
+- Everyone votes in silence with their dots
+    - It's ok to vote for your own idea
+    - It's ok to vote more than once for a single idea
+- Place the top voted notes on the map
+- The decider chooses the **TARGET** idea to be perused during the SPRINT
+
 [Table of Contents](#toc)
