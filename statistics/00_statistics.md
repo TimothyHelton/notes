@@ -18,7 +18,11 @@
 
 [Moments](#moments)
 
+[Multivariate Regression](#multivariate_regression)
+
 [Percentile](#percentile)
+
+[Polynomial Regression](#polynomial_regression)
 
 [Probability Density Function](#prob_density_func)
 
@@ -141,6 +145,25 @@ If the following relationship is true then causation exists.
 - Average of a population
   - sum / number of samples
 
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3])
+mean = arr.mean()
+```
+
+#### Weighted Mean
+- Values may be assigned different levels of importance
+
+#TODO add equation here!!!
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3])
+weights = np.array([1, 10, 100])
+weighted_mean = np.average(a=arr, weights=weights)
+```
+
 [Table of Contents](#toc)
 
 ---
@@ -154,6 +177,13 @@ If the following relationship is true then causation exists.
 1. If there is an even number of values then average the two located at the 
 midpoint
 
+```python
+import numpy as np
+
+arr = np.array([1, 2, 3])
+median = np.median(arr)
+```
+
 [Table of Contents](#toc)
 
 ---
@@ -161,6 +191,14 @@ midpoint
 ### <a name="mode"></a> Mode
 - most common value in a data set
   - not relevant to continuous numerical data
+
+```python
+import numpy as np
+import scipy.stats as stats
+
+arr = np.array([1, 2, 3])
+mode = stats.mode(arr)
+```
 
 [Table of Contents](#toc)
 
@@ -196,6 +234,14 @@ moment_4 = sp.stats.kurtosis(arr)
 
 [Table of Contents](#toc)
 
+---
+
+### <a name="multivariate_regression"></a> Multivariate Regression
+- value prediction of a single variable based on multiple other variables
+- **Assumes** the different factors are not themselves dependent on each other
+- r-squared can still be used to quantify the fit
+
+[Table of Contents](#toc)
 
 ---
 
@@ -214,6 +260,26 @@ np.percentile(array, desired_percentile)
 - **Inner Quartile Range** is the values between 25% and 75%.
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="polynomial_regression"></a> Polynomial Regression
+- Regression fitting with a higher order polynomials
+- order of 1 in a linear fit just like Least Squares Linear Regression
+- Be cautious of using too high a polynomial and over fitting
+  - This will yield a higher r squared value and more accurately represent 
+  the data you have, but will not be useful for making predictive estimates 
+  on new data.
+
+```python
+import numpy as np
+
+x = np.random.normal(1, 100, 1000)
+y = np.random.normal(50, 200, 1000)
+fit = np.polyfit(x, y, deg=3)
+```
+[Table of Contents](#toc)
+
 
 ---
 
