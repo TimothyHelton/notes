@@ -2,7 +2,7 @@
 
 %%% Packages
 \usepackage{tikz}
-\usetikzlibrary{arrows, positioning, shapes, snakes}
+\usetikzlibrary{arrows, backgrounds, fit, positioning, shapes, snakes}
 
 
 %%% Variables
@@ -18,7 +18,7 @@
   text centered,
   draw=black,
   fill=red!20
-  ]
+]
 \tikzstyle{io} = [% input or output of aata and information
   trapezium,
   trapezium left angle=70,
@@ -28,7 +28,7 @@
   text centered,
   draw=black,
   fill=blue!20
-  ]
+]
 \tikzstyle{process} = [% processes: calculations or data manipulations
   rectangle,
   minimum width=\minwidth,
@@ -36,7 +36,7 @@
   text centered,
   draw=black,
   fill=brown!20
-  ]
+]
 \tikzstyle{decision} = [% decision: comparison, question or decision
   diamond,
   minimum width=\minwidth,
@@ -44,7 +44,7 @@
   text centered,
   draw=black,
   fill=green!20
-  ]
+]
 \tikzstyle{junction} = [% junction: confluence of flow lines
   circle,
   minimum width=1cm,
@@ -52,7 +52,7 @@
   text centered,
   draw=black,
   fill=yellow!20
-  ]
+]
 \tikzstyle{loop} = [% loop
   chamfered rectangle,
   chamfered rectangle xsep=1cm,
@@ -61,11 +61,15 @@
   draw=black,
   fill=purple!20
   ]
+\tikzstyle{group} = [% group format
+  fill=gray!20,
+  inner sep=15pt
+]
 \tikzstyle{arrow} = [% arrow format
-  thick,
   ->,
-  >=stealth
-  ]
+  >=triangle 45,
+  thick
+]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,11 +90,18 @@
 \node[loop] (loop) [right=5cm of decision] {Loop};
 
 
+%%% Groupings
+\begin{scope}[on background layer]
+  \node[group, fit=(io) (process)] (group1) {};
+  \node[anchor=north west, inner sep=1pt] at (group1.north west) {Grouping};
+\end{scope}
+
+
 %%% Arrows
 \draw[arrow] (terminal) -- (io);
 \draw[arrow] (io) -- (process);
 \draw[arrow] (process) -- (decision.north);
-\draw[arrow] (decision.south) -- (junction);
+\draw[loosely dotted] (decision.south) -- (junction);
 \draw[arrow] (decision.east) -- (loop.west);
 \draw[arrow] (loop.east) -- ++(1, 0) |- (junction.east);
 \draw[arrow] (process.east) -| (loop.north);
