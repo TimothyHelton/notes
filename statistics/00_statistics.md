@@ -26,6 +26,8 @@
 
 [Probability Density Function](#prob_density_func)
 
+[Quartiles](#quartiles)
+
 [Standard Deviation](#standard_deviation)
 
 [Variance](#variance)
@@ -155,7 +157,8 @@ mean = arr.mean()
 #### Weighted Mean
 - Values may be assigned different levels of importance
 
-#TODO add equation here!!!
+![alt text](weighted_average.png)
+
 ```python
 import numpy as np
 
@@ -295,6 +298,23 @@ fit = np.polyfit(x, y, deg=3)
     - 3 STD: 99.8%
 
 [Table of Contents](#toc)
+
+---
+
+### <a name="quartiles"></a> Quartiles
+- Divide the population into 4 equal groups
+  - Q1: 25% (Median of 1st half)
+  - Q2: Median
+  - Q3: 75% (Median of 2nd half)
+
+1. Find the median
+1. Find the median of the 1st half of values
+1. Find the median of the 2nd half of values
+1. Find the Inner Quartile Range (IQR)
+    1. Q3 - Q1
+
+[Table of Contents](#toc)
+
 
 ---
 
