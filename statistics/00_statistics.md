@@ -138,6 +138,12 @@ If the following relationship is true then causation exists.
 ![alt text](r_squared_descriptive.png)
 
 ![alt text](r_squared.png)
+
+```python
+from sklearn.metrics import r2_score
+
+r2 = r2_score(test_y, regression(test_x))
+```
   
 [Table of Contents](#toc)
 
@@ -314,7 +320,6 @@ fit = np.polyfit(x, y, deg=3)
     1. Q3 - Q1
 
 [Table of Contents](#toc)
-
 
 ---
 
