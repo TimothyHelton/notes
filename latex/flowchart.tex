@@ -70,6 +70,10 @@
   >=triangle 45,
   thick
 ]
+\tikzstyle{legend} = [% legend format
+  minimum width=0.7cm,
+  minimum height=0.1cm
+]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,6 +109,26 @@
 \draw[arrow] (decision.east) -- (loop.west);
 \draw[arrow] (loop.east) -- ++(1, 0) |- (junction.east);
 \draw[arrow] (process.east) -| (loop.north);
+
+
+%%% Legend
+\node[junction, legend, minimum width=0.4cm] (LegendJunction) [left=5cm of terminal] {};
+\node[anchor=west, inner sep=15pt] at (LegendJunction) {\small Junction};
+
+\node[loop, legend] (LegendLoop) [above=0.2cm of LegendJunction] {};
+\node[anchor=west, inner sep=15pt] at (LegendLoop) {\small Loop};
+
+\node[io, legend] (LegendInputOutput) [above=0.2cm of LegendLoop] {};
+\node[anchor=west, inner sep=15pt] at (LegendInputOutput) {\small Input / Output};
+
+\node[process, legend, minimum height=0.3cm] (LegendProcess) [above=0.2cm of LegendInputOutput] {};
+\node[anchor=west, inner sep=15pt] at (LegendProcess) {\small Process};
+
+\node[decision, legend] (LegendDecision) [above=0.2cm of LegendProcess] {};
+\node[anchor=west, inner sep=15pt] at (LegendDecision) {\small Decision};
+
+\node[terminal, legend] (LegendStartStop) [above=0.2cm of LegendDecision] {};
+\node[anchor=west, inner sep=15pt] at (LegendStartStop) {\small Terminal};
 
 \end{tikzpicture}
 
