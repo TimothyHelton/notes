@@ -47,8 +47,8 @@
 ]
 \tikzstyle{junction} = [% junction: confluence of flow lines
   circle,
-  minimum width=1cm,
-  minimum height=1cm,
+  minimum width=0.7cm,
+  minimum height=0.7cm,
   text centered,
   draw=black,
   fill=yellow!20
@@ -79,7 +79,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\begin{tikzpicture}[node distance=1cm]
+\begin{tikzpicture}[node distance=0.7cm, every text node part/.style={align=center}]
 
 %%% Nodes
 \node[terminal] (terminal) {Terminal};
