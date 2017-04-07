@@ -2,11 +2,47 @@
 
 ### <a name="toc"></a>Table of Contents
 
+
+[Epicycle of Analysis](#epicycle)
+
 [K-fold Cross Validation](#k_fold)
 
 [Machine Learning](#machine_learning)
 
 [Types of Data](#types_of_data)
+
+---
+
+### <a name="epicycle"></a> Epicycle
+**Prerequisites**
+1. Collect the Data
+1. Process the Data
+
+**Data Analysis**
+1. Stating and Refining the Question
+1. Exploring the Data
+1. Building Formal Statistical Models 
+1. Interpreting the Results
+1. Communicate the Results
+
+#### Process for Each Step
+1. Set Expectations
+1. Collect Information (data)
+1. Compare Data to Expectations
+    1. Revise expectations to match data
+
+|     | Set Expectations | Collect Information | Revise Expectations |
+| --- | ---------------- | ------------------- | ------------------- |
+| Question | Question is of interest to audience | Literature Search | Sharpen question |
+| Exploratory Data | Data are appropriate for question | Make exploratory plots of data | Refine question or collect more data |
+| Formal Modeling | Primary model answers question | Fit secondary models, sensitivity analysis | Revise formal model to include more predictors |
+| Interpretation | Interpretation of analyses provides a specific and meaningful answer to the question | Interpret totality of analyses with focus on effect sizes and uncertainty | Revise Exploratory Data and/or models to provide specific and interpretable answer
+| Communication | Process and results of analysis are understood, complete and meaningful to audience | Seek feedback | Revise analyses or approach to presentation |
+
+**One characteristic of a successful data analysis is to raise additional 
+pertinent questions to the surface to then be pursued.**
+
+[Table of Contents](#toc)
 
 ---
 
