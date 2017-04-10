@@ -8,6 +8,8 @@
 
 [Correlation](#correlation)
 
+[Descriptive Statistics](#descriptive_stats)
+
 [Linear Regression](#linear_regression)
 
 [Mean](#mean)
@@ -120,6 +122,15 @@ If the following relationship is true then causation exists.
 [Table of Contents](#toc)
 
 ---
+### <a name="descriptive_stats"></a> Descriptive Statistics
+- Statistics that quantitatively describe or summarize features of a collection.
+- Aim to summarize a sample, rather than use the data to learn about the
+population that the sample of data is thought to represent.
+
+[Table of Contents](#toc)
+
+
+---
 
 ### <a name="linear_regression"></a>Linear Regression
   - If you only have data for one variable then the best predictor for 
@@ -160,6 +171,13 @@ arr = np.array([1, 2, 3])
 mean = arr.mean()
 ```
 
+```python
+import pandas as pd
+
+df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=list('ab'))
+df.mean()
+```
+
 #### Weighted Mean
 - Values may be assigned different levels of importance
 
@@ -193,6 +211,13 @@ arr = np.array([1, 2, 3])
 median = np.median(arr)
 ```
 
+```python
+import pandas as pd
+
+df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], index=list('ab'))
+df.median()
+```
+
 [Table of Contents](#toc)
 
 ---
@@ -224,7 +249,7 @@ mode = stats.mode(arr)
   - describes if the data is shifted to one side
   - data with a longer tail on the left will be skewed left (negative skew)
 - 4th Moment: Kurtosis
-  - describes how thick is  the tail, and how sharp is the peak when compared
+  - describes how thick is the tail, and how sharp is the peak when compared
   to a normal distribution
   - higher peaks have a higher kurtosis
   
