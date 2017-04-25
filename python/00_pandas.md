@@ -26,6 +26,9 @@
 
 [Series](#series)
 
+[Time Series](#time_series)
+
+
 ---
 
 ### <a name="import"></a> Import
@@ -592,3 +595,48 @@ Returns the number of times each value occurs in the series.
 
 [Table of Contents](#toc)
 
+
+---
+### <a name="time_seriese"></a> Time Series
+
+#### Convert Strings to DateTime Objects
+1. read the csv file into Pandas
+1. name the columns
+1. convert date strings to datetime objects
+
+```python
+import pandas as pd
+
+data = pd.read_csv('data.csv', header=0)
+data.columns = ['date', 'value']
+data.date = pd.to_datetime(data.date)
+```
+
+#### Group Values by Month
+1. create tuple of month names
+2. create a groupby object
+    1. lambda function sorts by month
+3. create masking dictionary based on month
+
+```python
+from collections import OrderedDict
+
+import pandas as pd
+
+data = pd.read_csv('data.csv', header=0)
+data.columns = ['date', 'value']
+data.date = pd.to_datetime(data.date)
+
+months = ('JAN', 'FEB', 'MAR', 'APR',
+          'MAY', 'JUN', 'JUL', 'AUG',
+          'SEP', 'OCT', 'NOV', 'DEC')
+
+month_groups = data.groupby(data.date.apply(lambda x: x.month))
+month_masks = {months[k - 1]: v
+               for k, v in month_groups.groups.items()}
+
+month_values = pd.DataFrame(OrderedDict({k: data.values[v]
+                                         for k, v in month_masks.items()}))
+```
+
+[Table of Contents](#toc)
