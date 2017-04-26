@@ -260,17 +260,16 @@ Find the maximum value of each column
 Return the median value
 
 #### merge
-
-  - combines two data frames common elements
-  - the column used to merge must exist in each DataFrame
-  - to merge on a specific column use the **on** argument
-  - to specify how the merge is completed use the **how** argument
-    - **left**: use only keys from the left frame
-    - **right**: use only keys from the right frame
-    - **inner**: use union of keys from both frames
-    - **outer**: use intersection of keys from both frames
-  - if multiple columns have the sme name in both DataFrames you may define 
-  the suffix to use with the **suffixes** argument
+- combines two data frames common elements
+- the column used to merge must exist in each DataFrame
+- to merge on a specific column use the **on** argument
+- to specify how the merge is completed use the **how** argument
+  - **left**: use only keys from the left frame
+  - **right**: use only keys from the right frame
+  - **inner**: use union of keys from both frames
+  - **outer**: use intersection of keys from both frames
+- if multiple columns have the sme name in both DataFrames you may define 
+the suffix to use with the **suffixes** argument
 
 #### min
 Find the minimum value of each column
@@ -344,9 +343,8 @@ Allows rows or columns to be reindexed
 Return a 1 or -1 depending on the sign of the DataFrame value
 
 #### slicing
-
-  - slice a DataFrame like a numpy array
-  - for multiple conditions use an &
+- slice a DataFrame like a numpy array
+- for multiple conditions use an &
   
 ```
 df{(df.key1 > value) & (df.key2 <= value)]
@@ -426,10 +424,9 @@ df = pd.DataFrame(np.arange(8).reshape(2, 4),
 ---
 
 ### <a name="io"></a> Input Output 
-
-  - data
-    - pd.io.data.get_data_yahoo() may be used to get stock prices from yahoo
-     finance
+- data
+  - pd.io.data.get_data_yahoo() may be used to get stock prices from yahoo
+  finance
      
 [Table of Contents](#toc)
 
@@ -438,16 +435,28 @@ df = pd.DataFrame(np.arange(8).reshape(2, 4),
 ### <a name="multiple_indices"></a> Multiple Indices
  
 #### Multi-Index Series
-
-  - Assigning multiple indices to a Series will cause it to act like a 
-  DataFrame.
-  - **unstack** Returns a DataFrame of the multi-index Series
+- Assigning multiple indices to a Series will cause it to act like a 
+DataFrame.
+- **unstack** Returns a DataFrame of the multi-index Series
   
 ```
 group = sorted([1, 2] * 3)
 idx = ['a', 'b', 'c'] * 2
 ser = pd.Series(np.random.randn, index=[group, idx])
 df = ser.unstack()
+```
+
+#### Access a Multi-Index Index Level
+- Return a list of a multi-index level
+
+```python
+df.index.levels[4]
+```
+
+#### Query a Multi-Index
+
+```python
+df.query('col1 == "string" & col2 == variable | col3 != "string')
 ```
 
 [Table of Contents](#toc)
