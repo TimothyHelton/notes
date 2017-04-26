@@ -13,9 +13,12 @@
 
 [Partitioning Data](#partitioning_data)
 
+[Questions](#questions)
+
 [Scaling](#scaling)
 
 [Types of Data](#types_of_data)
+
 
 ---
 
@@ -94,6 +97,7 @@ variables.
 
 
 ---
+
 ### <a name="missing_data"></a> Missing Data
 #### Categorical Data
 - **Class Label**: name given to common groups of items
@@ -177,7 +181,6 @@ inv_class_mapping = {v: k for (k, v) in class_mapping.items()}
 df.classlabel = df.classlabel.map(inv_class_mapping)
 ```
 
-
 #### Find all rows with missing data.
 
 ```python
@@ -227,7 +230,6 @@ features as the data array that was used to fit the model.
 ```python
 from sklearn.preprocessing import Imputer
 
-
 # create instance of Imputer class
 # strategy: 'mean', 'median'
 # axis: 0 = columns, 1 = rows)
@@ -241,8 +243,8 @@ imputed_data = imr.transform(df.values)
 ```
 [Table of Contents](#toc)
 
-
 ---
+
 ### <a name="partitioning_data"></a> Partitioning Data
 - Split Data Into Training and Testing
 
@@ -261,6 +263,59 @@ x_train, x_test, y_train, y=test = train_test_split(x, y,
 [Table of Contents](#toc)
 
 ---
+
+### <a name="questions"></a> Questions
+
+#### Characteristics of a Good Question
+1. Has the question already been **answered**?
+1. Is the question of **interest** to your audience?
+1. Does the question stem from a **plausible** framework?
+    1. A question without a plausible framework will likely result in an 
+    answer the is difficult to have confidence in or interpret.
+ 1. Is the question **answerable**?
+ 1. Is the question **specific**?
+    1. Is the answer to this question **interpretable**?
+
+#### Biases
+- Recall Bias
+    - People asked to remember if a condition was present my have already 
+    decided the the condition caused an outcome.
+    This skews the data.
+- Selection Bias
+    - The data was collected in such a way to inflate the proportion of 
+    people who have characteristics above what exists in the general 
+    population.
+
+#### Types of Questions
+1. Descriptive
+    1. Goal is to summarize a characteristic of a set of data.
+    1. There is no interpretation of the result itself as the result is a fact.
+1. Exploratory (Hypothesis-Generating)
+    1. Search for patterns, trends or relationships between variables.
+    1. Look for features that would support proposing a hypothesis.
+1. Inferential
+    1. A restatement of a proposed hypothesis as a question to be answered 
+    by analyzing a different set of data.
+1. Predictive
+    1. Ask is a sample has a trait.
+    1. These questions do not answer why a sample has a trait, only that the
+     trait exists.
+1. Causal
+    1. Asks about whether changing one factor will change another factor, on
+     average, in a population.
+1. Mechanistic
+    1. Asks a question to determine why a correlation exists. 
+
+#### Question Epicycle
+1. Establish you expectation about the question
+1. Gathering information about your question
+1. Determining if your expectations match the information you gathered, and 
+then refine the question or the expectations.
+
+[Table of Contents](#toc)
+
+---
+
 ### <a name="scaling"></a> Scaling
 - The majority of machine learning and optimization algorithms behave much 
 better if features are on the same scale.
@@ -302,7 +357,6 @@ x_test_std = stdsc.transform(x_test)
 ```
 
 [Table of Contents](#toc)
-
 
 ---
 
