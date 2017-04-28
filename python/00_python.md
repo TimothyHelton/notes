@@ -2,9 +2,24 @@
 
 ### <a name="toc"></a>Table of Contents
 
+
+[groupby](#groupby)
+
 [Installation](#installation)
 
 [Import Order](#import_order)
+
+
+---
+### <a name="groupby"></a> groupby
+```python
+from itertools import groupby
+
+groupby(object, key=func)
+```
+
+[Table of Contents](#toc)
+
 
 ---
 
