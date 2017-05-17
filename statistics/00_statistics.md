@@ -10,7 +10,13 @@
 
 [Descriptive Statistics](#descriptive_stats)
 
+[dirichlet_priors](#Dirichlet Priors)
+
+[Laplacian Estimator](#laplacian_estimator)
+
 [Linear Regression](#linear_regression)
+
+[Maximum Likelihood Estimator](#mle)
 
 [Mean](#mean)
 
@@ -26,16 +32,22 @@
 
 [Polynomial Regression](#polynomial_regression)
 
+[Probability Axioms](#probability_axioms)
+
 [Probability Density Function](#prob_density_func)
 
 [Quartiles](#quartiles)
+
+[Random Variables](#random_variabls)
+
+[Simpson's Paradox](#simpson_paradox)
 
 [Standard Deviation](#standard_deviation)
 
 [Variance](#variance)
 
----
 
+---
 ### <a name="definitions"></a> Definitions
 | Term | Definition |
 | ---- | ---------- |
@@ -47,7 +59,9 @@
 | n | sample size |
 | r | Pearson correlation coefficient |
 | ![alt text](std_dev.png) | Standard Deviation of x |
+| correlation | knowledge about 1 variable provides information about another variable |
 | covariance | a descriptive measure of the linear association between two variables |
+| empirical frequency | observed outcomes |
 | negative relationship | multiple variables which have opposite trends |
 | population | all specimens in a set |
 | positive relationship | multiple variables which follow the same trends |
@@ -57,8 +71,8 @@
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="bivariate_relationships"></a>Bivariate Relationships
 
 #### Covariance
@@ -91,8 +105,8 @@ np.cov(arr_1, arr_2, bias=True)
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="correlation"></a>Correlation
   - Describes the **magnitude** and **direction** of an association
   - Denoted by the lowercase variable r
@@ -121,6 +135,7 @@ If the following relationship is true then causation exists.
 
 [Table of Contents](#toc)
 
+
 ---
 ### <a name="descriptive_stats"></a> Descriptive Statistics
 - Statistics that quantitatively describe or summarize features of a collection.
@@ -131,7 +146,23 @@ population that the sample of data is thought to represent.
 
 
 ---
+### <a name="dirichlet_priors"></a> Dirichlet Priors
+- Prior data influences the future predictions.
 
+[Table of Contents](#toc)
+
+
+---
+### <a name="laplacian_estimator"></a> Laplacian Estimator
+- Add additional "FAKE" data to observed data to pull the probabilities 
+towards the Maximum Likelihood Estimator.
+- This technique is suited for sparse data.
+- Add a "Fake" item for each possible outcome.
+
+[Table of Contents](#toc)
+
+
+---
 ### <a name="linear_regression"></a>Linear Regression
   - If you only have data for one variable then the best predictor for 
   future samples would be the mean value of the data.
@@ -158,8 +189,16 @@ r2 = r2_score(test_y, regression(test_x))
   
 [Table of Contents](#toc)
 
----
 
+---
+### <a name="mle"></a> Maximum Likelihood Estimator (MLE)
+- The probability that will most likely yield the data.
+- MLE will always alter the data to a biased value.
+
+[Table of Contents](#toc)
+
+
+---
 ### <a name="mean"></a> Mean 
 - Average of a population
   - sum / number of samples
@@ -193,8 +232,8 @@ weighted_mean = np.average(a=arr, weights=weights)
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="median"></a> Median
 - Equivalent to the 50th percentile.
 - **Median is less susceptible to outliers than the mean**
@@ -220,8 +259,8 @@ df.median()
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="mode"></a> Mode
 - most common value in a data set
   - not relevant to continuous numerical data
@@ -236,8 +275,8 @@ mode = stats.mode(arr)
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="moments"></a> Moments
 - Quantitative measures of the shape of a probability density function.
 
@@ -268,8 +307,8 @@ moment_4 = sp.stats.kurtosis(arr)
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="multivariate_regression"></a> Multivariate Regression
 - value prediction of a single variable based on multiple other variables
 - **Assumes** the different factors are not themselves dependent on each other
@@ -277,8 +316,8 @@ moment_4 = sp.stats.kurtosis(arr)
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="percentile"></a> Percentile
 - A value in the X percentile means the value is greater than X% of the 
 total samples.
@@ -295,8 +334,8 @@ np.percentile(array, desired_percentile)
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="polynomial_regression"></a> Polynomial Regression
 - Regression fitting with a higher order polynomials
 - order of 1 in a linear fit just like Least Squares Linear Regression
@@ -316,7 +355,29 @@ fit = np.polyfit(x, y, deg=3)
 
 
 ---
+### <a name="probability_axioms"></a> Probability Axioms
+- for any event E:
+    - ![alt-text](p_event_e.png)
+- probability of the sample space s:
+    - ![alt-text](p_sample_space_s.png)
+- If all events E are *disjoint* events:
+    - ![alt-text](p_disjoint_events.png)
 
+#### Derived Consequences
+- Probability of an event is one minus the probability of the opposite of 
+the event.
+    - ![alt-text](p_alt_event.png)
+- Probabilities of all events combined is one.
+    - ![alt-text](p_combine_events.png)
+- Probability of a subset A contained within set B.
+    - ![alt-text](p_subset_a_in_b.png)
+- Probability of a union of two disjoint sets.
+    - ![alt-text](p_disjoint_union.png)
+
+[Table of Contents](#toc)
+
+
+---
 ### <a name="prob_density_func"></a> Probability Density Function
 - Probably of data point falling within a range of values.
 - If the data is **discrete** then it would be referred to as a 
@@ -330,8 +391,8 @@ fit = np.polyfit(x, y, deg=3)
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="quartiles"></a> Quartiles
 - Divide the population into 4 equal groups
   - Q1: 25% (Median of 1st half)
@@ -346,8 +407,32 @@ fit = np.polyfit(x, y, deg=3)
 
 [Table of Contents](#toc)
 
----
 
+---
+### <a name="random_variables"></a> Random Variables
+- Discrete Random Variables
+    - have a measurable probability between values (0, 1)
+    - all data values are integers
+    - has a Probability Mass Function (PMF)
+- Continuous Random Variables
+    - have a measurable probability between values (0, 1)
+    - data values have an infinite number of possible values
+    - has a Probability Density Function (PDF)
+    
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="simpson_paradox"></a> Simpson's Paradox
+- Grouping of data can completely alter the conclusions derived from
+statistics.
+
+
+[Table of Contents](#toc)
+
+
+---
 ### <a name="standard_deviation"></a> Standard Deviation
 - Standard deviation is the square root of the variance.
 - Values outside one standard deviation are considered to be outliers.
@@ -361,9 +446,10 @@ std_dev = a.std()
 
 [Table of Contents](#toc)
 
----
 
+---
 ### <a name="variance"></a> Variance
+- Describes the spread of the data.
 - The average of the squared differences from the mean.
 - Population Variance: ![alt text](population_variance.png)
 - Sample Variance: ![alt text](sample_variance.png)
