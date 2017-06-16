@@ -74,7 +74,7 @@ inflexible than any natural language.
 - Preprocessor will replace the directive with the content of the file whose
  name is listed in the directive.
 - Include statements surrounded by < and > are system libraries **#include 
-<path>**
+\<path>**
 - Include statements surrounded by " and " are non-system libraries 
 **#include "path"**
 
@@ -84,7 +84,8 @@ inflexible than any natural language.
 the line **using namespace XXX;** with the namespaces you would like to use.
 
 #### Main Function
-- Every program must have a function **main**, which returns a **integer**.
+- Every program must have a function named **main**, which returns a 
+**integer**.
 
 #### Function Prototype
 - The **result**, **name** and **arguments** of a function are called the 
@@ -92,8 +93,8 @@ the line **using namespace XXX;** with the namespaces you would like to use.
 
 #### Variables
 - Variables have three components:
-    1. name
     1. type
+    1. name
     1. value
 - Variable names follow these rules:
     1. only use uppercase, lowercase letters and underscores
@@ -133,6 +134,8 @@ declaration, but not before.
 - **floating-point**: contain or are able to contain fractional parts of a 
 number.
     - **float**
+    - **double**
+        - has double the precision of a float 
 - **type**: the characteristic of a number which determines its kind, range 
 and application
 - adding a **+** sign at the front of a positive number is optional
