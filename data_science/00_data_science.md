@@ -1,4 +1,4 @@
-# Structured Query Language (SQL)
+# Data Science
 
 ### <a name="toc"></a>Table of Contents
 

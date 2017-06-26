@@ -1,0 +1,154 @@
+# Machine Learning
+
+### <a name="toc"></a>Table of Contents
+
+
+[Overview](#overview)
+
+[Categories](#categories)
+
+[Classification](#classification)
+
+[Clustering](#clustering)
+
+[Density Estimation](#density_estimation)
+
+[Dimensionality Reduction](#dimensionality_reduction)
+
+[Error](#error)
+
+[Regression](#regression)
+
+[Workflow](#workflow)
+
+
+---
+### <a name="overview"></a> Overview
+- Machine Learning
+    - Field of computer science where algorithms learn from data.
+        - computational statistics
+        - pattern recognition
+        - mathematical optimization
+        - computational learning theory in artificial intelligence
+    - Data Mining
+    - Exploratory Data Analysis
+    - Reliable
+    - Repeatable
+    - Predictive
+    
+| Model | Summary |
+| :---- | :------ |
+| Regression | Identify relationships between variables |
+| Classification | Assign new data to the correct group |
+| Density Estimation | Find the distribution of inputs in a certain space |
+| Dimensionality Reduction | Simplify inputs by mapping them into a lower dimensional space |
+| Clustering | Group similar data points together, without knowing the groups beforehand |
+
+
+#### Base Model
+Y = f(X) + error
+
+##### Inference
+Understand the relationship between X and Y.
+- Which X values are associated with the Y outputs?
+- What is the relationship between each response and the predictor?
+- What equation adequately summarizes the model?
+
+###### Methods
+- Parametric
+    - Make an assumption about the shape of the model. (Linear)
+    - Use the training data to fit the model.
+- Non-Parametric Methods
+    - Estimate the training data as closely as possible.
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="categories"></a> Categories
+- Supervised
+    - Program finds relationships between the inputs and outputs from 
+    example data.
+- Unsupervised
+    - Program finds structure or patterns in the input only.
+- Reinforcement
+    - Program interacts with an environment where it must perform a certain 
+    goal.
+        - Robotics
+        - Self driving cars
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="classification"></a> Classification
+- Classification predicts categories for new data points.
+- Class Labels
+    - Discrete
+    - Unordered
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="clustering"></a> Clustering
+- Groups new data points into groups without knowing how they have 
+previously been grouped.
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="density_estimation"></a> Density Estimation
+
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="dimensionality_reduction"></a> Dimensionality Reduction
+- Reduce the variable degrees of freedom.
+- Remove noise
+- In certain cases improves algorithms performance
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="error"></a> Error
+- Reducible Error
+    - Error that may be negated by altering f(x).
+- Irreducible Error
+    - Error that cannot be accounted for by f(x), no matter how f(x) is 
+    modeled.
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="regression"></a> Regression
+- Create relationship between variables.
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="workflow"></a> Workflow
+1. Preprocessing
+    1. Getting Data
+    1. Cleaning Data
+    1. Scaling Data
+    1. Dimensionality Reduction
+1. Learning
+    1. Perform EDA
+    1. Evaluate Algorithms
+        1. Select the Best Model
+    1. Decide on Metric to Compare Performance
+    1. Cross-Validation Techniques
+1. Evaluation
+    1. Test the dataset
+    1. Evaluate the Model
+1. Prediction
+
+[Table of Contents](#toc)
+
