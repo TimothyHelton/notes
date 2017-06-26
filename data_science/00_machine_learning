@@ -25,6 +25,7 @@
 ---
 ### <a name="overview"></a> Overview
 - Machine Learning
+    - A means to build models of data.
     - Field of computer science where algorithms learn from data.
         - computational statistics
         - pattern recognition
@@ -69,8 +70,15 @@ Understand the relationship between X and Y.
 - Supervised
     - Program finds relationships between the inputs and outputs from 
     example data.
+    - Tasks
+        - Classification
+        - Regression
 - Unsupervised
     - Program finds structure or patterns in the input only.
+        - Identify input structure
+    - Tasks
+        - Clustering
+        - Dimensionality Reduction
 - Reinforcement
     - Program interacts with an environment where it must perform a certain 
     goal.
@@ -128,6 +136,7 @@ previously been grouped.
 ---
 ### <a name="regression"></a> Regression
 - Create relationship between variables.
+- Relationship is a continuous function.
 
 [Table of Contents](#toc)
 
