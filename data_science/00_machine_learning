@@ -17,6 +17,8 @@
 
 [Error](#error)
 
+[Gaussian naive Bayes](#gaussian_naive_bayes)
+
 [Regression](#regression)
 
 [Workflow](#workflow)
@@ -119,6 +121,22 @@ previously been grouped.
 - Remove noise
 - In certain cases improves algorithms performance
 
+#### Principal Component Analysis
+- Fast linear technique
+
+```python
+import seaborn as sns
+from sklearn.decomposition import PCA
+
+model = PCA(n_components=2)
+model.fit(X-iris)
+X_2D = model.transform(X_iris)
+
+iris['pca_0'] = X_2D[:, 0]
+iris['pca_1'] = X_2D[:, 1]
+sns.lmplot('pca_0', 'paca_2', hue='species', data=iris, fit_reg=False)
+```
+
 [Table of Contents](#toc)
 
 
@@ -129,6 +147,27 @@ previously been grouped.
 - Irreducible Error
     - Error that cannot be accounted for by f(x), no matter how f(x) is 
     modeled.
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="gaussian_naive_bayes"></a> Gaussian naive Bayes
+- Each class is drawn from an axis-aligned Gaussian distribution.
+- Very Fast
+    - no hyperparameters
+- Good choice for a baseline
+
+```python
+from sklearn.metrics import accuracy_score
+from sklearn.naive_bayes import GaussianNB
+
+model = GaussianNB()
+model.fit(Xtrain, ytrain)
+y_model = model.predict(Xtest)
+
+accuracy_score(ytest, y_model)
+```
 
 [Table of Contents](#toc)
 
