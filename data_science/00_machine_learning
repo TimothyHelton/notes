@@ -19,6 +19,8 @@
 
 [Gaussian naive Bayes](#gaussian_naive_bayes)
 
+[Principal Component Analysis (PCA)](#pca)
+
 [Regression](#regression)
 
 [Workflow](#workflow)
@@ -168,6 +170,39 @@ y_model = model.predict(Xtest)
 
 accuracy_score(ytest, y_model)
 ```
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="pca"></a> Principal Component Analysis(PCA)
+- Eigen vector Problem
+- Explains the covariance - variance structure through linear combinations 
+of variables.
+- Only requires input parameters.
+- Data Reduction technique
+- Uses:
+    - Data Visualization
+    - Data Reduction
+    - Data Classification
+    - Trend Analysis
+    - Factor Analysis
+    - Noise Reduction
+
+#### Introduction
+- **Assumes the relationship between variables is linear.**
+- Rigidly  rotate the aces of a p-dimensional space to new positions 
+(principal axes).
+- Order the principal axis from highest variance to lowest.
+- The covariance between axes is zero. (Uncorrelated)
+- It is important to standardize each variable to unit variance and zero mean.
+
+#### Theory
+1. Find the centroid of data points.
+1. Create a vector through the centroid that has the largest variance.
+1. Create a vector perpendicular to the the last vector.
+1. Transform all the data points into the local coordinate system defined by
+ the axis.
 
 [Table of Contents](#toc)
 
