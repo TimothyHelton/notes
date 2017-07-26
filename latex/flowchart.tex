@@ -79,7 +79,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-\begin{tikzpicture}[node distance=0.7cm, every text node part/.style={align=center}]
+\begin{tikzpicture}[framed, inner frame sep=1cm, node distance=0.7cm, every text node part/.style={align=center}]
 
 %%% Nodes
 \node[terminal] (terminal) {Terminal};
@@ -88,7 +88,7 @@
 
 \node[decision] (decision) [below=of process] {Decision};
 \node[text width=1cm] (yes) [above right=1mm of decision.east] {yes};
-\node[text width=1.1cm] (no) [below=1mm of decision.south] {no};
+\node[text width=1.1cm] (no) [below right=1mm and 0.1mm of decision.south] {no};
 
 \node[junction] (junction) [below=of decision] {};
 \node[loop] (loop) [right=5cm of decision] {Loop};
