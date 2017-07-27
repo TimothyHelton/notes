@@ -82,8 +82,8 @@
 \begin{tikzpicture}[framed, inner frame sep=1cm, node distance=0.7cm, every text node part/.style={align=center}]
 
 %%% Nodes
-\node[terminal] (terminal) {Terminal};
-\node[io] (io) [below=of terminal] {Input / Output};
+\node[terminal] (begin) {Terminal};
+\node[io] (io) [below=of begin] {Input / Output};
 \node[process] (process) [below=of io] {Process};
 
 \node[decision] (decision) [below=of process] {Decision};
@@ -102,7 +102,7 @@
 
 
 %%% Arrows
-\draw[arrow] (terminal) -- (io);
+\draw[arrow] (begin) -- (io);
 \draw[arrow] (io) -- (process);
 \draw[arrow] (process) -- (decision.north);
 \draw[loosely dotted] (decision.south) -- (junction);
@@ -112,7 +112,7 @@
 
 
 %%% Legend
-\node[junction, legend, minimum width=0.4cm] (LegendJunction) [left=5cm of terminal] {};
+\node[junction, legend, minimum width=0.4cm] (LegendJunction) [left=5cm of begin] {};
 \node[anchor=west, inner sep=15pt] at (LegendJunction) {\small Junction};
 
 \node[loop, legend] (LegendLoop) [above=0.2cm of LegendJunction] {};
