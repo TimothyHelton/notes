@@ -10,7 +10,7 @@
 
 [Descriptive Statistics](#descriptive_stats)
 
-[dirichlet_priors](#Dirichlet Priors)
+[Dirichlet_Priors](#dirichlet_priors)
 
 [Laplacian Estimator](#laplacian_estimator)
 
