@@ -13,6 +13,8 @@
 
 [S3](#s3)
 
+[Update Ubuntu](#update_ubuntu)
+
 
 ---
 ### <a name="create_aws_account"></a> Create AWS Account
@@ -88,3 +90,20 @@ aws s3 cp s3://bucket-name.bucket/file_name ./
 ```
 
 [Table of Contents](#toc)
+
+
+---
+### <a name="update_ubuntu"></a> Update Ubuntu
+```bash
+# Fetches the list of available updates
+sudo apt-get update
+
+# Strictly upgrades the current packages
+sudo apt-get upgrade
+
+# Installs updates (new ones)
+sudo apt-get dist-upgrade
+```
+
+[Table of Contents](#toc)
+
