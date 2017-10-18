@@ -7,6 +7,8 @@
 
 [Create EC2 Instance](#create_ec2_instance)
 
+[CRON Job with Anaconda](#cron_anaconda)
+
 [Install Anaconda on EC2](#install_anaconda)
 
 [SSH to EC2](#ssh_ec2)
@@ -35,6 +37,36 @@
 - Chose Operating System
 - Download Key
 - Save Key
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="cron_anaconda"></a> CRON Job with Anaconda
+- cron jobs
+    - use .sh by default
+    - the last line needs to be a comment
+    - if doing more commands than just calling the Python file to execute then
+    wrap the calls in a bash file
+        - the Python file must be **executable**
+    - set up the cron job for a user with the command
+        - **crontab -e**
+    - if an error occurs in the crontab execution then an email is sent to 
+    this location
+        - **/var/mail/<user_name>**
+    - the PATH variable must be redefined to include
+        - the Anaconda virtual environment bin directory
+        - the directory with the Python file
+        - **by default the cron job is executed in the user's home directory**
+
+Example crontab job:    
+```bash
+SHELL=/bin/bash
+# m  h  dom mon dow   command
+PATH=/home/ubuntu/anaconda3/envs/<env_name>/bin:/home/ubuntu/<script_loc>:$PATH
+50   23 *   *   *     /bin/bash wrapper.sh &> wrapper.log
+#
+```
 
 [Table of Contents](#toc)
 
