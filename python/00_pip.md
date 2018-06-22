@@ -93,7 +93,7 @@ pip install -r requirements.txt
 ```
 
 ```
-pip install --use-wheel --no-index --find-links=WheelHouseDirctory PackageName
+pip install --no-index --find-links=WheelHouseDirctory PackageName
 ```
 
 #### Install Package in Developer Mode
