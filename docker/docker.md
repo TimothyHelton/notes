@@ -41,6 +41,12 @@ ln -s $etc/docker-compose.bash-completion $(brew --prefix)/etc/bash_completion.d
 - New format: `docker command sub-command`
 
 ```bash
+# account commands
+## Login to Docker Hub (Stores login information ~/.docker/config.json!!!)
+docker login
+## Logout of Docker Hub (ALWAYS run this command to remove account inforation.)
+docker logout
+
 # list all available docker commands
 docker
 
@@ -96,6 +102,10 @@ docker network ls
 ## Image
 - *Image*: application to be run
 - Default Image: `hub.docker.com`
+- *latest* only means *default* and does not have to actually be the latest
+version.
+- Create private images on the web interface before uploading.
+By default the image will be public.
 
 ## Containers
 - *Container*: instance of an image running as a process
