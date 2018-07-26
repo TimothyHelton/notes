@@ -8,6 +8,10 @@
 
 [Data Splits](#data_splits)
 
+[Exponentially Weighted Average](#exponentially_weighted_average)
+
+[Mini-Batch Sizes](#minibatch_sizes)
+
 
 ---
 ### <a name="bias_variance"></a> Bias and Variance
@@ -89,4 +93,27 @@ ratios:
 - It is ok if the training set has augmented samples.
 
 [Table of Contents](#toc)
+
+
+---
+### <a name="exponentially_weighted_average"></a> Exponentially Weighted Average
+$$v_t = \beta * v_{t-1} + (1 - \beta) * \sigma_t$$
+
+- Represents the average over time units:
+$$\frac{1}{1 - \beta}$$
+
+[Table of Contents](#toc)
+
+
+---
+### <a name="minibatch_sizes"></a> Mini-Batch Sizes
+- Data < 2000 samples: just use batch gradient decent and evaluate the entire
+dataset for each iteration of gradient decent.
+- Big Data:
+    - use a mini-batch size that is a power of 2
+        - common choices 64, 128, 256, 512
+    - ensure the each batch will fit in memory (cpu or gpu)
+
+[Table of Contents](#toc)
+
 
